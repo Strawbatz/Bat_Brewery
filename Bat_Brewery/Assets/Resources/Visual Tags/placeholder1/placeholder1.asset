@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: placeholder1
   m_EditorClassIdentifier: 
   inventoryImg: {fileID: 21300000, guid: 0c97167eb2d9a354888ef8efa5e58c06, type: 3}
+  inventoryImg2: {fileID: 21300000, guid: 0c97167eb2d9a354888ef8efa5e58c06, type: 3}
   mapImg: {fileID: 21300000, guid: a965daa1d61de634b807486a8361f8c2, type: 3}
+  worldImg: {fileID: 21300000, guid: a965daa1d61de634b807486a8361f8c2, type: 3}

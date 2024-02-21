@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
-  m_Name: placeholder2
+  m_Name: krikroVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 21300000, guid: fb327842118447e4e8b66d5581c7aef9, type: 3}
-  inventoryImg2: {fileID: 21300000, guid: fb327842118447e4e8b66d5581c7aef9, type: 3}
-  mapImg: {fileID: 21300000, guid: d7ad1befbf136f74383008f149bbb769, type: 3}
-  worldImg: {fileID: 21300000, guid: d7ad1befbf136f74383008f149bbb769, type: 3}
+  inventoryImg: {fileID: 1361177546, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
+  inventoryImg2: {fileID: 1611827823, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
+  mapImg: {fileID: -2092644652, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
+  worldImg: {fileID: 503864655, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}

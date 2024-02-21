@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
-  m_Name: placeholder2
+  m_Name: bo-baVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 21300000, guid: fb327842118447e4e8b66d5581c7aef9, type: 3}
-  inventoryImg2: {fileID: 21300000, guid: fb327842118447e4e8b66d5581c7aef9, type: 3}
-  mapImg: {fileID: 21300000, guid: d7ad1befbf136f74383008f149bbb769, type: 3}
-  worldImg: {fileID: 21300000, guid: d7ad1befbf136f74383008f149bbb769, type: 3}
+  inventoryImg: {fileID: -185063516, guid: b03ddd29bd023d349a84360716baef37, type: 3}
+  inventoryImg2: {fileID: -1846029180, guid: b03ddd29bd023d349a84360716baef37, type: 3}
+  mapImg: {fileID: 1568047539, guid: b03ddd29bd023d349a84360716baef37, type: 3}
+  worldImg: {fileID: 1478730657, guid: b03ddd29bd023d349a84360716baef37, type: 3}
