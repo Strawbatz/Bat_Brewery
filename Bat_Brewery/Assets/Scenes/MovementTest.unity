@@ -331,7 +331,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &514042405
+--- !u!114 &505561282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -493,7 +493,7 @@ Transform:
   m_GameObject: {fileID: 569884238}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.06, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -534,8 +534,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 1598557105}
+  feetTransform: {fileID: 1790693882}
   cameraSpeed: 10
---- !u!114 &873118231
+  renderer: {fileID: 569884239}
+--- !u!114 &686218802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -737,12 +739,12 @@ MonoBehaviour:
   dataDict:
     keys:
     - {fileID: 1598557108}
-    - {fileID: 0}
     - {fileID: 569884245}
+    - {fileID: 984880939}
     values:
     - {fileID: 1700370803}
-    - {fileID: 514042405}
-    - {fileID: 873118231}
+    - {fileID: 505561282}
+    - {fileID: 686218802}
   extensionEnabled: 1
   debugMode: 0
 --- !u!4 &1160292285

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls the movement of the camera
+/// </summary>
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] Transform targetTransform;
