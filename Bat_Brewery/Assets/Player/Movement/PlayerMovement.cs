@@ -27,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
     {
         movementVector = moveAction.action.ReadValue<Vector2>();
         object obj = moveAction.action.ReadValueAsObject();
-        Debug.Log(obj);
 
         //transform.position = (Vector2)transform.position + movementVector.normalized*movementSpeed*Time.deltaTime;
 
