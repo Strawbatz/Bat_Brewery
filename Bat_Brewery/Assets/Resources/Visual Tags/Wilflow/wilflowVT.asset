@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
-  m_Name: placeholder2
+  m_Name: wilflowVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 21300000, guid: fb327842118447e4e8b66d5581c7aef9, type: 3}
-  inventoryImg2: {fileID: 21300000, guid: fb327842118447e4e8b66d5581c7aef9, type: 3}
-  mapImg: {fileID: 21300000, guid: d7ad1befbf136f74383008f149bbb769, type: 3}
-  worldImg: {fileID: 21300000, guid: d7ad1befbf136f74383008f149bbb769, type: 3}
+  inventoryImg: {fileID: -602010029, guid: 9483084717a25ba4c9ae523296f5a9d6, type: 3}
+  inventoryImg2: {fileID: -371784321, guid: 9483084717a25ba4c9ae523296f5a9d6, type: 3}
+  mapImg: {fileID: -991841558, guid: 9483084717a25ba4c9ae523296f5a9d6, type: 3}
+  worldImg: {fileID: -1198707166, guid: 9483084717a25ba4c9ae523296f5a9d6, type: 3}

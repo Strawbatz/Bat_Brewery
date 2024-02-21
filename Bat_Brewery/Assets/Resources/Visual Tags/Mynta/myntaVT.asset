@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
-  m_Name: placeholder2
+  m_Name: myntaVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 21300000, guid: fb327842118447e4e8b66d5581c7aef9, type: 3}
-  inventoryImg2: {fileID: 21300000, guid: fb327842118447e4e8b66d5581c7aef9, type: 3}
-  mapImg: {fileID: 21300000, guid: d7ad1befbf136f74383008f149bbb769, type: 3}
-  worldImg: {fileID: 21300000, guid: d7ad1befbf136f74383008f149bbb769, type: 3}
+  inventoryImg: {fileID: 1826260105, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+  inventoryImg2: {fileID: 2032582940, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+  mapImg: {fileID: 289395480, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+  worldImg: {fileID: -139067265, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
