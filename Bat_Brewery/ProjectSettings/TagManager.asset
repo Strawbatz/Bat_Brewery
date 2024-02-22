@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Vision Mask
+    uniqueID: 1779584593
+    locked: 0
