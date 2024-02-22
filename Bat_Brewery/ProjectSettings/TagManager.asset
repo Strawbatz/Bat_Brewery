@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - New tag
+  - PlayerPhysics
   layers:
   - Default
   - TransparentFX
