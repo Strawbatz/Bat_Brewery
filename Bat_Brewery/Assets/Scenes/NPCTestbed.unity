@@ -323,15 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5bb16e2d01b9f46af24c7f632157b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interact:
-    m_Name: Interact
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 80815b86-029d-481a-9e89-9cbd1679acc5
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  interact: {fileID: 1968120607357455528, guid: ceaa601a797be6f4888b907a09f6a620, type: 3}
   interactSprite: {fileID: 791044059}
 --- !u!61 &379785965
 BoxCollider2D:
@@ -751,6 +743,22 @@ PrefabInstance:
     - target: {fileID: 1173055253617471756, guid: 55a67b487a9ef1f4483a64b6a38b8286, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173055253617471756, guid: 55a67b487a9ef1f4483a64b6a38b8286, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614314190258659522, guid: 55a67b487a9ef1f4483a64b6a38b8286, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3423632309862261695, guid: 55a67b487a9ef1f4483a64b6a38b8286, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361651027459559883, guid: 55a67b487a9ef1f4483a64b6a38b8286, type: 3}
+      propertyPath: m_TagString
+      value: PlayerPhysics
       objectReference: {fileID: 0}
     - target: {fileID: 6843247902462594423, guid: 55a67b487a9ef1f4483a64b6a38b8286, type: 3}
       propertyPath: m_Camera
