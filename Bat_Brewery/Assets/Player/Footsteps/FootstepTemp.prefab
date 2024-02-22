@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4316799265173840748}
   - component: {fileID: 4453347073998943039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FootstepTemp
   m_TagString: PlayerFootstep
   m_Icon: {fileID: 0}

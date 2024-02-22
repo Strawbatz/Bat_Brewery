@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst;
 using UnityEngine;
 
 public class Utilities
@@ -19,5 +20,33 @@ public class Utilities
 
         // Rotate the object to face the target position
         objectToRotate.rotation = Quaternion.Euler(0, 0, angle+offsetAngle);
+    }
+
+    /// <summary>
+    /// Returns true if the value is inside of the specified range
+    /// </summary>
+    /// <param name="value"></param>
+    /// <param name="minValue"></param>
+    /// <param name="maxValue"></param>
+    /// <returns></returns>
+    public static bool InRange(float value, float minValue, float maxValue)
+    {
+        if(value > maxValue) return false;
+        if(value < minValue) return false;
+        return true;
+    }
+
+    /// <summary>
+    /// Returns true if the vector is inside of the bounds represented by the other vectors
+    /// </summary>
+    /// <param name="vector"></param>
+    /// <param name="maxVector"></param>
+    /// <param name="minVector"></param>
+    /// <returns></returns>
+    public static bool InRange(Vector2 vector, Vector2 minVector, Vector2 maxVector)
+    {
+        if(!InRange(vector.x, minVector.x, maxVector.x)) return false;
+        if(!InRange(vector.y, minVector.y, maxVector.y)) return false;
+        return true;
     }
 }

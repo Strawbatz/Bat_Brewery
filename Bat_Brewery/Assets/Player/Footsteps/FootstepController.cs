@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -36,6 +38,20 @@ public class FootstepController : MonoBehaviour
             {
                 footstepPool.Push(playerFootsteps.Dequeue());
             }
+        }
+
+        foreach (GameObject footstep in playerFootsteps)
+        {
+            if(Utilities.InRange(footstep.transform.position, (Vector2)playerFeet.parent.position-Vector2.one*footstepDistance, 
+            (Vector2)playerFeet.parent.position+Vector2.one*footstepDistance))
+            {
+                if(Vector2.Distance(footstep.transform.position, playerFeet.parent.position) < footstepDistance)
+                {
+                    footstep.SetActive(false);
+                    continue;
+                } 
+            } 
+            footstep.SetActive(true);
         }
     }
 
