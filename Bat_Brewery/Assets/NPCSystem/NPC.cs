@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,6 @@ private void OnTriggerEnter2D(Collider2D other) {
     if(other.gameObject.CompareTag("PlayerPhysics")) {
         interact.action.performed += Interact;
         interactSprite.gameObject.SetActive(true);
-        Debug.Log("Entered");
     }
 }
 
@@ -24,7 +24,6 @@ private void OnTriggerExit2D(Collider2D other) {
     if(other.gameObject.CompareTag("PlayerPhysics")) {
         interact.action.performed -= Interact;
         interactSprite.gameObject.SetActive(false);
-        Debug.Log("Exited");
     }
 }
 

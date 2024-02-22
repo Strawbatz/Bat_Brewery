@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class mushDood : NPC
+public class MushDood : TalkableNPC
 {
     public override void Interact(InputAction.CallbackContext ctx)
     {
-        Debug.Log("Mushdood dialogue");
+        Talk(dialogue);
+    }
+
+
+    public override void Talk(TextAsset dialogue)
+    {
+        DialogueManager.GetInstance().EnterDialogueMode(dialogue, this);
     }
 }
