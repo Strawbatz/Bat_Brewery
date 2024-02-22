@@ -7,6 +7,6 @@ public class mushDood : NPC
 {
     public override void Interact(InputAction.CallbackContext ctx)
     {
-        
+        Debug.Log("Mushdood dialogue");
     }
 }
