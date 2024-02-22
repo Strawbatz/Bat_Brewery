@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerPhysics
+  - PlayerFootstep
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - VisionMask
+  - Footsteps
   - 
   - 
   - 
@@ -44,4 +45,7 @@ TagManager:
     locked: 0
   - name: Vision Mask
     uniqueID: 1779584593
+    locked: 0
+  - name: Footsteps
+    uniqueID: 2255634459
     locked: 0
