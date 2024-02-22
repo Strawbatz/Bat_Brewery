@@ -646,6 +646,7 @@ MonoBehaviour:
     - {fileID: 651871919}
     - {fileID: 1066008768}
     - {fileID: 5515209100188123238, guid: 708a8523a2c52c646bcf2a3636a4d6b3, type: 3}
+    - {fileID: 0}
     values:
     - {fileID: 1700370803}
     - {fileID: 505561282}
@@ -656,6 +657,7 @@ MonoBehaviour:
     - {fileID: 2087609131}
     - {fileID: 208743357}
     - {fileID: 406672243}
+    - {fileID: 2000657171}
   extensionEnabled: 1
   debugMode: 0
 --- !u!4 &1160292285
@@ -1175,6 +1177,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000657171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseInspectorFoldout: 0
+  layoutInfos: []
+  buttonMethods: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &2087609131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,7 +1331,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2614314190258659522, guid: 55a67b487a9ef1f4483a64b6a38b8286, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55a67b487a9ef1f4483a64b6a38b8286, type: 3}
