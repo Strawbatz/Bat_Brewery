@@ -423,11 +423,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseInspectorFoldout: 0
-  layoutInfos: []
+  layoutInfos:
+  - rid: 516841433236766758
+  - rid: 516841433236766759
+  - rid: 516841433236766760
   buttonMethods: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 516841433236766758
+      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
+      data:
+        fieldName: targetTransform
+        fieldTypeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        label: Movement
+        foldout: 1
+    - rid: 516841433236766759
+      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
+      data:
+        fieldName: minSize
+        fieldTypeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        includeLast: 0
+    - rid: 516841433236766760
+      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
+      data:
+        fieldName: minSize
+        fieldTypeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+        label: Zoom
+        foldout: 1
 --- !u!114 &827146030
 MonoBehaviour:
   m_ObjectHideFlags: 0
