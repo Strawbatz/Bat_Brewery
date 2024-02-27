@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         movementVector = moveAction.action.ReadValue<Vector2>();
-        object obj = moveAction.action.ReadValueAsObject();
+        //object obj = moveAction.action.ReadValueAsObject();
 
         //transform.position = (Vector2)transform.position + movementVector.normalized*movementSpeed*Time.deltaTime;
 
