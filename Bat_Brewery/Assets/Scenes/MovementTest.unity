@@ -424,14 +424,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseInspectorFoldout: 0
   layoutInfos:
-  - rid: 516841433236766758
-  - rid: 516841433236766759
-  - rid: 516841433236766760
+  - rid: 516841455638282240
+  - rid: 516841455638282241
+  - rid: 516841455638282242
   buttonMethods: []
   references:
     version: 2
     RefIds:
-    - rid: 516841433236766758
+    - rid: 516841455638282240
       type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: targetTransform
@@ -439,14 +439,14 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         label: Movement
         foldout: 1
-    - rid: 516841433236766759
+    - rid: 516841455638282241
       type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: minSize
         fieldTypeName: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
         includeLast: 0
-    - rid: 516841433236766760
+    - rid: 516841455638282242
       type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: minSize
