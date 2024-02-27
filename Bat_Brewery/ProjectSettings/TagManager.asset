@@ -46,6 +46,9 @@ TagManager:
   - name: Vision Mask
     uniqueID: 1779584593
     locked: 0
+  - name: Objects
+    uniqueID: 3891110791
+    locked: 0
   - name: Footsteps
     uniqueID: 2255634459
     locked: 0

@@ -53,3 +53,5 @@ MonoBehaviour:
   - {fileID: 6638812221064593384, guid: 8b09a66a92198fa4681ee8b54d1e440e, type: 3}
   maximumFootsteps: 100
   footstepDistance: 2
+  playerNoFootstepRadius: 2.5
+  playerFadeFootstepsRadius: 3.5
