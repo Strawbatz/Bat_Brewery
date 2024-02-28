@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 6638812221064593384, guid: 37f3c3b41f290ad4c95089780aa92793, type: 3}
   - {fileID: 6638812221064593384, guid: a9d6f4edc4ffcf44f892485d67b415e7, type: 3}
   - {fileID: 6638812221064593384, guid: 8b09a66a92198fa4681ee8b54d1e440e, type: 3}
+  - {fileID: 6638812221064593384, guid: cefac5f03df75fa498fcf4bc8feeccb3, type: 3}
   maximumFootsteps: 100
   footstepDistance: 2
   playerNoFootstepRadius: 2.5

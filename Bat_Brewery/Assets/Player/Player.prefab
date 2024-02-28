@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 5927657823407069292}
-  maxViewDistance: 3
-  maxClearDistance: 1
+  maxViewDistance: 4
+  maxClearDistance: 2
 --- !u!1 &3423632309862261695
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 2282822788150095018}
   - component: {fileID: 3032093513595734042}
   m_Layer: 0
-  m_Name: Vision mask R 4x16
+  m_Name: Vision mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,7 +279,7 @@ SpriteRenderer:
   m_SortingLayerID: 1779584593
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b0065755cbae42944ba5aab46feca12c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 753ed17807e135347a63578c2f5f14b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
