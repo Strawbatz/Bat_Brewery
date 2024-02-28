@@ -135,8 +135,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""0801480b-8d2a-4f66-940e-6439d74e762c"",
-                    ""path"": ""<Mouse>/scroll/down"",
+                    ""id"": ""eba97b9b-db0e-481d-91f6-f68cd2c379c9"",
+                    ""path"": ""<Mouse>/scroll/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse&Keyboard"",
@@ -146,8 +146,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""eba97b9b-db0e-481d-91f6-f68cd2c379c9"",
-                    ""path"": ""<Mouse>/scroll/up"",
+                    ""id"": ""0801480b-8d2a-4f66-940e-6439d74e762c"",
+                    ""path"": ""<Mouse>/scroll/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse&Keyboard"",
