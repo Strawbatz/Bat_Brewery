@@ -11,9 +11,11 @@ using UnityEngine.AI;
 public class FootstepController : MonoBehaviour
 {
     [SerializeField] private Transform playerFeet;
-    [SerializeField] private GameObject footstepPrefab;
+    [SerializeField] private GameObject[] footstepPrefab;
     [SerializeField] int maximumFootsteps;
     [SerializeField] float footstepDistance;
+    [SerializeField] float playerNoFootstepRadius;
+    [SerializeField] float playerFadeFootstepsRadius;
     private Queue<GameObject> playerFootsteps = new Queue<GameObject>();
     private Stack<GameObject> footstepPool = new Stack<GameObject>();
     private Vector2 lastPosition;
@@ -42,16 +44,21 @@ public class FootstepController : MonoBehaviour
 
         foreach (GameObject footstep in playerFootsteps)
         {
-            if(Utilities.InRange(footstep.transform.position, (Vector2)playerFeet.parent.position-Vector2.one*footstepDistance, 
-            (Vector2)playerFeet.parent.position+Vector2.one*footstepDistance))
+            if(Utilities.InRange(footstep.transform.position, (Vector2)playerFeet.parent.position-Vector2.one*(playerFadeFootstepsRadius+2), 
+            (Vector2)playerFeet.parent.position+Vector2.one*(playerFadeFootstepsRadius+2)))
             {
-                if(Vector2.Distance(footstep.transform.position, playerFeet.parent.position) < footstepDistance)
+                float dist = Vector2.Distance(footstep.transform.position, playerFeet.parent.position);
+                if(dist < playerFadeFootstepsRadius)
                 {
-                    footstep.SetActive(false);
+                    Color color = Color.white;
+                    color.a = (dist - playerNoFootstepRadius)/(playerFadeFootstepsRadius-playerNoFootstepRadius);
+                    footstep.GetComponent<SpriteRenderer>().color = color;
                     continue;
-                } 
-            } 
-            footstep.SetActive(true);
+                } else
+                {
+                    footstep.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+            }
         }
     }
 
@@ -61,7 +68,7 @@ public class FootstepController : MonoBehaviour
         GameObject footstep;
         if(footstepPool.Count <= 0)
         {
-            footstep = GameObject.Instantiate(footstepPrefab, transform) as GameObject;
+            footstep = GameObject.Instantiate(footstepPrefab[UnityEngine.Random.Range(0,footstepPrefab.Length)], transform) as GameObject;
             footstep.SetActive(false);
         } else
         {
