@@ -11,7 +11,7 @@ using UnityEngine.AI;
 public class FootstepController : MonoBehaviour
 {
     [SerializeField] private Transform playerFeet;
-    [SerializeField] private GameObject footstepPrefab;
+    [SerializeField] private GameObject[] footstepPrefab;
     [SerializeField] int maximumFootsteps;
     [SerializeField] float footstepDistance;
     private Queue<GameObject> playerFootsteps = new Queue<GameObject>();
@@ -61,7 +61,7 @@ public class FootstepController : MonoBehaviour
         GameObject footstep;
         if(footstepPool.Count <= 0)
         {
-            footstep = GameObject.Instantiate(footstepPrefab, transform) as GameObject;
+            footstep = GameObject.Instantiate(footstepPrefab[UnityEngine.Random.Range(0,footstepPrefab.Length)], transform) as GameObject;
             footstep.SetActive(false);
         } else
         {

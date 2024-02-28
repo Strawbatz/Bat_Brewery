@@ -152,3 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 0}
   cameraSpeed: 5
+  minSize: 5
+  maxSize: 50
+  zoomSpeed: 15
+  zoomAction: {fileID: -7738364521524161132, guid: ceaa601a797be6f4888b907a09f6a620, type: 3}
