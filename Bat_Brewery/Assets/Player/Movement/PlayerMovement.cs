@@ -25,6 +25,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        
+        if(!Utilities.InRange(movementVector, Vector2.one*-0.1f, Vector2.one*0.1f))
+        {
+            animator.SetFloat("Prev_Horizontal", movementVector.x);
+            animator.SetFloat("Prev_Vertical", movementVector.y);
+        }
         movementVector = moveAction.action.ReadValue<Vector2>();
         //object obj = moveAction.action.ReadValueAsObject();
 
