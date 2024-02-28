@@ -50,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: RenderStacking
+    uniqueID: 3628500029
+    locked: 0
   - name: Vision Mask
     uniqueID: 1779584593
     locked: 0
