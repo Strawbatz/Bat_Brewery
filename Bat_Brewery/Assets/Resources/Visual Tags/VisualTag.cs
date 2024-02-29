@@ -18,6 +18,17 @@ public class VisualTag : ScriptableObject
     public Sprite GetInventoryImg2() {
         return inventoryImg2;
     }
+    /// <summary>
+    /// Returns one of the 2 inventory images that exists at random.
+    /// </summary>
+    /// <returns></returns>
+    public Sprite GetRandomInventoryImg() {
+        if(Random.Range(0,1) == 0) {
+            return inventoryImg;
+        } else {
+            return inventoryImg2;
+        }
+    }
     public Sprite GetMapImg() {
         return mapImg;
     }

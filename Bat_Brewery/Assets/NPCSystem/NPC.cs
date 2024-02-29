@@ -10,11 +10,7 @@ using UnityEngine.InputSystem;
 public abstract class NPC : MonoBehaviour, IInteractable
 {
 [SerializeField] InputActionReference interact;
-[SerializeField] SpriteRenderer interactSprite;
-
-private void Start() {
-    interactSprite.gameObject.SetActive(false);
-}
+[SerializeField] public SpriteRenderer interactSprite;
 
 /// <summary>
 /// If player enters triggerbox, display interact indicator and listen for input
