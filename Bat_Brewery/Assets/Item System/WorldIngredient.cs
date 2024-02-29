@@ -11,13 +11,13 @@ using UnityEngine.InputSystem;
 public class WorldIngredient : NPC
 {
     
-    [SerializeField] public TaggableItem itemTag;
+    [SerializeField] public Ingredient itemTag;
     [SerializeField] private SpriteRenderer worldImg;
-    [SerializeField] public IngredientType ingredientType;
     private bool consumed;
 
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
+        itemTag.tagUpdated += ()=>{worldImg.sprite = itemTag.visualTag.GetWorldImg();}; 
         interactSprite.gameObject.SetActive(false);
         consumed = false;
     }
@@ -26,9 +26,9 @@ public class WorldIngredient : NPC
     {
         if(consumed == false) {
             PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
-            playerInventory.AddIngredient(this);
+            playerInventory.AddIngredient(itemTag);
             consumed = true;
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
         
     }
