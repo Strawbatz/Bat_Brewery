@@ -8,6 +8,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class ObjectFading : MonoBehaviour
 {
+    [SerializeField] float fadeStrength = 1f;
     private Transform player;
     private PlayerVisionController visionController;
     private SpriteRenderer spriteRenderer;
@@ -24,14 +25,14 @@ public class ObjectFading : MonoBehaviour
 
     void Update()
     {
-        if(Utilities.InBox(transform.position, player.position, visionController.maxViewDistance+2))
+        if(Utilities.InBox(transform.position, player.position, visionController.maxViewDistance*fadeStrength+2))
         {
             float dist = Vector2.Distance(transform.position, player.position);
             float alpha = 0;
             Color color = Color.white;
-            if(dist < visionController.maxViewDistance)
+            if(dist < visionController.maxViewDistance*fadeStrength)
             {
-                alpha = 1-((dist-visionController.maxClearDistance)/(visionController.maxViewDistance-visionController.maxClearDistance));
+                alpha = 1-((dist-visionController.maxClearDistance*fadeStrength)/(visionController.maxViewDistance*fadeStrength-visionController.maxClearDistance*fadeStrength));
                 if(alpha > 1) alpha = 1;
                 else if(alpha < 0) alpha = 0;
             } 

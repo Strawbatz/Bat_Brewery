@@ -41,8 +41,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 1184489973
+    locked: 0
+  - name: Walls
+    uniqueID: 133299757
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: RenderStacking
+    uniqueID: 3628500029
     locked: 0
   - name: Vision Mask
     uniqueID: 1779584593
