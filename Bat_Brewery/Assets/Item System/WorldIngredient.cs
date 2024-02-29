@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 /// and can be picked up and put into player inventory. It will then be consumed
 /// until scene is loaded again.
 /// </summary>
-public class WorldIngredient : NPC
+public class WorldIngredient : InteractableObject
 {
     
     [SerializeField] public Ingredient itemTag;
@@ -22,7 +22,7 @@ public class WorldIngredient : NPC
         consumed = false;
     }
 
-    public override void Interact(InputAction.CallbackContext ctx)
+    public override void Interact()
     {
         if(consumed == false) {
             PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
