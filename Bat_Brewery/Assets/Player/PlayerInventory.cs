@@ -10,8 +10,7 @@ public class PlayerInventory : MonoBehaviour
     public List<InventoryIngredient> ingredients;
 
     public void AddIngredient(WorldIngredient ing) {
-        InventoryIngredient newIng = ScriptableObject.CreateInstance<InventoryIngredient>();
-        newIng.Create(ing);
+        InventoryIngredient newIng = new InventoryIngredient(ing);
         ingredients.Add(newIng);
     }
 

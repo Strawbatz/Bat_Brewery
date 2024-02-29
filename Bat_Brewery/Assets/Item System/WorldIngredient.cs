@@ -28,6 +28,7 @@ public class WorldIngredient : NPC
             PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
             playerInventory.AddIngredient(this);
             consumed = true;
+            this.gameObject.SetActive(false);
         }
         
     }
