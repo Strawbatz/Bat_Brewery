@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,18 +20,30 @@ public class WorldIngredient : NPC
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
         itemTag.tagUpdated += ()=>{worldImg.sprite = itemTag.visualTag.GetWorldImg();}; 
         interactSprite.gameObject.SetActive(false);
+        gameObject.SetActive(true);
         consumed = false;
     }
 
     public override void Interact(InputAction.CallbackContext ctx)
     {
         if(consumed == false) {
+            DialogueManager dialogueManager = DialogueManager.GetInstance();
+            dialogueManager.EnterDescription(itemTag.description);
+            dialogueManager.choicePicked += Collect;
+        }
+        
+    }
+
+    public void Collect(int choice){
+        if(choice == 1) {
             PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
             playerInventory.AddIngredient(itemTag);
             consumed = true;
             gameObject.SetActive(false);
+            DialogueManager.GetInstance().choicePicked -= Collect;
+        } else {
+            DialogueManager.GetInstance().choicePicked -= Collect;
         }
-        
     }
 }
 
