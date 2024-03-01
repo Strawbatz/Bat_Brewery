@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Strawberry
   m_EditorClassIdentifier: 
   visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
+  description: {fileID: 4900000, guid: a477f42824f8ddc47a112d41e7d79239, type: 3}

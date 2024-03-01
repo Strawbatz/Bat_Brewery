@@ -95,6 +95,19 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void EnterDescription(TextAsset inkJSON) {
+        if(!dialogueIsPlaying) {
+        currentStory = new Story(inkJSON.text);
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+        charName.text = "?";
+
+        interact.action.performed += ContinueStory;
+        
+        ContinueStory();
+        }
+    }
+
     private void ContinueStory(InputAction.CallbackContext ctx) {ContinueStory();}
 
     /// <summary>
@@ -211,7 +224,11 @@ public class DialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex) {
         currentStory.ChooseChoiceIndex(choiceIndex);
         choicePicked?.Invoke(choiceIndex);
+        choicesPending = false;
         ContinueStory();
+        if(dialogueText.text == "") {
+            ExitDialogueMode();
+        }
     }
 
     /// <summary>
