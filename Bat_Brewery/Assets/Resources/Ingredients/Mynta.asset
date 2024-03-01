@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Mynta
   m_EditorClassIdentifier: 
   visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
+  description: {fileID: 4900000, guid: a8b3847606466d54db054fe51186f977, type: 3}

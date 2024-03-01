@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Woogle
   m_EditorClassIdentifier: 
   visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
+  description: {fileID: 4900000, guid: 21c80bc7dc6c56e43b6555412a92d2f8, type: 3}

@@ -4,5 +4,5 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class Ingredient : TaggableItem {
-    
+    [SerializeField] public TextAsset description;
 }
