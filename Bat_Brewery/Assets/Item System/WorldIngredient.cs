@@ -15,6 +15,7 @@ public class WorldIngredient : NPC
     [SerializeField] public Ingredient itemTag;
     [SerializeField] private SpriteRenderer worldImg;
     private bool consumed;
+    private bool isTalking;
 
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
@@ -22,11 +23,13 @@ public class WorldIngredient : NPC
         interactSprite.gameObject.SetActive(false);
         gameObject.SetActive(true);
         consumed = false;
+        isTalking = false;
     }
 
     public override void Interact(InputAction.CallbackContext ctx)
     {
-        if(consumed == false) {
+        if(!consumed && !isTalking) {
+            isTalking = true;
             DialogueManager dialogueManager = DialogueManager.GetInstance();
             dialogueManager.EnterDescription(itemTag.description);
             dialogueManager.choicePicked += Collect;
@@ -44,6 +47,7 @@ public class WorldIngredient : NPC
         } else {
             DialogueManager.GetInstance().choicePicked -= Collect;
         }
+        isTalking = false;
     }
 }
 
