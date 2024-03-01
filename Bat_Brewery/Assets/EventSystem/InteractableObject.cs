@@ -7,9 +7,9 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// Abstract class enabling interaction. Needs a triggerbox to work.
 /// </summary>
-public abstract class NPC : MonoBehaviour, IInteractable
+[RequireComponent(typeof(Collider2D))]
+public abstract class InteractableObject : MonoBehaviour
 {
-[SerializeField] InputActionReference interact;
 [SerializeField] public SpriteRenderer interactSprite;
 
 /// <summary>
@@ -19,8 +19,8 @@ public abstract class NPC : MonoBehaviour, IInteractable
 /// <param name="other"></param>
 private void OnTriggerEnter2D(Collider2D other) {
     if(other.gameObject.CompareTag("PlayerPhysics")) {
-        interact.action.performed += Interact;
-        interactSprite.gameObject.SetActive(true);
+        GameEventsManager.instance.inputEvents.onPlayerInteracted += Interact;
+        if(interactSprite) interactSprite.gameObject.SetActive(true);
     }
 }
 
@@ -31,8 +31,8 @@ private void OnTriggerEnter2D(Collider2D other) {
 /// <param name="other"></param>
 private void OnTriggerExit2D(Collider2D other) {
     if(other.gameObject.CompareTag("PlayerPhysics")) {
-        interact.action.performed -= Interact;
-        interactSprite.gameObject.SetActive(false);
+        GameEventsManager.instance.inputEvents.onPlayerInteracted -= Interact;
+        if(interactSprite) interactSprite.gameObject.SetActive(false);
     }
 }
 
@@ -41,5 +41,5 @@ private void OnTriggerExit2D(Collider2D other) {
 /// when interact is pressed.
 /// </summary>
 /// <param name="ctx"></param>
-public abstract void Interact(InputAction.CallbackContext ctx);
+protected abstract void Interact();
 }

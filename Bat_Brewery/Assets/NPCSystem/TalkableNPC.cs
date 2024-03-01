@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// An abstract class containing components needed for dialogue.
 /// </summary>
-public abstract class TalkableNPC : NPC
+public abstract class TalkableNPC : InteractableObject
 {
     //Name to be displayed.
     [SerializeField] public String NPCName;

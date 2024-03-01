@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 /// and can be picked up and put into player inventory. It will then be consumed
 /// until scene is loaded again.
 /// </summary>
-public class WorldIngredient : NPC
+public class WorldIngredient : InteractableObject
 {
     
     [SerializeField] public Ingredient itemTag;
@@ -26,7 +26,7 @@ public class WorldIngredient : NPC
         isTalking = false;
     }
 
-    public override void Interact(InputAction.CallbackContext ctx)
+    protected override void Interact()
     {
         if(!consumed && !isTalking) {
             isTalking = true;

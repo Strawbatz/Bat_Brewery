@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class MushDood : TalkableNPC
 {
-    public override void Interact(InputAction.CallbackContext ctx)
+    protected override void Interact()
     {
         Talk(dialogue);
     }
