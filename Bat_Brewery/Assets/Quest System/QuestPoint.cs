@@ -3,19 +3,42 @@ using System.Collections.Generic;
 using AdvancedEditorTools.Attributes;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
-public class QuestPoint : MonoBehaviour
+public class QuestPoint : InteractableObject
 {
     [SerializeField] private QuestInfoSO questInfoForPoint;
-    [SerializeField, ReadOnly]private bool playerIsNear = false;
+    private QuestState currentQuestState;
+    private string questId;
 
-    void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] private bool canStart = false;
+    [SerializeField] private bool canFinish = false;
+    void Awake()
     {
-        if(other.CompareTag("PlayerPhysics")) playerIsNear = true;
+        questId = questInfoForPoint.id;
     }
-
-    void OnTriggerExit2D(Collider2D other)
+    void Start()
     {
-        if(other.CompareTag("PlayerPhysics")) playerIsNear = false;
+        GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
+    }
+    void OnDisable()
+    {
+        GameEventsManager.instance.questEvents.onQuestStateChange -= QuestStateChange;
+    }
+    private void QuestStateChange(Quest quest)
+    {
+        if(quest.info.id.Equals(questId))
+        {
+            currentQuestState = quest.state;
+        }
+    }
+    protected override void Interact()
+    {
+        if(currentQuestState.Equals(QuestState.CAN_START) && canStart)
+        {
+            GameEventsManager.instance.questEvents.StartQuest(questId);
+        }
+        if(currentQuestState.Equals(QuestState.CAN_FINISH) && canFinish)
+        {
+            GameEventsManager.instance.questEvents.FinishQuest(questId);
+        }
     }
 }

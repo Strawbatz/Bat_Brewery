@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// Abstract class enabling interaction. Needs a triggerbox to work.
 /// </summary>
+[RequireComponent(typeof(Collider2D))]
 public abstract class InteractableObject : MonoBehaviour
 {
 [SerializeField] public SpriteRenderer interactSprite;
@@ -19,7 +20,7 @@ public abstract class InteractableObject : MonoBehaviour
 private void OnTriggerEnter2D(Collider2D other) {
     if(other.gameObject.CompareTag("PlayerPhysics")) {
         GameEventsManager.instance.inputEvents.onPlayerInteracted += Interact;
-        interactSprite.gameObject.SetActive(true);
+        if(interactSprite) interactSprite.gameObject.SetActive(true);
     }
 }
 
@@ -31,7 +32,7 @@ private void OnTriggerEnter2D(Collider2D other) {
 private void OnTriggerExit2D(Collider2D other) {
     if(other.gameObject.CompareTag("PlayerPhysics")) {
         GameEventsManager.instance.inputEvents.onPlayerInteracted -= Interact;
-        interactSprite.gameObject.SetActive(false);
+        if(interactSprite) interactSprite.gameObject.SetActive(false);
     }
 }
 
@@ -40,5 +41,5 @@ private void OnTriggerExit2D(Collider2D other) {
 /// when interact is pressed.
 /// </summary>
 /// <param name="ctx"></param>
-public abstract void Interact();
+protected abstract void Interact();
 }

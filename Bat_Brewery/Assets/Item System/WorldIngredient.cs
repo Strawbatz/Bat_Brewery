@@ -22,7 +22,7 @@ public class WorldIngredient : InteractableObject
         consumed = false;
     }
 
-    public override void Interact()
+    protected override void Interact()
     {
         if(consumed == false) {
             PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
