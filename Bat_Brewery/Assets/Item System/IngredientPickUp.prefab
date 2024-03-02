@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3359426468015425710}
   - component: {fileID: 1623309757317405363}
   m_Layer: 0
-  m_Name: MysteryIngredient
+  m_Name: IngredientPickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -34,13 +34,11 @@ public class WorldIngredient : InteractableObject
             dialogueManager.EnterDescription(itemTag.description);
             dialogueManager.choicePicked += Collect;
         }
-        
     }
 
     public void Collect(int choice){
         if(choice == 1) {
-            PlayerInventory playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
-            playerInventory.AddIngredient(itemTag);
+            GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
             consumed = true;
             gameObject.SetActive(false);
             DialogueManager.GetInstance().choicePicked -= Collect;

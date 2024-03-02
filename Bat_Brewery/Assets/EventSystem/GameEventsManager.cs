@@ -10,6 +10,7 @@ public class GameEventsManager : MonoBehaviour
     public static GameEventsManager instance {get; private set;}
     public InputEvents inputEvents;
     public QuestEvents questEvents;
+    public InventoryEvents inventoryEvents;
     void Awake()
     {
         if(instance != null)
@@ -19,5 +20,6 @@ public class GameEventsManager : MonoBehaviour
         instance = this;
 
         questEvents = new QuestEvents();
+        inventoryEvents = new InventoryEvents();
     }
 }

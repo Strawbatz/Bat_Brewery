@@ -11,12 +11,22 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<InventoryIngredient> ingredients = new List<InventoryIngredient>();
 
+    void Start()
+    {
+        GameEventsManager.instance.inventoryEvents.onPickUpIngredient += AddIngredient;
+    }
+
+    void OnDisable()
+    {
+        GameEventsManager.instance.inventoryEvents.onPickUpIngredient -= AddIngredient;
+    }
+
     /// <summary>
     /// Adds ingredient to inventory, if it already exists count is increased,
     /// else a new ingredient is created and added.
     /// </summary>
     /// <param name="ing">Ingredient to be added.</param>
-    public void AddIngredient(Ingredient ing) {
+    private void AddIngredient(Ingredient ing) {
         InventoryIngredient temp = ingredients.Find(ingredient => ingredient.ingredient == ing);
         if(temp != null) {
             temp.count ++;
@@ -41,6 +51,7 @@ public class PlayerInventory : MonoBehaviour
             if(temp.count == 0) {
             ingredients.Remove(temp);
             }
+            GameEventsManager.instance.inventoryEvents.IngredientWasRemoved(ing);
             return true;
         } 
         return false;
