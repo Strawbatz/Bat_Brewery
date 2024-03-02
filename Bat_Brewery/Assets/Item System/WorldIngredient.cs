@@ -32,19 +32,18 @@ public class WorldIngredient : InteractableObject
             isTalking = true;
             DialogueManager dialogueManager = DialogueManager.GetInstance();
             dialogueManager.EnterDescription(itemTag.description);
-            dialogueManager.choicePicked += Collect;
+            GameEventsManager.instance.dialogueEvents.onChoiceMade += Collect;
         }
     }
 
-    public void Collect(int choice){
+    public void Collect(string storyId, int choice){
+        if(!storyId.Equals(itemTag.description.name)) return;
         if(choice == 1) {
             GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
             consumed = true;
             gameObject.SetActive(false);
-            DialogueManager.GetInstance().choicePicked -= Collect;
-        } else {
-            DialogueManager.GetInstance().choicePicked -= Collect;
         }
+        GameEventsManager.instance.dialogueEvents.onChoiceMade -= Collect;
         isTalking = false;
     }
 }
