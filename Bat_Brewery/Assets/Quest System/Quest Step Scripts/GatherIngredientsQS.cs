@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// This is a quest step that requires that the player gathers specific ingredients.
+/// The quest defines how much of each ingredient that is needed.
+/// </summary>
 public class GatherIngredientsQS : QuestStep
 {
     [SerializeField] List<InventoryIngredient> ingredientsRequired;

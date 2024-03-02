@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using AdvancedEditorTools.Attributes;
 using UnityEngine;
+/// <summary>
+/// This class represents a quest in the game
+/// </summary>
 public class Quest
 {
     public QuestInfoSO info;
@@ -38,6 +41,9 @@ public class Quest
         return true;
     }
 
+    /// <summary>
+    /// Increases the quest step index
+    /// </summary>
     public void MoveToNextStep()
     {
         currentQuestStepIndex ++;
@@ -48,6 +54,10 @@ public class Quest
         return (currentQuestStepIndex < info.questStepPrefabs.Length);
     }
 
+    /// <summary>
+    /// Instantiates the current quest step
+    /// </summary>
+    /// <param name="parentTransform"></param>
     public void InstantiateCurrentQuestStep(Transform parentTransform)
     {
         GameObject questStepPrefab = GetCurrentQuestStepPrefab();

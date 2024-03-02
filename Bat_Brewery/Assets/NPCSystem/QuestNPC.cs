@@ -24,6 +24,10 @@ public class QuestNPC : TalkableNPC
         }
     }
 
+    /// <summary>
+    /// Queues the dialogue for a quest to this NPC
+    /// </summary>
+    /// <param name="questDialogue"></param>
     public void AddQuestDialogue(TextAsset questDialogue)
     {
         dialogueQueue.Enqueue(questDialogue);

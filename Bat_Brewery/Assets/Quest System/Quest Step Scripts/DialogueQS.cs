@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// A quest step that the requires the player to talk to a specific npc. 
+/// This quest step is finished when the player has exhausted the specified dialogue with the npc.
+/// The quest step automatically sends the request to the npc with the specified dialogue. 
+/// </summary>
 public class DialogueQS : QuestStep
 {
     [SerializeField] TextAsset story;
+
+    //Note that this is the name of the object of the npc.
+    [Tooltip("Note that this is the name of the object of the NPC")]
     [SerializeField] string npcName;
 
     QuestNPC npc;
