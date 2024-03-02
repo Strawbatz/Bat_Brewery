@@ -10,7 +10,7 @@ public class MushDood : TalkableNPC
 {
     protected override void Interact()
     {
-        Talk(dialogue);
+        Talk(defaultDialogue);
     }
 
 
