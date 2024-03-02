@@ -32,7 +32,12 @@ public class QuestManager : MonoBehaviour
     private void ChangeQuestState(string id, QuestState state)
     {
         Quest quest = GetQuestById(id);
+        if(quest.state == QuestState.REQUIREMENTS_NOT_MET && state == QuestState.CAN_START) 
+        {
+            quest.CleanPrerequisites();
+        } 
         quest.state = state;
+    
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
     }
 
@@ -45,8 +50,7 @@ public class QuestManager : MonoBehaviour
                 return false;
             }
         }
-
-        return true;
+        return quest.PrerequisitesMet();
     }
 
     void Update()
@@ -106,7 +110,7 @@ public class QuestManager : MonoBehaviour
             {
                 Debug.LogWarning("Duplicate ID found when creating quest map: " + questInfo.id);
             }
-            idToQuestMap.Add(questInfo.id, new Quest(questInfo));
+            idToQuestMap.Add(questInfo.id, new Quest(questInfo, this.transform));
         }
 
         return idToQuestMap;

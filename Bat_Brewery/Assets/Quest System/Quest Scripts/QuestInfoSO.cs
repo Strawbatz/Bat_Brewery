@@ -10,6 +10,7 @@ public class QuestInfoSO : ScriptableObject
     
     public string displayName;
     public QuestInfoSO[] questPrerequisites;
+    public QuestPrerequisite[] prerequisites;
     public GameObject[] questStepPrefabs;
 
     //TODO: Add rewards

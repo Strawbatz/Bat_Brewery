@@ -16,6 +16,7 @@ public class DialogueQS : QuestStep
         npc = obj.GetComponent<QuestNPC>();
         npc.AddQuestDialogue(story);
         GameEventsManager.instance.dialogueEvents.onDialogueEnded += DialogueCompleted;
+        GameEventsManager.instance.dialogueEvents.onChoiceMade += (string name, int nr) => {Debug.Log("Choice for " + name + " made as " + nr);};
     }
 
     private void DialogueCompleted(string storyId)

@@ -9,11 +9,33 @@ public class Quest
 
     private int currentQuestStepIndex;
 
-    public Quest (QuestInfoSO questInfoSO)
+    private List<QuestPrerequisite> questPrerequisites = new List<QuestPrerequisite>();
+
+    public Quest (QuestInfoSO questInfoSO, Transform parentTransform)
     { 
         this.info = questInfoSO;
         this.state = QuestState.REQUIREMENTS_NOT_MET;
         this.currentQuestStepIndex = 0;
+
+        questPrerequisites = new List<QuestPrerequisite>();
+        foreach(QuestPrerequisite prerequisite in questInfoSO.prerequisites)
+        {
+            QuestPrerequisite newPrerequisite = Object.Instantiate<GameObject>(prerequisite.gameObject, parentTransform).GetComponent<QuestPrerequisite>();
+            questPrerequisites.Add(newPrerequisite);
+        }
+    }
+
+    /// <summary>
+    /// Check if all the quest prerequisite are met
+    /// </summary>
+    /// <returns></returns>
+    public bool PrerequisitesMet()
+    {
+        foreach (QuestPrerequisite prerequisite in questPrerequisites)
+        {
+            if(!prerequisite.PrerequisiteIsMet()) return false;
+        }
+        return true;
     }
 
     public void MoveToNextStep()
@@ -34,6 +56,18 @@ public class Quest
             QuestStep questStep = Object.Instantiate<GameObject>(questStepPrefab, parentTransform).GetComponent<QuestStep>();
             questStep.InitializeQuestStep(info.id);
         }
+    }
+
+    /// <summary>
+    /// Removes quest prerequisites
+    /// </summary>
+    public void CleanPrerequisites()
+    {
+        foreach(QuestPrerequisite prerequisite in questPrerequisites)
+        {
+            GameObject.Destroy(prerequisite.gameObject);
+        }
+        questPrerequisites = new List<QuestPrerequisite>();
     }
 
     private GameObject GetCurrentQuestStepPrefab()
