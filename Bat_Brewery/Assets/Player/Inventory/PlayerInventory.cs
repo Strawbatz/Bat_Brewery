@@ -54,6 +54,40 @@ public class PlayerInventory : MonoBehaviour
             GameEventsManager.instance.inventoryEvents.IngredientWasRemoved(ing);
             return true;
         } 
+        InsufficientIngredientsPopup();
+        return false;
+    }
+
+    /// <summary>
+    /// Tries to remove an ingredient from inventory. If ingredient exists
+    /// its count is by the amount, and removed if it was the last
+    /// and returns true.
+    /// If ingredient doesn't exist the method returns false and nothing
+    /// happens.
+    /// If the ingredient existed but the amount in the inventory was not enough as the amount specified to be removed, 
+    /// none of the ingredient is removed and the method returns false.
+    /// </summary>
+    /// <param name="ing">Ingredient to be removed.</param>
+    /// <returns></returns>
+    public bool RemoveIngredient(Ingredient ing, int amount)
+    {
+        InventoryIngredient temp = ingredients.Find(ingredient => ingredient.ingredient == ing);
+        if(temp != null)
+        {
+            if(temp.count < amount)
+            {
+                InsufficientIngredientsPopup();
+                return false;
+            }
+            temp.count -= amount;
+            if(temp.count == 0)
+            {
+                ingredients.Remove(temp);
+            }
+            GameEventsManager.instance.inventoryEvents.IngredientWasRemoved(ing);
+            return true;
+        }
+        InsufficientIngredientsPopup();
         return false;
     }
 
@@ -69,6 +103,12 @@ public class PlayerInventory : MonoBehaviour
             return temp.count;
         } 
         return 0;
+    }
+
+    public void InsufficientIngredientsPopup()
+    {
+        //TODO: ADD A UI EFFECT THAT POPS UP ON THE SCREEN THAT TELLS THE PLAYER THAT THEY HAVE INSUFFICIENT INGREDIENTS
+        Debug.Log("The player has insufficient ingredients for the operation");
     }
 }
 

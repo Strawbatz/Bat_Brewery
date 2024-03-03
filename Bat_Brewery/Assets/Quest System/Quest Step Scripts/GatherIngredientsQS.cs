@@ -11,6 +11,9 @@ public class GatherIngredientsQS : QuestStep
 {
     [SerializeField] List<InventoryIngredient> ingredientsRequired;
 
+    [Header("Destroy ingredients when completed")]
+    [SerializeField] bool destroyIngredients;
+
     private PlayerInventory playerInventory;
 
     private void Start() 
@@ -37,6 +40,14 @@ public class GatherIngredientsQS : QuestStep
         foreach (InventoryIngredient inventoryIngredient in ingredientsRequired)
         {
             if(playerInventory.CheckIngredientCount(inventoryIngredient.ingredient) < inventoryIngredient.count) return;
+        }
+
+        if(destroyIngredients)
+        {
+            foreach(InventoryIngredient inventoryIngredient in ingredientsRequired)
+            {
+                playerInventory.RemoveIngredient(inventoryIngredient.ingredient, inventoryIngredient.count);
+            }
         }
 
         FinishQuestStep();
