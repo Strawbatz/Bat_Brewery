@@ -1,39 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 
 /// <summary>
 /// Fades an object that is far away from the player
 /// </summary>
 [RequireComponent(typeof(SpriteRenderer))]
-public class ObjectFading : MonoBehaviour
+public class ObjectFading : ObjectSortingOrderer
 {
     [SerializeField] float fadeStrength = 1f;
     private Transform player;
     private PlayerVisionController visionController;
-    private SpriteRenderer spriteRenderer;
 
-    void Start()
+    protected float maxAlpha = 1;
+
+    protected override void Start()
     {
+        base.Start();
         visionController = FindObjectOfType<PlayerVisionController>();
         player = visionController.GetPlayerTransform();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         Color color = Color.white;
         color.a = 0;
         spriteRenderer.color = color;
     }
 
-    void Update()
+    protected override void Update()
     {
-        if(Utilities.InBox(transform.position, player.position, visionController.maxViewDistance*fadeStrength+2))
+        base.Update();
+        Vector3 position = transform.position + Vector3.up*offset;
+        if(Utilities.InBox(position, player.position, visionController.maxViewDistance*fadeStrength+2))
         {
-            float dist = Vector2.Distance(transform.position, player.position);
+            float dist = Vector2.Distance(position, player.position);
             float alpha = 0;
             Color color = Color.white;
             if(dist < visionController.maxViewDistance*fadeStrength)
             {
-                alpha = 1-((dist-visionController.maxClearDistance*fadeStrength)/(visionController.maxViewDistance*fadeStrength-visionController.maxClearDistance*fadeStrength));
-                if(alpha > 1) alpha = 1;
+                alpha = (1-((dist-visionController.maxClearDistance*fadeStrength)/(visionController.maxViewDistance*fadeStrength-visionController.maxClearDistance*fadeStrength)))*maxAlpha;
+                if(alpha > 1) alpha = maxAlpha;
                 else if(alpha < 0) alpha = 0;
             } 
             color.a = alpha;

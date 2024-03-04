@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a914cac530b33f149aac1823b08bfe8c
+guid: 53f7c084b27ee2e4e807a1582cd93ddb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 25
-  spriteBorder: {x: 0, y: 11, z: 24, w: 12}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -136,43 +136,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mushroom1 1_0
+      name: trees1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 8
-        width: 24
-        height: 28
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        y: 0
+        width: 72
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78be3290988a86540b1bced36b0b8ee6
-      internalID: -1272970012
+      spriteID: 9fe4f5273434daa4f935844d4741389f
+      internalID: -1042473975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mushroom1 1_1
+      name: trees1_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 8
-        width: 24
-        height: 28
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        x: 72
+        y: 0
+        width: 72
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4d85c51857b6be4fac2d729157a0e6b
-      internalID: 1474934395
+      spriteID: 090ba88e9b9fa9747991091680ed4012
+      internalID: -168325934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trees1_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 72
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d422871441d5c0942add4cec4ae27031
+      internalID: -1210175461
       vertices: []
       indices: 
       edges: []
@@ -181,15 +202,16 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mushroom1 1_0: -1272970012
-      mushroom1 1_1: 1474934395
+      trees1_0: -1042473975
+      trees1_1: -168325934
+      trees1_2: -1210175461
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
