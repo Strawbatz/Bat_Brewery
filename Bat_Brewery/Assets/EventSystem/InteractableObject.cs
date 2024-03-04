@@ -40,6 +40,5 @@ private void OnTriggerExit2D(Collider2D other) {
 /// Abstract function to make sure inherited class has a function for 
 /// when interact is pressed.
 /// </summary>
-/// <param name="ctx"></param>
 protected abstract void Interact();
 }
