@@ -15,5 +15,6 @@ MonoBehaviour:
   <id>k__BackingField: test
   displayName: 
   questPrerequisites: []
+  prerequisites: []
   questStepPrefabs:
-  - {fileID: 6554675950221983957, guid: 926c24459f3114f41a3db506678ce1aa, type: 3}
+  - {fileID: 4313865627344732529, guid: 818090430e5812d4e929e9406fba4296, type: 3}

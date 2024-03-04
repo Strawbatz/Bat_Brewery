@@ -246,9 +246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactSprite: {fileID: 791044059}
-  NPCName: Mush Man
+  npcName: MushDood
   portrait: {fileID: 21300000, guid: 9b644f8fac8e8654c8f7455683285aa4, type: 3}
-  dialogue: {fileID: 4900000, guid: f6bba099967d9494f857606df4b69463, type: 3}
+  defaultDialogue: {fileID: 4900000, guid: f6bba099967d9494f857606df4b69463, type: 3}
 --- !u!61 &379785965
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -9,13 +9,13 @@ using UnityEngine;
 public abstract class TalkableNPC : InteractableObject
 {
     //Name to be displayed.
-    [SerializeField] public String NPCName;
+    [SerializeField] public String npcName;
 
     //Portrait to be shown in dialogue.
     [SerializeField] public Sprite portrait;
 
     //JSON file generated from inky containing dialogue. 
-    [SerializeField] public TextAsset dialogue;
+    [SerializeField] public TextAsset defaultDialogue;
 
     /// <summary>
     /// abstract function to make sure a talk function exists.

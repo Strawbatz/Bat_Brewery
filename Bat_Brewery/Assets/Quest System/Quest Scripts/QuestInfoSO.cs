@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using AdvancedEditorTools.Attributes;
 
+/// <summary>
+/// This file contains the static variables for a quest in game
+/// </summary>
 [CreateAssetMenu(fileName = "NewQuestInfoSO", menuName = "Quest/QuestInfoSO", order = 1)]
 public class QuestInfoSO : ScriptableObject
 {
@@ -10,11 +13,12 @@ public class QuestInfoSO : ScriptableObject
     
     public string displayName;
     public QuestInfoSO[] questPrerequisites;
+    public QuestPrerequisite[] prerequisites;
     public GameObject[] questStepPrefabs;
 
     //TODO: Add rewards
 
-    //ensure the id is always the name of the Scriptable Object asset
+    //Ensure the id is always the name of the Scriptable Object asset
     private void OnValidate() 
     {
         #if UNITY_EDITOR

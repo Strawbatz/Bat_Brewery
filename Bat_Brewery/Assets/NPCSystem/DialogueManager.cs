@@ -27,18 +27,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] Image portrait1Image;
     [SerializeField] private GameObject[] choices;
-    [Header("Input actions")]
-    [SerializeField] InputActionReference interact;
     [Header("Typing configuration")]
     [SerializeField] private float typeSpeed = 5;
     private float maxTypeTime = 0.2f;
 
-    //Unity actions manager sends out.
-    public UnityAction dialogueEnded;
-    public UnityAction<int> choicePicked;
-
     //Components  for progressing the story.
     private Story currentStory;
+    private string currentStoryId;
     private TextMeshProUGUI[] choicesText;
     private Coroutine typeDialogueCorutine;
 
@@ -83,13 +78,15 @@ public class DialogueManager : MonoBehaviour
     public void EnterDialogueMode(TextAsset inkJSON, TalkableNPC npc) {
         if(!dialogueIsPlaying) {
         currentStory = new Story(inkJSON.text);
+        currentStoryId = inkJSON.name;
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         portrait1.SetActive(true);
         portrait1Image.sprite = npc.portrait;
-        charName.text = npc.NPCName;
+        charName.text = npc.npcName;
 
-        interact.action.performed += ContinueStory;
+        GameEventsManager.instance.dialogueEvents.DialogueStarted(currentStoryId);
+        GameEventsManager.instance.inputEvents.onPlayerInteracted += ContinueStory;
         
         ContinueStory();
         }
@@ -98,11 +95,12 @@ public class DialogueManager : MonoBehaviour
     public void EnterDescription(TextAsset inkJSON) {
         if(!dialogueIsPlaying) {
         currentStory = new Story(inkJSON.text);
+        currentStoryId = inkJSON.name;
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         charName.text = "?";
 
-        interact.action.performed += ContinueStory;
+        GameEventsManager.instance.inputEvents.onPlayerInteracted += ContinueStory;
         
         ContinueStory();
         }
@@ -147,8 +145,8 @@ public class DialogueManager : MonoBehaviour
         dialogueText.name = "";
         dialogueText.text = "";
 
-        interact.action.performed -= ContinueStory;
-        dialogueEnded?.Invoke();
+        GameEventsManager.instance.inputEvents.onPlayerInteracted -= ContinueStory;
+        GameEventsManager.instance.dialogueEvents.DialogueEnded(currentStoryId);
     }
 
     /// <summary>
@@ -223,7 +221,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="choiceIndex">Choice picked</param>
     public void MakeChoice(int choiceIndex) {
         currentStory.ChooseChoiceIndex(choiceIndex);
-        choicePicked?.Invoke(choiceIndex);
+        GameEventsManager.instance.dialogueEvents.ChoiceMade(currentStoryId, choiceIndex);
         choicesPending = false;
         ContinueStory();
         if(dialogueText.text == "") {
