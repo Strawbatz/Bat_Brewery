@@ -38,7 +38,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine typeDialogueCorutine;
 
     //Bools tracking different states of the dialogue.
-    private bool dialogueIsPlaying;
+    public bool dialogueIsPlaying {get; private set;}
     private bool isTyping;
     private bool choicesPending;
 

@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: -1.81
   fadeStrength: 1
-  obstructionFade: 0.1
+  obstructionFade: 0.2
 --- !u!114 &348900129433335225
 MonoBehaviour:
   m_ObjectHideFlags: 0

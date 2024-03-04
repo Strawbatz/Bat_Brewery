@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer), typeof(Collider2D))]
 public class ObjectObstructionFading : ObjectFading
 {
-    [SerializeField] float obstructionFade = 0.1f;
+    [SerializeField] float obstructionFade = 0.2f;
 
     void OnTriggerEnter2D(Collider2D other)
     {

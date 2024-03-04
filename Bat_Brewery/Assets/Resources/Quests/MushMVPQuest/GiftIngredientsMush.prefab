@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7828733431702287196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2783129071723677545}
+  - component: {fileID: -5070418225668841717}
+  m_Layer: 0
+  m_Name: GiftIngredientsMush
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2783129071723677545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828733431702287196}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.1690664, y: -0.39952645, z: -0.0730494}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5070418225668841717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828733431702287196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33c5764c7c97a04db973216f5841f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  giftStory: {fileID: 4900000, guid: 50a0d73809108f440b74623bfd8679c8, type: 3}
+  giftChoiceIndex: 0
+  notEnoughStory: {fileID: 4900000, guid: 452261dc027ff5d4e92b38e016c35e75, type: 3}
+  npcName: Mush
+  ingredientsRequired:
+  - ingredient: {fileID: 11400000, guid: 4b6ff57844a555546bbd98bbbb32d1ef, type: 2}
+    count: 1
+  - ingredient: {fileID: 11400000, guid: e37210dca0026a44d8b8eba7a2ba6fa8, type: 2}
+    count: 1
