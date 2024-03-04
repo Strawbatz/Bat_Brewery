@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class QuestNPC : TalkableNPC
 {
-    protected Queue<TextAsset> dialogueQueue = new Queue<TextAsset>();
+    protected Queue<DialogueQS> dialogueQueue = new Queue<DialogueQS>();
     public override void Talk(TextAsset dialogue)
     {
         DialogueManager.GetInstance().EnterDialogueMode(dialogue, this);
@@ -17,7 +17,7 @@ public class QuestNPC : TalkableNPC
     {
         if(dialogueQueue.Count > 0)
         {
-            Talk(dialogueQueue.Dequeue());
+            Talk(dialogueQueue.Dequeue().GetQuestStory());
         } else if(defaultDialogue)
         {
             Talk(defaultDialogue);
@@ -28,7 +28,7 @@ public class QuestNPC : TalkableNPC
     /// Queues the dialogue for a quest to this NPC
     /// </summary>
     /// <param name="questDialogue"></param>
-    public void AddQuestDialogue(TextAsset questDialogue)
+    public void AddQuestDialogue(DialogueQS questDialogue)
     {
         dialogueQueue.Enqueue(questDialogue);
     }

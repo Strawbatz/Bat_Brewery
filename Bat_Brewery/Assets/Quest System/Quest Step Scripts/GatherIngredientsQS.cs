@@ -37,17 +37,11 @@ public class GatherIngredientsQS : QuestStep
 
     private void CheckIfCompleted()
     {
-        foreach (InventoryIngredient inventoryIngredient in ingredientsRequired)
-        {
-            if(playerInventory.CheckIngredientCount(inventoryIngredient.ingredient) < inventoryIngredient.count) return;
-        }
+        if(!playerInventory.EnoughIngredients(ingredientsRequired.ToArray())) return;
 
         if(destroyIngredients)
         {
-            foreach(InventoryIngredient inventoryIngredient in ingredientsRequired)
-            {
-                playerInventory.RemoveIngredient(inventoryIngredient.ingredient, inventoryIngredient.count);
-            }
+            if(!playerInventory.RemoveIngredient(ingredientsRequired.ToArray())) return;
         }
 
         FinishQuestStep();

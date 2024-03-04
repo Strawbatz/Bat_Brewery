@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33c5764c7c97a04db973216f5841f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  story: {fileID: 4900000, guid: f6bba099967d9494f857606df4b69463, type: 3}
-  collectChoiceIndex: 0
+  giftStory: {fileID: 4900000, guid: f6bba099967d9494f857606df4b69463, type: 3}
+  giftChoiceIndex: 0
+  notEnoughStory: {fileID: 0}
   npcName: TestMushQuest
   ingredientsRequired:
   - ingredient: {fileID: 11400000, guid: 2513773e14935ae4c83cf77772970ac7, type: 2}

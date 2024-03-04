@@ -59,8 +59,8 @@ public class PlayerInventory : MonoBehaviour
     }
 
     /// <summary>
-    /// Tries to remove an ingredient from inventory. If ingredient exists
-    /// its count is by the amount, and removed if it was the last
+    /// Tries to remove ingredients from inventory. If ingredient exists
+    /// its count is reduced by the amount, and removed if it was the last
     /// and returns true.
     /// If ingredient doesn't exist the method returns false and nothing
     /// happens.
@@ -92,6 +92,26 @@ public class PlayerInventory : MonoBehaviour
     }
 
     /// <summary>
+    /// Tries to remove ingredients from inventory. If all ingredients exist with 
+    /// the specified amount then those are reduced in the inventory and it returns true.
+    /// If ingredient doesn't exist the method returns false.
+    /// If not all ingredients existed with the specified amount the method returns false and no
+    /// ingredients are removed.
+    /// </summary>
+    /// <param name="ingredientsToRemove"></param>
+    /// <returns></returns>
+    public bool RemoveIngredient(InventoryIngredient[] ingredientsToRemove)
+    {
+        if (!EnoughIngredients(ingredientsToRemove)) return false;
+        foreach(InventoryIngredient invIng in ingredientsToRemove)
+        {
+            RemoveIngredient(invIng.ingredient, invIng.count);
+        }
+
+        return true;
+    }
+
+    /// <summary>
     /// Returns 0 if ingredient doesn't exist in inventory.
     /// Else returns ingredient count.
     /// </summary>
@@ -103,6 +123,21 @@ public class PlayerInventory : MonoBehaviour
             return temp.count;
         } 
         return 0;
+    }
+
+    /// <summary>
+    /// Returns true if the inventory has equal to or more than the specified required ingredients
+    /// </summary>
+    /// <param name="required"></param>
+    /// <returns></returns>
+    public bool EnoughIngredients(InventoryIngredient[] required)
+    {
+        foreach(InventoryIngredient invIng in required)
+        {
+            if(CheckIngredientCount(invIng.ingredient) < invIng.count) return false;
+        }
+
+        return true;
     }
 
     public void InsufficientIngredientsPopup()
