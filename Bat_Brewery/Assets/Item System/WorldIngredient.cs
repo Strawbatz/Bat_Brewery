@@ -20,6 +20,7 @@ public class WorldIngredient : InteractableObject
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
         itemTag.tagUpdated += ()=>{worldImg.sprite = itemTag.visualTag.GetWorldImg();}; 
+        
         interactSprite.gameObject.SetActive(false);
         gameObject.SetActive(true);
         consumed = false;
