@@ -36,4 +36,9 @@ public class TagMenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler
         GetComponentsInChildren<Image>()[2].color = new Color(1,1,1);
     }
 
+    private void OnDisable() {
+        GetComponentsInChildren<Image>()[0].color = baseColor;
+        GetComponentsInChildren<Image>()[2].color = new Color(1,1,1);
+    }
+
 }

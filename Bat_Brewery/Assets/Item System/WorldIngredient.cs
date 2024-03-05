@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 /// <summary>
 /// Script on ingredients found in the world. They are interactable
@@ -29,7 +29,7 @@ public class WorldIngredient : InteractableObject
 
     protected override void Interact()
     {
-        if(!consumed && !isTalking) {
+        if(!consumed && !isTalking && !ItemTagManager.instance.isOpen) {
             isTalking = true;
             DialogueManager dialogueManager = DialogueManager.GetInstance();
             dialogueManager.EnterDescription(itemTag.description);
@@ -46,6 +46,31 @@ public class WorldIngredient : InteractableObject
         }
         GameEventsManager.instance.dialogueEvents.onChoiceMade -= Collect;
         isTalking = false;
+    }
+
+    private void TagMenuToggle() {
+        if(!isTalking) { 
+        ItemTagManager.instance.ToggleMenu(itemTag);
+        }
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D other) {
+        base.OnTriggerEnter2D(other);
+        if(other.gameObject.CompareTag("PlayerPhysics")) {
+            GameEventsManager.instance.inputEvents.onTagInteracted += TagMenuToggle;
+            GameEventsManager.instance.inputEvents.onCancelInteracted += ItemTagManager.instance.ExitMenu;
+        }
+    }
+
+    protected override void OnTriggerExit2D(Collider2D other) {
+        base.OnTriggerExit2D(other);
+        if(other.gameObject.CompareTag("PlayerPhysics")) {
+            GameEventsManager.instance.inputEvents.onTagInteracted -= TagMenuToggle;
+            GameEventsManager.instance.inputEvents.onCancelInteracted -= ItemTagManager.instance.ExitMenu;
+            if(ItemTagManager.instance.isOpen) {
+                ItemTagManager.instance.ExitMenu();
+            }
+        }
     }
 }
 
