@@ -580,8 +580,8 @@ TextureImporter:
       name: paths_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 120
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -601,8 +601,8 @@ TextureImporter:
       name: paths_22
       rect:
         serializedVersion: 2
-        x: 24
-        y: 96
+        x: 144
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -622,8 +622,8 @@ TextureImporter:
       name: paths_23
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
+        x: 168
+        y: 120
         width: 24
         height: 24
       alignment: 0
@@ -643,7 +643,7 @@ TextureImporter:
       name: paths_24
       rect:
         serializedVersion: 2
-        x: 72
+        x: 0
         y: 96
         width: 24
         height: 24
@@ -664,7 +664,7 @@ TextureImporter:
       name: paths_25
       rect:
         serializedVersion: 2
-        x: 96
+        x: 24
         y: 96
         width: 24
         height: 24
@@ -685,7 +685,7 @@ TextureImporter:
       name: paths_26
       rect:
         serializedVersion: 2
-        x: 120
+        x: 48
         y: 96
         width: 24
         height: 24
@@ -706,7 +706,7 @@ TextureImporter:
       name: paths_27
       rect:
         serializedVersion: 2
-        x: 144
+        x: 72
         y: 96
         width: 24
         height: 24
@@ -727,7 +727,7 @@ TextureImporter:
       name: paths_28
       rect:
         serializedVersion: 2
-        x: 168
+        x: 96
         y: 96
         width: 24
         height: 24
@@ -748,8 +748,8 @@ TextureImporter:
       name: paths_29
       rect:
         serializedVersion: 2
-        x: 0
-        y: 72
+        x: 120
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -769,8 +769,8 @@ TextureImporter:
       name: paths_30
       rect:
         serializedVersion: 2
-        x: 24
-        y: 72
+        x: 144
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -790,8 +790,8 @@ TextureImporter:
       name: paths_31
       rect:
         serializedVersion: 2
-        x: 48
-        y: 72
+        x: 168
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -803,216 +803,6 @@ TextureImporter:
       bones: []
       spriteID: 4875b47eb1cf9c9449dd6b3b4af01731
       internalID: 2055449007
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_32
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 72
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4516214dfb0d8b94295ef37e6bfb3fad
-      internalID: 1282964223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_33
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 72
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71619d4593e1ec54a940c7072d9b847a
-      internalID: -1214854942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_34
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 72
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e7f87e1cc7f36c4e8b072063a5e2426
-      internalID: 623880300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_35
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 72
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b4c67474ec933143a810d69ac9f80ef
-      internalID: -603826053
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_36
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 72
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 286613ecfe9e72d49a026f8233a3677a
-      internalID: 1256331211
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_37
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc93d3da28a8ae64bb06985cddf79324
-      internalID: -1249373031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_38
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b584385704aa314c9432cc8c27ff836
-      internalID: -183881990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_39
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a386173bb5a5e7540a20fb157e47f740
-      internalID: -531937450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_40
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88aafa25b78ea824c839f1ee1282710c
-      internalID: 1230520990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: paths_41
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2da7d15072c60184da728c056f54122d
-      internalID: 1331644866
       vertices: []
       indices: 
       edges: []
@@ -1054,17 +844,7 @@ TextureImporter:
       paths_3: -167466903
       paths_30: 461526047
       paths_31: 2055449007
-      paths_32: 1282964223
-      paths_33: -1214854942
-      paths_34: 623880300
-      paths_35: -603826053
-      paths_36: 1256331211
-      paths_37: -1249373031
-      paths_38: -183881990
-      paths_39: -531937450
       paths_4: 1543568687
-      paths_40: 1230520990
-      paths_41: 1331644866
       paths_5: 1640409590
       paths_6: 1020607272
       paths_7: 1563493723

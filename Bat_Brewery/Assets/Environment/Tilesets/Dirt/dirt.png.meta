@@ -286,8 +286,8 @@ TextureImporter:
       name: dirt_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 168
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -307,7 +307,7 @@ TextureImporter:
       name: dirt_8
       rect:
         serializedVersion: 2
-        x: 24
+        x: 0
         y: 48
         width: 24
         height: 24
@@ -328,7 +328,7 @@ TextureImporter:
       name: dirt_9
       rect:
         serializedVersion: 2
-        x: 48
+        x: 24
         y: 48
         width: 24
         height: 24
@@ -349,7 +349,7 @@ TextureImporter:
       name: dirt_10
       rect:
         serializedVersion: 2
-        x: 72
+        x: 48
         y: 48
         width: 24
         height: 24
@@ -370,7 +370,7 @@ TextureImporter:
       name: dirt_11
       rect:
         serializedVersion: 2
-        x: 96
+        x: 72
         y: 48
         width: 24
         height: 24
@@ -391,7 +391,7 @@ TextureImporter:
       name: dirt_12
       rect:
         serializedVersion: 2
-        x: 120
+        x: 96
         y: 48
         width: 24
         height: 24
@@ -412,7 +412,7 @@ TextureImporter:
       name: dirt_13
       rect:
         serializedVersion: 2
-        x: 144
+        x: 120
         y: 48
         width: 24
         height: 24
@@ -433,8 +433,8 @@ TextureImporter:
       name: dirt_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
+        x: 144
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -454,8 +454,8 @@ TextureImporter:
       name: dirt_15
       rect:
         serializedVersion: 2
-        x: 24
-        y: 24
+        x: 168
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -475,7 +475,7 @@ TextureImporter:
       name: dirt_16
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -496,7 +496,7 @@ TextureImporter:
       name: dirt_17
       rect:
         serializedVersion: 2
-        x: 72
+        x: 24
         y: 24
         width: 24
         height: 24
@@ -517,7 +517,7 @@ TextureImporter:
       name: dirt_18
       rect:
         serializedVersion: 2
-        x: 96
+        x: 48
         y: 24
         width: 24
         height: 24
@@ -538,7 +538,7 @@ TextureImporter:
       name: dirt_19
       rect:
         serializedVersion: 2
-        x: 120
+        x: 72
         y: 24
         width: 24
         height: 24
@@ -559,7 +559,7 @@ TextureImporter:
       name: dirt_20
       rect:
         serializedVersion: 2
-        x: 144
+        x: 96
         y: 24
         width: 24
         height: 24
@@ -580,7 +580,7 @@ TextureImporter:
       name: dirt_21
       rect:
         serializedVersion: 2
-        x: 168
+        x: 120
         y: 24
         width: 24
         height: 24
@@ -601,8 +601,8 @@ TextureImporter:
       name: dirt_22
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 144
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -622,8 +622,8 @@ TextureImporter:
       name: dirt_23
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
+        x: 168
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -643,7 +643,7 @@ TextureImporter:
       name: dirt_24
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 0
         width: 24
         height: 24
@@ -664,7 +664,7 @@ TextureImporter:
       name: dirt_25
       rect:
         serializedVersion: 2
-        x: 72
+        x: 24
         y: 0
         width: 24
         height: 24
@@ -685,7 +685,7 @@ TextureImporter:
       name: dirt_26
       rect:
         serializedVersion: 2
-        x: 96
+        x: 48
         y: 0
         width: 24
         height: 24
@@ -706,7 +706,7 @@ TextureImporter:
       name: dirt_27
       rect:
         serializedVersion: 2
-        x: 120
+        x: 72
         y: 0
         width: 24
         height: 24
@@ -727,7 +727,7 @@ TextureImporter:
       name: dirt_28
       rect:
         serializedVersion: 2
-        x: 144
+        x: 96
         y: 0
         width: 24
         height: 24
@@ -748,7 +748,7 @@ TextureImporter:
       name: dirt_29
       rect:
         serializedVersion: 2
-        x: 168
+        x: 120
         y: 0
         width: 24
         height: 24
@@ -761,6 +761,48 @@ TextureImporter:
       bones: []
       spriteID: d3c5c00e34b51f240a1d16a0b427b2be
       internalID: -1674229695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dirt_30
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56bdabb129fffb41bb477af327f5325
+      internalID: -691707896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dirt_31
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab0fda97ac5b904e9237ef31e1d0bf3
+      internalID: -9877107
       vertices: []
       indices: 
       edges: []
@@ -800,6 +842,8 @@ TextureImporter:
       dirt_28: 372822384
       dirt_29: -1674229695
       dirt_3: -1692163886
+      dirt_30: -691707896
+      dirt_31: -9877107
       dirt_4: 2078437857
       dirt_5: -796061772
       dirt_6: -1427440738
