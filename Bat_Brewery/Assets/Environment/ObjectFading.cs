@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using TreeEditor;
 using UnityEngine;
 
@@ -25,13 +26,16 @@ public class ObjectFading : ObjectSortingOrderer
         spriteRenderer.color = color;
     }
 
-    protected override void Update()
+    void Update()
     {
-        base.Update();
-        Vector3 position = transform.position + Vector3.up*offset;
-        if(Utilities.InBox(position, player.position, visionController.maxViewDistance*fadeStrength+2))
+        Vector3 positionOff = transform.position + Vector3.up*offset;
+        Vector3 position = transform.position;
+        if(Utilities.InBox(positionOff, player.position, visionController.maxViewDistance*fadeStrength+2) || 
+            Utilities.InBox(position, player.position, visionController.maxViewDistance*fadeStrength+2))
         {
-            float dist = Vector2.Distance(position, player.position);
+            float distPos = Vector2.Distance(position, player.position);
+            float distOff = Vector2.Distance(positionOff, player.position);
+            float dist = (distOff>distPos)?distPos:distOff;
             float alpha = 0;
             Color color = Color.white;
             if(dist < visionController.maxViewDistance*fadeStrength)

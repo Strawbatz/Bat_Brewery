@@ -18,19 +18,7 @@ public class ObjectSortingOrderer : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerFeet = GameObject.Find("PlayerFeet").transform;
-    }
-
-    protected virtual void Update()
-    {
-        if(playerFeet.position.y <= transform.position.y + offset)
-        {
-            //Draw player on top
-            spriteRenderer.sortingOrder = -1;
-        } else
-        {
-            //Draw this object on top
-            spriteRenderer.sortingOrder = 1;
-        }
+        spriteRenderer.sortingOrder = -Mathf.RoundToInt((transform.position.y+offset)*10);
     }
 
     #if UNITY_EDITOR
