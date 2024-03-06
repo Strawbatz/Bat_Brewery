@@ -7,7 +7,8 @@ using UnityEngine;
 /// <summary>
 /// Script on ingredients found in the world. They are interactable
 /// and can be picked up and put into player inventory. It will then be consumed
-/// until scene is loaded again.
+/// until scene is loaded again. You can also change it's visual representation
+/// by opening the tagMenu and selecting a new visual representation.
 /// </summary>
 public class WorldIngredient : InteractableObject
 {

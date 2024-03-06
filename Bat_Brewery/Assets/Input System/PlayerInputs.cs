@@ -62,15 +62,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Click"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""d8882483-7737-43a2-80b1-7c503a14f7dc"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -216,50 +207,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""TagMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""45593b04-1fed-443f-8ae6-3e32acc065a6"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Click"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""70718a7e-4397-492a-9d8f-61bd6b4ca4f6"",
-                    ""path"": ""<Pen>/tip"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Click"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e30bb657-8af3-41ac-9a3b-9e0c85f8cc88"",
-                    ""path"": ""<Touchscreen>/touch*/press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Click"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cfd065ff-83ee-40e2-8853-96d2058c8bec"",
-                    ""path"": ""<XRController>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Click"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -289,7 +236,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
         m_Player_TagMenu = m_Player.FindAction("TagMenu", throwIfNotFound: true);
-        m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -355,7 +301,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Zoom;
     private readonly InputAction m_Player_TagMenu;
-    private readonly InputAction m_Player_Click;
     public struct PlayerActions
     {
         private @PlayerInputs m_Wrapper;
@@ -364,7 +309,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
         public InputAction @TagMenu => m_Wrapper.m_Player_TagMenu;
-        public InputAction @Click => m_Wrapper.m_Player_Click;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -386,9 +330,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @TagMenu.started += instance.OnTagMenu;
             @TagMenu.performed += instance.OnTagMenu;
             @TagMenu.canceled += instance.OnTagMenu;
-            @Click.started += instance.OnClick;
-            @Click.performed += instance.OnClick;
-            @Click.canceled += instance.OnClick;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -405,9 +346,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @TagMenu.started -= instance.OnTagMenu;
             @TagMenu.performed -= instance.OnTagMenu;
             @TagMenu.canceled -= instance.OnTagMenu;
-            @Click.started -= instance.OnClick;
-            @Click.performed -= instance.OnClick;
-            @Click.canceled -= instance.OnClick;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -440,6 +378,5 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
         void OnTagMenu(InputAction.CallbackContext context);
-        void OnClick(InputAction.CallbackContext context);
     }
 }

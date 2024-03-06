@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactAction: {fileID: 1968120607357455528, guid: ceaa601a797be6f4888b907a09f6a620, type: 3}
+  tagAction: {fileID: 7108923729854236221, guid: ceaa601a797be6f4888b907a09f6a620, type: 3}
+  cancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
 --- !u!114 &8012066014346593296
 MonoBehaviour:
   m_ObjectHideFlags: 0

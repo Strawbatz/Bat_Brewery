@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
+/// <summary>
+/// Singleton manager for handling the tagMenu system.
+/// </summary>
 public class ItemTagManager : MonoBehaviour
 {
     public static ItemTagManager instance {get; private set;}
@@ -14,8 +15,6 @@ public class ItemTagManager : MonoBehaviour
     private TaggableItem toBeTagged;
 
     [NonSerialized] public bool isOpen; 
-
-    [SerializeField] InputActionReference leftClick;
 
     [Header("UI Components")]
     [SerializeField] private GameObject menuContainer;
@@ -39,46 +38,37 @@ public class ItemTagManager : MonoBehaviour
         menuContainer.SetActive(false);
     }
 
+    /// <summary>
+    /// Function for toggling the menu on and off. Is only toggleable
+    /// given an item to change tags on.
+    /// </summary>
+    /// <param name="item">taggable item to be changed.</param>
     public void ToggleMenu(TaggableItem item) {
         if(!menuContainer.activeSelf) {
             isOpen = true;
             menuContainer.SetActive(true);
             toBeTagged = item;
-            //leftClick.action.performed += IsClickInsideContainer;
         } else {
             ExitMenu();
         }
     }
 
+    /// <summary>
+    /// Function called by the buttons inside the menu, providing
+    /// the visual tag to be set for the item.
+    /// </summary>
+    /// <param name="visualTag">Visual tag to be set.</param>
     public void ItemClicked(VisualTag visualTag) {
-        Debug.Log("ItemTagged");
         toBeTagged.SetVisualTag(visualTag);
         ExitMenu();
     }
 
+    /// <summary>
+    /// Closes menu weither an item was selected or not.
+    /// </summary>
     public void ExitMenu() {
         isOpen = false;
         menuContainer.SetActive(false);
         toBeTagged = null;
-        //leftClick.action.performed -= IsClickInsideContainer;
     }
-
-    /*
-    void IsClickInsideContainer(InputAction.CallbackContext ctx) {
-        Vector2 mousePos = Mouse.current.position.ReadValue();
-        RectTransform container = menuContainer.GetComponent<RectTransform>();
-        float rectWidth = container.rect.width;
-        float rectX = (Screen.width - rectWidth)/2;
-        float rectHeight =container.rect.height;
-        float rectY = (Screen.height - rectHeight)/2;
-        Debug.Log(rectX);
-        Debug.Log(rectWidth);
-        Debug.Log(rectY);
-        Debug.Log(rectHeight);
-        if(mousePos.x < rectX || mousePos.x > (rectX + rectWidth) || mousePos.y < rectY || mousePos.y > (rectY+rectHeight)) {
-            ExitMenu();
-        }
-    
-       // if(menuContainer.GetComponent<RectTransform>().rect.Contains(mousePos)){    ExitMenu();}
-    } */
 }
