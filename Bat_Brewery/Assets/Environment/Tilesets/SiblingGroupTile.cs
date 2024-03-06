@@ -9,7 +9,7 @@ using UnityEngine.Tilemaps;
 public class SiblingGroupTile : RuleTile<SiblingGroupTile.Neighbor> {
     
     public string siblingGroup;
-    public string cousinGroup;
+    public string[] cousinGroups = new string[0];
     public class Neighbor : RuleTile.TilingRule.Neighbor {
         public const int Sibing = 3;
         public const int Cousin = 4;
@@ -18,7 +18,7 @@ public class SiblingGroupTile : RuleTile<SiblingGroupTile.Neighbor> {
         SiblingGroupTile myTile = tile as SiblingGroupTile;
         switch (neighbor) {
             case Neighbor.Sibing: return myTile && myTile.siblingGroup.Equals(siblingGroup);
-            case Neighbor.Cousin: return myTile && (myTile.siblingGroup.Equals(cousinGroup) || myTile.siblingGroup.Equals(siblingGroup));
+            case Neighbor.Cousin: return myTile && (cousinGroups.Contains(myTile.siblingGroup) || myTile.siblingGroup.Equals(siblingGroup));
         }
         return base.RuleMatch(neighbor, tile);
     }
