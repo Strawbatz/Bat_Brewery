@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,7 +18,7 @@ public abstract class InteractableObject : MonoBehaviour
 /// from the interact key.
 /// </summary>
 /// <param name="other"></param>
-private void OnTriggerEnter2D(Collider2D other) {
+protected virtual void OnTriggerEnter2D(Collider2D other) {
     if(other.gameObject.CompareTag("PlayerPhysics")) {
         GameEventsManager.instance.inputEvents.onPlayerInteracted += Interact;
         if(interactSprite) interactSprite.gameObject.SetActive(true);
@@ -29,7 +30,7 @@ private void OnTriggerEnter2D(Collider2D other) {
 /// listening for input from interact key.
 /// </summary>
 /// <param name="other"></param>
-private void OnTriggerExit2D(Collider2D other) {
+protected virtual void OnTriggerExit2D(Collider2D other) {
     if(other.gameObject.CompareTag("PlayerPhysics")) {
         GameEventsManager.instance.inputEvents.onPlayerInteracted -= Interact;
         if(interactSprite) interactSprite.gameObject.SetActive(false);
@@ -40,6 +41,5 @@ private void OnTriggerExit2D(Collider2D other) {
 /// Abstract function to make sure inherited class has a function for 
 /// when interact is pressed.
 /// </summary>
-/// <param name="ctx"></param>
 protected abstract void Interact();
 }
