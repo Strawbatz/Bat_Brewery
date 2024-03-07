@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 /// <summary>
 /// Singleton manager for handling the tagMenu system.
@@ -48,6 +50,7 @@ public class ItemTagManager : MonoBehaviour
             isOpen = true;
             menuContainer.SetActive(true);
             toBeTagged = item;
+            StartCoroutine(SelectFirstChoice());
         } else {
             ExitMenu();
         }
@@ -70,5 +73,18 @@ public class ItemTagManager : MonoBehaviour
         isOpen = false;
         menuContainer.SetActive(false);
         toBeTagged = null;
+    }
+
+    /// <summary>
+    /// Corutine for selecting a first choice for navigaition
+    /// with controller/keyboard. Waiting a frame between deselecting
+    /// and selecting a new item for the eventsystem is needed because 
+    /// unity is unity.
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator SelectFirstChoice(){
+        EventSystem.current.SetSelectedGameObject(null);
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(buttonContainer.GetComponentsInChildren<Button>()[0].gameObject);
     }
 }

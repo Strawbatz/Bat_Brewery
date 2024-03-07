@@ -22,7 +22,6 @@ public class TagMenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler
         thisButton.onClick.AddListener(Clicked);
         GetComponentsInChildren<Image>()[1].sprite = visualTag.GetWorldImg();
         transform.localScale = Vector3.one;
-
     }
 
     private void Clicked() {
