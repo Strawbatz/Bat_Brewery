@@ -1485,10 +1485,6 @@ PrefabInstance:
       propertyPath: m_ScrollWheelAction
       value: 
       objectReference: {fileID: 3446715280316070784, guid: ceaa601a797be6f4888b907a09f6a620, type: 3}
-    - target: {fileID: 3922461081791907143, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
-      propertyPath: m_CancelAction
-      value: 
-      objectReference: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
     - target: {fileID: 7265043287754539996, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.327098
