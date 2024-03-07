@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TagMenuContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 556870223064753454, guid: 9d909aa476cfe8642bee7ee2b5b3dd8e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2920866287449575805, guid: 9d909aa476cfe8642bee7ee2b5b3dd8e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
