@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AdvancedEditorTools.Attributes;
 using UnityEngine;
 
 /// <summary>
@@ -9,13 +10,22 @@ using UnityEngine;
 public abstract class TalkableNPC : InteractableObject
 {
     //Name to be displayed.
-    [SerializeField] public String npcName;
+    [SerializeField, ReadOnly] public String npcName;
 
     //Portrait to be shown in dialogue.
     [SerializeField] public Sprite portrait;
 
     //JSON file generated from inky containing dialogue. 
     [SerializeField] public TextAsset defaultDialogue;
+
+    /// <summary>
+    /// Called when the script is loaded or a value is changed in the
+    /// inspector (Called in the editor only).
+    /// </summary>
+    private void OnValidate()
+    {
+        npcName = gameObject.name;
+    }
 
     /// <summary>
     /// abstract function to make sure a talk function exists.

@@ -15,6 +15,7 @@ public class QuestNPC : TalkableNPC
 
     protected override void Interact()
     {
+        if(DialogueManager.GetInstance().dialogueIsPlaying) return;
         if(dialogueQueue.Count > 0)
         {
             Talk(dialogueQueue.Dequeue().GetQuestStory());

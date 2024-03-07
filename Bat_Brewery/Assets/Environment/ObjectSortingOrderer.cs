@@ -10,27 +10,15 @@ using UnityEngine;
 /// </summary>
 public class ObjectSortingOrderer : MonoBehaviour
 {
-    [SerializeField] float offset;
-    SpriteRenderer renderer;
+    [SerializeField]protected float offset;
+    protected SpriteRenderer spriteRenderer;
 
     Transform playerFeet;
-    void Start()
+    protected virtual void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         playerFeet = GameObject.Find("PlayerFeet").transform;
-    }
-
-    void Update()
-    {
-        if(playerFeet.position.y <= transform.position.y + offset)
-        {
-            //Draw player on top
-            renderer.sortingOrder = -1;
-        } else
-        {
-            //Draw this object on top
-            renderer.sortingOrder = 1;
-        }
+        spriteRenderer.sortingOrder = -Mathf.RoundToInt((transform.position.y+offset)*10);
     }
 
     #if UNITY_EDITOR
