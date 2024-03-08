@@ -162,6 +162,7 @@ MonoBehaviour:
   - {fileID: 5642365417901827091}
   - {fileID: 7325307008890227058}
   - {fileID: 6948326115937191170}
+  inactiveChoices: {fileID: 8809755970633531011}
   typeSpeed: 10
 --- !u!1 &7462554668164523227
 GameObject:
@@ -596,5 +597,10 @@ MonoBehaviour:
 --- !u!1 &7325307008890227058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1021489157788132325, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+  m_PrefabInstance: {fileID: 7747802228442475159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8809755970633531011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1281049187273135124, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
   m_PrefabInstance: {fileID: 7747802228442475159}
   m_PrefabAsset: {fileID: 0}

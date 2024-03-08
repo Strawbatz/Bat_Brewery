@@ -27,6 +27,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] Image portrait1Image;
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private GameObject inactiveChoices;
     [Header("Typing configuration")]
     [SerializeField] private float typeSpeed = 5;
     private float maxTypeTime = 0.2f;
@@ -200,12 +201,14 @@ public class DialogueManager : MonoBehaviour
             foreach(Choice choice in currentChoices) {
 
                 choices[index].SetActive(true);
+                choices[index].transform.SetParent(choicesContainer.transform);
                 choicesText[index].text = choice.text;
                 index ++;
             }
 
             for (int i = index; i < choices.Length; i++) {
                 choices[i].SetActive(false);
+                choices[i].transform.SetParent(inactiveChoices.transform);
             }
             choicesContainer.SetActive(true);
             StartCoroutine(SelectFirstChoice());
