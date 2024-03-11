@@ -555,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5efbd312e7a79e4469d5f3480f99b055, type: 3}
+      objectReference: {fileID: 8300000, guid: 9889b75557545dc4c9b02b80faf71d8a, type: 3}
     - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -897,6 +897,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 544646336932358556, guid: 9a52d01a754e79c48a7f9830d46b7411, type: 3}
   m_PrefabInstance: {fileID: 1544224621}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &339875667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseInspectorFoldout: 0
+  layoutInfos: []
+  buttonMethods: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &340308599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -959,6 +977,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8162464632778088961, guid: 863f8d881d3e31e4e9be0e9a077f3daa, type: 3}
   m_PrefabInstance: {fileID: 340308599}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &352268775 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1618109480869244359, guid: 5058461d9487386469903d8681c6fc31, type: 3}
+  m_PrefabInstance: {fileID: 573410941}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee66cedd0b572942a042e36911a5305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &356641845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1017,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7702277995747476914, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
       propertyPath: droneSources.Array.size
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7702277995747476914, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
       propertyPath: droneSources.Array.data[0]
@@ -1035,6 +1064,26 @@ PrefabInstance:
       propertyPath: droneSources.Array.data[3]
       value: 
       objectReference: {fileID: 193370148}
+    - target: {fileID: 7702277995747476914, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      propertyPath: droneSources.Array.data[4]
+      value: 
+      objectReference: {fileID: 1132629422}
+    - target: {fileID: 7702277995747476914, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      propertyPath: droneSources.Array.data[5]
+      value: 
+      objectReference: {fileID: 801601150}
+    - target: {fileID: 7702277995747476914, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      propertyPath: droneSources.Array.data[6]
+      value: 
+      objectReference: {fileID: 600671005}
+    - target: {fileID: 7702277995747476914, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      propertyPath: droneSources.Array.data[7]
+      value: 
+      objectReference: {fileID: 1923977340}
+    - target: {fileID: 7702277995747476914, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      propertyPath: droneSources.Array.data[8]
+      value: 
+      objectReference: {fileID: 1507246065}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1044,6 +1093,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3643260225487905381, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 193370147}
+    - targetCorrespondingSourceObject: {fileID: 3643260225487905381, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1132629421}
+    - targetCorrespondingSourceObject: {fileID: 3643260225487905381, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 801601149}
+    - targetCorrespondingSourceObject: {fileID: 3643260225487905381, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 600671004}
+    - targetCorrespondingSourceObject: {fileID: 3643260225487905381, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1923977339}
+    - targetCorrespondingSourceObject: {fileID: 3643260225487905381, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1507246064}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8674a5487f7f774e9475cba44691f2d, type: 3}
 --- !u!114 &368306472
@@ -1223,52 +1287,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42f71082aae10d64baf48382237f825a, type: 3}
---- !u!114 &447352340
+--- !u!114 &451574840 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7616525410855904144, guid: 5058461d9487386469903d8681c6fc31, type: 3}
+  m_PrefabInstance: {fileID: 573410941}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3797450da29378444a06240074e6d58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseInspectorFoldout: 0
-  layoutInfos:
-  - rid: 4999271823240069174
-  - rid: 4999271823240069175
-  - rid: 4999271823240069176
-  buttonMethods: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999271823240069174
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: footstepSounds
-        fieldTypeName: AYellowpaper.SerializedCollections.SerializedDictionary`2[[System.String,
-          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.AudioSource,
-          UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-          AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069175
-      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        includeLast: 0
-    - rid: 4999271823240069176
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        label: Drones
-        foldout: 0
 --- !u!1001 &467994938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69764,6 +69793,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2567079331025106422, guid: 26130842ccb75194fb744f87b42de0a3, type: 3}
   m_PrefabInstance: {fileID: 1890161065}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &600671003
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1121749105}
+    m_Modifications:
+    - target: {fileID: 638924098598342832, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_Name
+      value: Magpies (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e2dbc79f98b3ece42900f9a453f40da3, type: 3}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+--- !u!4 &600671004 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 600671003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &600671005 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 600671003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &615234632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70338,6 +70438,95 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c7f4d9011092241bc463b2a8c0ce27, type: 3}
+--- !u!1001 &801601148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1121749105}
+    m_Modifications:
+    - target: {fileID: 638924098598342832, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_Name
+      value: Magpies (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 80f289f6429046f4ea1383f45fec7fcc, type: 3}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+--- !u!4 &801601149 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 801601148}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &801601150 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 801601148}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &817346858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseInspectorFoldout: 0
+  layoutInfos: []
+  buttonMethods: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &843050291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72625,61 +72814,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: -9, y: -8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 20
-      m_TileMatrixIndex: 2
-      m_TileColorIndex: 2
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
   - first: {x: 3, y: -8, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 8
       m_TileSpriteIndex: 27
-      m_TileMatrixIndex: 2
-      m_TileColorIndex: 2
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: 7, y: -8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 20
-      m_TileMatrixIndex: 2
-      m_TileColorIndex: 2
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: 8, y: -8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 17
-      m_TileMatrixIndex: 2
-      m_TileColorIndex: 2
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: 9, y: -8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 17
-      m_TileMatrixIndex: 2
-      m_TileColorIndex: 2
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
-  - first: {x: 10, y: -8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 2
       m_TileColorIndex: 2
       m_TileObjectToInstantiateIndex: 65535
@@ -73843,7 +73982,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 23
     m_Data: {fileID: 11400000, guid: 254ff53377620f74ea7ac5aec0fef578, type: 2}
-  - m_RefCount: 256
+  - m_RefCount: 251
     m_Data: {fileID: 11400000, guid: 83a858222afe8d046895951f2c8e6b76, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -73880,13 +74019,13 @@ Tilemap:
     m_Data: {fileID: 1384782882, guid: 6018cadd411a7ad44ac02c4e244fee7c, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: -435805767, guid: 6018cadd411a7ad44ac02c4e244fee7c, type: 3}
-  - m_RefCount: 27
+  - m_RefCount: 25
     m_Data: {fileID: 521175399, guid: 6018cadd411a7ad44ac02c4e244fee7c, type: 3}
   - m_RefCount: 18
     m_Data: {fileID: -1995844028, guid: 6018cadd411a7ad44ac02c4e244fee7c, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1415790255, guid: 6018cadd411a7ad44ac02c4e244fee7c, type: 3}
-  - m_RefCount: 41
+  - m_RefCount: 38
     m_Data: {fileID: 461526047, guid: 6018cadd411a7ad44ac02c4e244fee7c, type: 3}
   - m_RefCount: 15
     m_Data: {fileID: -2009763334, guid: 6018cadd411a7ad44ac02c4e244fee7c, type: 3}
@@ -73943,7 +74082,7 @@ Tilemap:
       e31: 0
       e32: 4.5905e-41
       e33: 0
-  - m_RefCount: 279
+  - m_RefCount: 274
     m_Data:
       e00: 1
       e01: 0
@@ -74002,7 +74141,7 @@ Tilemap:
     m_Data: {r: 4.1745e-41, g: 4.1745e-41, b: 4.1745e-41, a: 4.1745e-41}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
-  - m_RefCount: 279
+  - m_RefCount: 274
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -74349,52 +74488,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8162464632778088961, guid: 863f8d881d3e31e4e9be0e9a077f3daa, type: 3}
   m_PrefabInstance: {fileID: 1598304384}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1130282173
-MonoBehaviour:
+--- !u!1001 &1132629420
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1121749105}
+    m_Modifications:
+    - target: {fileID: 638924098598342832, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_Name
+      value: Magpies (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e0075d9901e6434e9cbcf247458ca9d, type: 3}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+--- !u!4 &1132629421 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 1132629420}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseInspectorFoldout: 0
-  layoutInfos:
-  - rid: 4999271823240069159
-  - rid: 4999271823240069160
-  - rid: 4999271823240069161
-  buttonMethods: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999271823240069159
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: footstepSounds
-        fieldTypeName: AYellowpaper.SerializedCollections.SerializedDictionary`2[[System.String,
-          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.AudioSource,
-          UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-          AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069160
-      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        includeLast: 0
-    - rid: 4999271823240069161
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        label: Drones
-        foldout: 0
+--- !u!82 &1132629422 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 1132629420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1157282287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74715,6 +74879,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26130842ccb75194fb744f87b42de0a3, type: 3}
+--- !u!114 &1269218018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseInspectorFoldout: 0
+  layoutInfos: []
+  buttonMethods: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &1279073676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseInspectorFoldout: 0
+  layoutInfos: []
+  buttonMethods: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &1288880545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74865,6 +75065,39 @@ MonoBehaviour:
   questInfoForPoint: {fileID: 11400000, guid: d3be1aa189e558a43b4c98067181c949, type: 2}
   canStart: 1
   canFinish: 1
+--- !u!114 &1303953316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2940810447169785592, guid: 74f86661ea5efa34b96ede7569fdcb1a, type: 3}
+  m_PrefabInstance: {fileID: 6049838482643377146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303953306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7c408faf32f2c418f1fb120c87aa89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1303953317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8073671486386100539, guid: 74f86661ea5efa34b96ede7569fdcb1a, type: 3}
+  m_PrefabInstance: {fileID: 6049838482643377146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303953306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd1d1ddcc469624bad0761e7aaf40e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1303953318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1863446583173320916, guid: 74f86661ea5efa34b96ede7569fdcb1a, type: 3}
+  m_PrefabInstance: {fileID: 6049838482643377146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303953306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bead5ae545b173b488fdb8a045e22a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1308483072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2567079331025106422, guid: 26130842ccb75194fb744f87b42de0a3, type: 3}
@@ -74884,14 +75117,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseInspectorFoldout: 0
   layoutInfos:
-  - rid: 4999271823240069177
-  - rid: 4999271823240069178
-  - rid: 4999271823240069179
+  - rid: 4999271823240069213
+  - rid: 4999271823240069214
+  - rid: 4999271823240069215
   buttonMethods: []
   references:
     version: 2
     RefIds:
-    - rid: 4999271823240069177
+    - rid: 4999271823240069213
       type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: footstepSounds
@@ -74901,14 +75134,14 @@ MonoBehaviour:
           AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         label: Footstep Sounds
         foldout: 0
-    - rid: 4999271823240069178
+    - rid: 4999271823240069214
       type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: droneSources
         fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         includeLast: 0
-    - rid: 4999271823240069179
+    - rid: 4999271823240069215
       type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: droneSources
@@ -74973,7 +75206,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c7f4d9011092241bc463b2a8c0ce27, type: 3}
---- !u!114 &1337628503
+--- !u!4 &1346267750 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2567079331025106422, guid: 26130842ccb75194fb744f87b42de0a3, type: 3}
+  m_PrefabInstance: {fileID: 1801291693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1384592029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74986,44 +75224,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseInspectorFoldout: 0
-  layoutInfos:
-  - rid: 4999271823240069171
-  - rid: 4999271823240069172
-  - rid: 4999271823240069173
+  layoutInfos: []
   buttonMethods: []
   references:
     version: 2
-    RefIds:
-    - rid: 4999271823240069171
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: footstepSounds
-        fieldTypeName: AYellowpaper.SerializedCollections.SerializedDictionary`2[[System.String,
-          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.AudioSource,
-          UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-          AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069172
-      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        includeLast: 0
-    - rid: 4999271823240069173
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        label: Drones
-        foldout: 0
---- !u!4 &1346267750 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2567079331025106422, guid: 26130842ccb75194fb744f87b42de0a3, type: 3}
-  m_PrefabInstance: {fileID: 1801291693}
-  m_PrefabAsset: {fileID: 0}
+    RefIds: []
 --- !u!4 &1424103472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7744006437517739318, guid: 26c7f4d9011092241bc463b2a8c0ce27, type: 3}
@@ -75095,6 +75300,77 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 708a8523a2c52c646bcf2a3636a4d6b3, type: 3}
+--- !u!1001 &1507246063
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1121749105}
+    m_Modifications:
+    - target: {fileID: 638924098598342832, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_Name
+      value: Magpies (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6df2edf01b68f304bb83dcca60f7cccd, type: 3}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+--- !u!4 &1507246064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 1507246063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1507246065 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 1507246063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1516637358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139244,10 +139520,12 @@ MonoBehaviour:
     - {fileID: 70591279}
     - {fileID: 5806303540590555501, guid: aefd0e35d2cc0e64f8fe91045f2d64dd, type: 3}
     - {fileID: 392274756}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 1303953318}
+    - {fileID: 1303953317}
+    - {fileID: 1303953316}
+    - {fileID: 1303953315}
+    - {fileID: 352268775}
+    - {fileID: 451574840}
     values:
     - {fileID: 1952387884}
     - {fileID: 1640866176}
@@ -139263,10 +139541,12 @@ MonoBehaviour:
     - {fileID: 1516637358}
     - {fileID: 1310969215}
     - {fileID: 562966001}
-    - {fileID: 1130282173}
-    - {fileID: 2127763648}
-    - {fileID: 447352340}
-    - {fileID: 1337628503}
+    - {fileID: 817346858}
+    - {fileID: 339875667}
+    - {fileID: 1269218018}
+    - {fileID: 1384592029}
+    - {fileID: 1279073676}
+    - {fileID: 1974009678}
   extensionEnabled: 1
   debugMode: 0
 --- !u!4 &1856433935
@@ -139708,6 +139988,77 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7744006437517739318, guid: 26c7f4d9011092241bc463b2a8c0ce27, type: 3}
   m_PrefabInstance: {fileID: 705797016}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1923977338
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1121749105}
+    m_Modifications:
+    - target: {fileID: 638924098598342832, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_Name
+      value: Magpies (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8db51eb97fb745e4a9d2be4e24897cb1, type: 3}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+--- !u!4 &1923977339 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7271870701611547651, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 1923977338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1923977340 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6077014787771831552, guid: e294a90850aec994799c3b1c8e1f84fc, type: 3}
+  m_PrefabInstance: {fileID: 1923977338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1925534741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139870,14 +140221,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseInspectorFoldout: 0
   layoutInfos:
-  - rid: 4999271823240069180
-  - rid: 4999271823240069181
-  - rid: 4999271823240069182
+  - rid: 4999271823240069207
+  - rid: 4999271823240069208
+  - rid: 4999271823240069209
   buttonMethods: []
   references:
     version: 2
     RefIds:
-    - rid: 4999271823240069180
+    - rid: 4999271823240069207
       type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: footstepSounds
@@ -139887,14 +140238,14 @@ MonoBehaviour:
           AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         label: Footstep Sounds
         foldout: 0
-    - rid: 4999271823240069181
+    - rid: 4999271823240069208
       type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: droneSources
         fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         includeLast: 0
-    - rid: 4999271823240069182
+    - rid: 4999271823240069209
       type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: droneSources
@@ -139969,6 +140320,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
   m_PrefabInstance: {fileID: 469716204}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1974009678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseInspectorFoldout: 0
+  layoutInfos: []
+  buttonMethods: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &1974112366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140159,52 +140528,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8162464632778088961, guid: 863f8d881d3e31e4e9be0e9a077f3daa, type: 3}
   m_PrefabInstance: {fileID: 1157282287}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2127763648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseInspectorFoldout: 0
-  layoutInfos:
-  - rid: 4999271823240069156
-  - rid: 4999271823240069157
-  - rid: 4999271823240069158
-  buttonMethods: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999271823240069156
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: footstepSounds
-        fieldTypeName: AYellowpaper.SerializedCollections.SerializedDictionary`2[[System.String,
-          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.AudioSource,
-          UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-          AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069157
-      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        includeLast: 0
-    - rid: 4999271823240069158
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        label: Drones
-        foldout: 1
 --- !u!114 &2134219180 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1847109778564108753, guid: 5058461d9487386469903d8681c6fc31, type: 3}
