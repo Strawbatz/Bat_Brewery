@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class TextbookItem : MonoBehaviour
 {
-    [SerializeField] TextbookController tbController;
+    private TextbookController tbController;
     public int nr;
     
     private void Start() {
+        tbController = GetComponentInParent<TextbookController>(); 
         GetComponent<Button>().onClick.AddListener(Clicked);
     }
 
