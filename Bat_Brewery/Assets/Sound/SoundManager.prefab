@@ -63,7 +63,7 @@ MonoBehaviour:
       Value: {fileID: 3500666904217313921}
   defaultFootstepAudio: {fileID: 2907495264734114392}
   droneSources: []
-  maxDroneTimer: 90
+  maxDroneTimer: 60
 --- !u!1 &3111296936572945948
 GameObject:
   m_ObjectHideFlags: 0
