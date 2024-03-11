@@ -42,4 +42,9 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Horizontal_M", movementVector.x);
         animator.SetFloat("Vertical_M", movementVector.y);
     }
+
+    public bool IsMoving()
+    {
+        return !movementVector.Equals(Vector2.zero);
+    }
 }
