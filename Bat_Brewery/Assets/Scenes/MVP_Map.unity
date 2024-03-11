@@ -1223,52 +1223,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42f71082aae10d64baf48382237f825a, type: 3}
---- !u!114 &447352340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseInspectorFoldout: 0
-  layoutInfos:
-  - rid: 4999271823240069174
-  - rid: 4999271823240069175
-  - rid: 4999271823240069176
-  buttonMethods: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999271823240069174
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: footstepSounds
-        fieldTypeName: AYellowpaper.SerializedCollections.SerializedDictionary`2[[System.String,
-          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.AudioSource,
-          UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-          AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069175
-      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        includeLast: 0
-    - rid: 4999271823240069176
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        label: Drones
-        foldout: 0
 --- !u!1001 &467994938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74349,52 +74303,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8162464632778088961, guid: 863f8d881d3e31e4e9be0e9a077f3daa, type: 3}
   m_PrefabInstance: {fileID: 1598304384}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1130282173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseInspectorFoldout: 0
-  layoutInfos:
-  - rid: 4999271823240069159
-  - rid: 4999271823240069160
-  - rid: 4999271823240069161
-  buttonMethods: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999271823240069159
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: footstepSounds
-        fieldTypeName: AYellowpaper.SerializedCollections.SerializedDictionary`2[[System.String,
-          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.AudioSource,
-          UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-          AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069160
-      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        includeLast: 0
-    - rid: 4999271823240069161
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        label: Drones
-        foldout: 0
 --- !u!1001 &1157282287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74973,52 +74881,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c7f4d9011092241bc463b2a8c0ce27, type: 3}
---- !u!114 &1337628503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseInspectorFoldout: 0
-  layoutInfos:
-  - rid: 4999271823240069171
-  - rid: 4999271823240069172
-  - rid: 4999271823240069173
-  buttonMethods: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999271823240069171
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: footstepSounds
-        fieldTypeName: AYellowpaper.SerializedCollections.SerializedDictionary`2[[System.String,
-          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.AudioSource,
-          UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-          AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069172
-      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        includeLast: 0
-    - rid: 4999271823240069173
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        label: Drones
-        foldout: 0
 --- !u!4 &1346267750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2567079331025106422, guid: 26130842ccb75194fb744f87b42de0a3, type: 3}
@@ -139244,10 +139106,6 @@ MonoBehaviour:
     - {fileID: 70591279}
     - {fileID: 5806303540590555501, guid: aefd0e35d2cc0e64f8fe91045f2d64dd, type: 3}
     - {fileID: 392274756}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
     values:
     - {fileID: 1952387884}
     - {fileID: 1640866176}
@@ -139263,10 +139121,6 @@ MonoBehaviour:
     - {fileID: 1516637358}
     - {fileID: 1310969215}
     - {fileID: 562966001}
-    - {fileID: 1130282173}
-    - {fileID: 2127763648}
-    - {fileID: 447352340}
-    - {fileID: 1337628503}
   extensionEnabled: 1
   debugMode: 0
 --- !u!4 &1856433935
@@ -139870,14 +139724,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseInspectorFoldout: 0
   layoutInfos:
-  - rid: 4999271823240069180
-  - rid: 4999271823240069181
-  - rid: 4999271823240069182
+  - rid: 4999271823240069195
+  - rid: 4999271823240069196
+  - rid: 4999271823240069197
   buttonMethods: []
   references:
     version: 2
     RefIds:
-    - rid: 4999271823240069180
+    - rid: 4999271823240069195
       type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: footstepSounds
@@ -139886,15 +139740,15 @@ MonoBehaviour:
           UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
           AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
         label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069181
+        foldout: 1
+    - rid: 4999271823240069196
       type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: droneSources
         fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
         includeLast: 0
-    - rid: 4999271823240069182
+    - rid: 4999271823240069197
       type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
       data:
         fieldName: droneSources
@@ -140159,52 +140013,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8162464632778088961, guid: 863f8d881d3e31e4e9be0e9a077f3daa, type: 3}
   m_PrefabInstance: {fileID: 1157282287}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2127763648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91035bcb2ca13824395c1c51b162bf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseInspectorFoldout: 0
-  layoutInfos:
-  - rid: 4999271823240069156
-  - rid: 4999271823240069157
-  - rid: 4999271823240069158
-  buttonMethods: []
-  references:
-    version: 2
-    RefIds:
-    - rid: 4999271823240069156
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: footstepSounds
-        fieldTypeName: AYellowpaper.SerializedCollections.SerializedDictionary`2[[System.String,
-          mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.AudioSource,
-          UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
-          AYellowpaper.SerializedCollections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-        label: Footstep Sounds
-        foldout: 0
-    - rid: 4999271823240069157
-      type: {class: EndFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        includeLast: 0
-    - rid: 4999271823240069158
-      type: {class: BeginFoldoutInfo, ns: AdvancedEditorTools, asm: Assembly-CSharp}
-      data:
-        fieldName: droneSources
-        fieldTypeName: UnityEngine.AudioSource[], UnityEngine.AudioModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        label: Drones
-        foldout: 1
 --- !u!114 &2134219180 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1847109778564108753, guid: 5058461d9487386469903d8681c6fc31, type: 3}
