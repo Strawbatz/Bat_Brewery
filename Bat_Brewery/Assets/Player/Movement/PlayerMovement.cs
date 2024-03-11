@@ -67,6 +67,6 @@ public class PlayerMovement : MonoBehaviour
             if(freezes.Contains(id)) freezes.Remove(id);
         }
 
-        isFrozen.Equals(freezes.Count > 0);
+        isFrozen = (freezes.Count > 0);
     }
 }

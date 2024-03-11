@@ -48,6 +48,7 @@ public class ItemTagManager : MonoBehaviour
     /// <param name="item">taggable item to be changed.</param>
     public void ToggleMenu(TaggableItem item) {
         if(!menuContainer.activeSelf) {
+            GameEventsManager.instance.playerMovementEvents.SetFreezePlayerMovement("tagMenu", true);
             isOpen = true;
             menuContainer.SetActive(true);
             toBeTagged = item;
@@ -74,6 +75,7 @@ public class ItemTagManager : MonoBehaviour
         isOpen = false;
         menuContainer.SetActive(false);
         toBeTagged = null;
+        GameEventsManager.instance.playerMovementEvents.SetFreezePlayerMovement("tagMenu", false);
     }
 
     /// <summary>
