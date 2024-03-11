@@ -6,6 +6,9 @@ using UnityEngine.Tilemaps;
 using AYellowpaper.SerializedCollections;
 using AdvancedEditorTools.Attributes;
 
+/// <summary>
+/// Controls the sound and music in the game scenes
+/// </summary>
 public class SoundManager : MonoBehaviour
 {   
     #region Footstep sounds
@@ -62,6 +65,7 @@ public class SoundManager : MonoBehaviour
 
     void Update()
     {
+        //Play drones sounds in the game
         droneTimer-=Time.deltaTime;
         if(droneTimer <= 0)
         {
@@ -70,7 +74,7 @@ public class SoundManager : MonoBehaviour
             droneTimer = droneSource.clip.length + Random.Range(0, maxDroneTimer);
         }
 
-
+        //Footstep sounds below this
         if(!playerMovement.IsMoving())
         {
             currentFootstepSource.Pause();
@@ -96,6 +100,10 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changes the footstep sound depending on what tile the player is on
+    /// </summary>
+    /// <param name="tile"></param>
     void OnNewTile(SiblingGroupTile tile)
     {
         Debug.Log(tile.siblingGroup);
@@ -108,6 +116,10 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changes the footstep sound
+    /// </summary>
+    /// <param name="footstepSource"></param>
     private void ChangeFootstepSource(AudioSource footstepSource)
     {
         currentFootstepSource.Pause();
@@ -115,6 +127,11 @@ public class SoundManager : MonoBehaviour
         currentFootstepSource.UnPause();
     }
 
+    /// <summary>
+    /// Returns the current tile that the player is standing on
+    /// </summary>
+    /// <param name="tilemap"></param>
+    /// <returns></returns>
     public SiblingGroupTile GetTile(Tilemap tilemap)
     {
         int posX = (int)(((playerFeet.position.x+tilemap.transform.position.x)/grid.cellSize.x));
