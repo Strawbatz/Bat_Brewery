@@ -4,21 +4,34 @@ using AdvancedEditorTools.DataTypes;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using AYellowpaper.SerializedCollections;
+using AdvancedEditorTools.Attributes;
 
 public class SoundManager : MonoBehaviour
 {   
+    #region Footstep sounds
+    [BeginFoldout("Footstep Sounds")]
     [SerializedDictionary("Ground name", "Audio")]
     [SerializeField] SerializedDictionary<string, AudioSource> footstepSounds;
     [SerializeField] AudioSource defaultFootstepAudio;
+
     Transform playerFeet;
     List<Tilemap> tilemaps = new List<Tilemap>();
     Grid grid;
-
     AudioSource currentFootstepSource;
-
     PlayerMovement playerMovement;
-
     string previousGround = "";
+    [EndFoldout]
+    #endregion
+    
+    #region Drones
+    [BeginFoldout("Drones")]
+    [SerializeField] AudioSource[] droneSources;
+    [SerializeField] float maxDroneTimer;
+    [EndFoldout]
+    float droneTimer;
+    #endregion
+
+
 
     void Start()
     {
@@ -43,10 +56,21 @@ public class SoundManager : MonoBehaviour
             source.Play();
             source.Pause();
         }
+
+        droneTimer = Random.Range(0, maxDroneTimer);
     }
 
     void Update()
     {
+        droneTimer-=Time.deltaTime;
+        if(droneTimer <= 0)
+        {
+            AudioSource droneSource = droneSources[Random.Range(0, droneSources.Length)];
+            droneSource.Play();
+            droneTimer = droneSource.clip.length + Random.Range(0, maxDroneTimer);
+        }
+
+
         if(!playerMovement.IsMoving())
         {
             currentFootstepSource.Pause();
