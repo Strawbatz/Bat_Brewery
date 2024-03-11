@@ -8,20 +8,24 @@ using AYellowpaper.SerializedCollections;
 public class SoundManager : MonoBehaviour
 {   
     [SerializedDictionary("Ground name", "Audio")]
-    [SerializeField] SerializedDictionary<string, AudioClip> footstepSounds;
-    [SerializeField] AudioClip defaultFootstepAudio;
-
-    AudioSource footstepPlayer;
+    [SerializeField] SerializedDictionary<string, AudioSource> footstepSounds;
+    [SerializeField] AudioSource defaultFootstepAudio;
     Transform playerFeet;
     List<Tilemap> tilemaps = new List<Tilemap>();
     Grid grid;
+
+    AudioSource currentFootstepSource;
+
+    PlayerMovement playerMovement;
 
     string previousGround = "";
 
     void Start()
     {
-        footstepPlayer = GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<AudioSource>();
+        currentFootstepSource = defaultFootstepAudio;
         playerFeet = GameObject.Find("PlayerFeet").transform;
+
+        playerMovement = FindAnyObjectByType<PlayerMovement>();
 
         grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
         Transform gridTrans = grid.transform;
@@ -30,10 +34,29 @@ public class SoundManager : MonoBehaviour
         {
             tilemaps.Add(gridTrans.GetChild(i).GetComponent<Tilemap>());
         }
+
+        defaultFootstepAudio.Play();
+        defaultFootstepAudio.Pause();
+
+        foreach(AudioSource source in footstepSounds.Values)
+        {
+            source.Play();
+            source.Pause();
+        }
     }
 
     void Update()
     {
+        if(!playerMovement.IsMoving())
+        {
+            currentFootstepSource.Pause();
+            return;
+        }
+        else if(!currentFootstepSource.isPlaying)
+        {
+            currentFootstepSource.UnPause();
+        }
+
         for(int i = tilemaps.Count-1; i >= 0; i--)
         {
             SiblingGroupTile tile = GetTile(tilemaps[i]);
@@ -54,19 +77,26 @@ public class SoundManager : MonoBehaviour
         Debug.Log(tile.siblingGroup);
         if(footstepSounds.ContainsKey(tile.siblingGroup))
         {
-            footstepPlayer.clip = footstepSounds[tile.siblingGroup];
-            footstepPlayer.Play();
+            ChangeFootstepSource(footstepSounds[tile.siblingGroup]);
         } else
         {
-            footstepPlayer.clip = defaultFootstepAudio;
-            footstepPlayer.Play();
+            ChangeFootstepSource(defaultFootstepAudio);
         }
+    }
+
+    private void ChangeFootstepSource(AudioSource footstepSource)
+    {
+        currentFootstepSource.Pause();
+        currentFootstepSource = footstepSource;
+        currentFootstepSource.UnPause();
     }
 
     public SiblingGroupTile GetTile(Tilemap tilemap)
     {
-        int posX = (int)((playerFeet.position.x+tilemap.transform.position.x)/grid.cellSize.x)-1;
-        int posY = (int)((playerFeet.position.y+tilemap.transform.position.y)/grid.cellSize.y)-1;
+        int posX = (int)(((playerFeet.position.x+tilemap.transform.position.x)/grid.cellSize.x));
+        int posY = (int)(((playerFeet.position.y+tilemap.transform.position.y)/grid.cellSize.y));
+        if(playerFeet.position.x < tilemap.transform.position.x) posX--;
+        if(playerFeet.position.y < tilemap.transform.position.y) posY--;
         TileBase tile = tilemap.GetTile(new Vector3Int(posX,posY,0));
         var retTile = tile as SiblingGroupTile;
         return retTile;
