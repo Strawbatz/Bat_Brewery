@@ -162,6 +162,7 @@ MonoBehaviour:
   - {fileID: 5642365417901827091}
   - {fileID: 7325307008890227058}
   - {fileID: 6948326115937191170}
+  inactiveChoices: {fileID: 8809755970633531011}
   typeSpeed: 10
 --- !u!1 &7462554668164523227
 GameObject:
@@ -225,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 556870223064753454, guid: 9d909aa476cfe8642bee7ee2b5b3dd8e, type: 3}
       propertyPath: m_Name
       value: TagMenuContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 556870223064753454, guid: 9d909aa476cfe8642bee7ee2b5b3dd8e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2920866287449575805, guid: 9d909aa476cfe8642bee7ee2b5b3dd8e, type: 3}
       propertyPath: m_Pivot.x
@@ -370,10 +375,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1618109480869244359}
+    - target: {fileID: 2941665317502916285, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618109480869244359}
+    - target: {fileID: 2941665317502916285, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MakeChoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941665317502916285, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4370392565052067898, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1618109480869244359}
+    - target: {fileID: 4684409107164575376, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618109480869244359}
+    - target: {fileID: 4684409107164575376, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MakeChoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684409107164575376, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6309442268228942555, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -466,6 +495,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1618109480869244359}
+    - target: {fileID: 7189682119032619901, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MakeChoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568863786186708080, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1618109480869244359}
+    - target: {fileID: 7568863786186708080, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MakeChoice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568863786186708080, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -552,5 +597,10 @@ MonoBehaviour:
 --- !u!1 &7325307008890227058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1021489157788132325, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+  m_PrefabInstance: {fileID: 7747802228442475159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8809755970633531011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1281049187273135124, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
   m_PrefabInstance: {fileID: 7747802228442475159}
   m_PrefabAsset: {fileID: 0}

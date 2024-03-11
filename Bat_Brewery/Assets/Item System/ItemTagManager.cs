@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -50,7 +51,7 @@ public class ItemTagManager : MonoBehaviour
             isOpen = true;
             menuContainer.SetActive(true);
             toBeTagged = item;
-            StartCoroutine(SelectFirstChoice());
+            StartCoroutine(SelectFirstChoice(Array.IndexOf(visualTags, item.visualTag)));
         } else {
             ExitMenu();
         }
@@ -81,10 +82,18 @@ public class ItemTagManager : MonoBehaviour
     /// and selecting a new item for the eventsystem is needed because 
     /// unity is unity.
     /// </summary>
+    ///  <param name="nr">Index of item to be selected.</param>
     /// <returns></returns>
-    private IEnumerator SelectFirstChoice(){
+    private IEnumerator SelectFirstChoice(int nr){
+        Debug.Log(nr);
+        if(nr <= -1 || nr > visualTags.Length) {
+            nr = 0;
+        } else {
+            buttonContainer.GetComponentsInChildren<TagMenuButton>()[nr].SetLastSelected();
+        }
         EventSystem.current.SetSelectedGameObject(null);
         yield return new WaitForEndOfFrame();
-        EventSystem.current.SetSelectedGameObject(buttonContainer.GetComponentsInChildren<Button>()[0].gameObject);
+        EventSystem.current.SetSelectedGameObject(buttonContainer.GetComponentsInChildren<Button>()[nr].gameObject);
+        
     }
 }
