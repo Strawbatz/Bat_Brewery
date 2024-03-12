@@ -60,6 +60,9 @@ TagManager:
   - name: Objects
     uniqueID: 3891110791
     locked: 0
+  - name: Fog
+    uniqueID: 3284847661
+    locked: 0
   - name: Footsteps
     uniqueID: 2255634459
     locked: 0
