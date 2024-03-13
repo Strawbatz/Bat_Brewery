@@ -18,6 +18,8 @@ public class WorldIngredient : InteractableObject
     private bool consumed;
     private bool isTalking;
 
+    private bool firstTime = false;
+
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
         itemTag.tagUpdated += ()=>{worldImg.sprite = itemTag.visualTag.GetWorldImg();}; 
@@ -40,7 +42,7 @@ public class WorldIngredient : InteractableObject
 
     public void Collect(string storyId, int choice){
         if(!storyId.Equals(itemTag.description.name)) return;
-        if(choice == 1) {
+        if(choice == 0) {
             GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
             consumed = true;
             gameObject.SetActive(false);

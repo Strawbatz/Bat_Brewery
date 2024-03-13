@@ -4,5 +4,5 @@ But it is not hard like a shell. It's soft and flexible, and I can stretch it ou
 A few of them have been tangled together. 
 And I can hear… the rushing waters. 
 Pick up?
-*   [No]
 *   [Yes]
+*   [No]
