@@ -18,9 +18,8 @@ public class WorldIngredient : InteractableObject
     [SerializeField] private SpriteRenderer worldImg;
     [SerializeField] private TextAsset interactText;
     [SerializeField] private TextAsset consumedText;
-    private bool consumed;
     private bool isTalking;
-    private bool firstTime = true;
+    private PickupMode mode = PickupMode.NEVER_INTERACTED;
 
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
@@ -28,7 +27,7 @@ public class WorldIngredient : InteractableObject
         
         interactSprite.gameObject.SetActive(false);
         gameObject.SetActive(true);
-        consumed = false;
+        mode = PickupMode.NEVER_INTERACTED; //TODO Load from save
         isTalking = false;
     }
 
@@ -41,49 +40,60 @@ public class WorldIngredient : InteractableObject
 
     protected override void Interact()
     {
-        if(!consumed && firstTime && !isTalking && !ItemTagManager.instance.isOpen) {
-            isTalking = true;
-            DialogueManager dialogueManager = DialogueManager.GetInstance();
-            dialogueManager.EnterDescription(itemTag.description);
-            GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
-            firstTime = false;
-            return;
-        } else if(!consumed && !firstTime && !isTalking && !ItemTagManager.instance.isOpen)
+        if(!isTalking && !ItemTagManager.instance.isOpen)
         {
             isTalking = true;
-            DialogueManager dialogueManager = DialogueManager.GetInstance();
-            dialogueManager.EnterDescription(interactText);
-            GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
-            return;
-        } else if(consumed && !isTalking && !ItemTagManager.instance.isOpen)
-        {
-            isTalking = true;
-            DialogueManager dialogueManager = DialogueManager.GetInstance();
-            dialogueManager.EnterDescription(consumedText);
-            GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
-            return;
+            switch(mode)
+            {
+                case PickupMode.NEVER_INTERACTED:
+                {
+                    DialogueManager.GetInstance().EnterDescription(itemTag.description);
+                    GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
+                    mode = PickupMode.DISCOVERED;
+                    return;     
+                }
+                case PickupMode.DISCOVERED:
+                {
+                    DialogueManager.GetInstance().EnterDescription(interactText);
+                    GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
+                    return;
+                }
+                case PickupMode.PICKED:
+                {
+                    DialogueManager.GetInstance().EnterDescription(consumedText);
+                    GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
+                    return;
+                }
+            }
         }
     }
 
+    /// <summary>
+    /// Is called when the description of the ingredient ends
+    /// </summary>
+    /// <param name="id"></param>
     private void DescriptionEnded(string id)
     {
         if(id.Equals(itemTag.description.name))
         {
-            if(!consumed) DialogueManager.GetInstance().EnterDescription(interactText);
-            else DialogueManager.GetInstance().EnterDescription(consumedText);
+            if(mode == PickupMode.PICKED) DialogueManager.GetInstance().EnterDescription(consumedText);
+            else DialogueManager.GetInstance().EnterDescription(interactText);
             GameEventsManager.instance.dialogueEvents.onDialogueEnded -= DescriptionEnded;
             GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
         }
     }
 
+    /// <summary>
+    /// Is called when the player chooses to investigate the ingredient in the ingredient choice
+    /// </summary>
+    /// <param name="id"></param>
     private void RedoDescription(string id)
     {
         if(!id.Equals(interactText.name) && !id.Equals(consumedText.name)) return;
         if(!isTalking && !ItemTagManager.instance.isOpen)
         {
             isTalking = true;
-            DialogueManager dialogueManager = DialogueManager.GetInstance();
-            dialogueManager.EnterDescription(itemTag.description);
+            DialogueManager.GetInstance().EnterDescription(itemTag.description);
             GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
         }
 
@@ -92,44 +102,50 @@ public class WorldIngredient : InteractableObject
 
     public void InteractChoice(string storyId, int choice){
         if(storyId.Equals(interactText.name)){
-            if(choice == 0) 
+            switch(choice)
             {
-                //The player picks up the item
-                GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
-                consumed = true;
+                case 0:
+                {
+                    //The player picks up the item
+                    GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
+                    mode = PickupMode.PICKED;
+                    break;
+                }
+                case 1:
+                {
+                    //The player investigates the ingredient
+                    GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
+                    break;
+                }
+                case 2:
+                {
+                    //The player changes visual tag of item
+                    ItemTagManager.instance.ToggleMenu(itemTag);
+                    break;
+                }
             }
-
-            if(choice == 1)
-            {
-                //The player investigates the ingredient
-                GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
-            }
-
-            if(choice == 2)
-            {
-                //The player changes visual tag of item
-                ItemTagManager.instance.ToggleMenu(itemTag);
-            }
-            GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
-            isTalking = false;
-            return;
         } else if(storyId.Equals(consumedText.name))
         {
-            if(choice == 0)
+            switch(choice)
             {
-                //The player investigates the ingredient
-                GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
+                case 0:
+                {
+                    //The player investigates the ingredient
+                    GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
+                    break;
+                }
+                case 1:
+                {
+                    //The player changes visual tag of item
+                    ItemTagManager.instance.ToggleMenu(itemTag);
+                    break;
+                }
             }
-
-            if(choice == 1)
-            {
-                //The player changes visual tag of item
-                ItemTagManager.instance.ToggleMenu(itemTag);
-            }
-            GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
-            isTalking = false;
-            return;
         }
+
+        GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
+        isTalking = false;
+        return;
     }
 
     private void TagMenuToggle() {
@@ -160,6 +176,13 @@ public class WorldIngredient : InteractableObject
     void OnValidate()
     {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
+    }
+
+    private enum PickupMode
+    {
+        NEVER_INTERACTED,
+        DISCOVERED,
+        PICKED
     }
 }
 
