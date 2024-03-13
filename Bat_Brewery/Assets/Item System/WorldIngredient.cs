@@ -19,7 +19,7 @@ public class WorldIngredient : InteractableObject
     [SerializeField] private TextAsset interactText;
     [SerializeField] private TextAsset consumedText;
     private bool isTalking;
-    private PickupMode mode = PickupMode.NEVER_INTERACTED;
+    private PickupMode mode = PickupMode.UNKNOWN;
 
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
@@ -27,7 +27,7 @@ public class WorldIngredient : InteractableObject
         
         interactSprite.gameObject.SetActive(false);
         gameObject.SetActive(true);
-        mode = PickupMode.NEVER_INTERACTED; //TODO Load from save
+        mode = PickupMode.UNKNOWN; //TODO Load from save
         isTalking = false;
     }
 
@@ -45,7 +45,7 @@ public class WorldIngredient : InteractableObject
             isTalking = true;
             switch(mode)
             {
-                case PickupMode.NEVER_INTERACTED:
+                case PickupMode.UNKNOWN:
                 {
                     DialogueManager.GetInstance().EnterDescription(itemTag.description);
                     GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
@@ -58,7 +58,7 @@ public class WorldIngredient : InteractableObject
                     GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
                     return;
                 }
-                case PickupMode.PICKED:
+                case PickupMode.HARVESTED:
                 {
                     DialogueManager.GetInstance().EnterDescription(consumedText);
                     GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
@@ -76,7 +76,7 @@ public class WorldIngredient : InteractableObject
     {
         if(id.Equals(itemTag.description.name))
         {
-            if(mode == PickupMode.PICKED) DialogueManager.GetInstance().EnterDescription(consumedText);
+            if(mode == PickupMode.HARVESTED) DialogueManager.GetInstance().EnterDescription(consumedText);
             else DialogueManager.GetInstance().EnterDescription(interactText);
             GameEventsManager.instance.dialogueEvents.onDialogueEnded -= DescriptionEnded;
             GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
@@ -100,15 +100,14 @@ public class WorldIngredient : InteractableObject
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
     }
 
-    public void InteractChoice(string storyId, int choice){
+    private void InteractChoice(string storyId, int choice){
         if(storyId.Equals(interactText.name)){
             switch(choice)
             {
                 case 0:
                 {
                     //The player picks up the item
-                    GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
-                    mode = PickupMode.PICKED;
+                    HarvestPlant();
                     break;
                 }
                 case 1:
@@ -148,6 +147,25 @@ public class WorldIngredient : InteractableObject
         return;
     }
 
+    /// <summary>
+    /// Harvests this plant
+    /// </summary>
+    public void HarvestPlant()
+    {
+        GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
+        mode = PickupMode.HARVESTED;
+        worldImg.sprite = itemTag.visualTag.GetHarvestedImg();
+    }
+
+    /// <summary>
+    /// Regrow this plant
+    /// </summary>
+    public void RegrowPlant()
+    {
+        mode = PickupMode.DISCOVERED;
+        worldImg.sprite = itemTag.visualTag.GetWorldImg();
+    }
+
     private void TagMenuToggle() {
         if(!isTalking) { 
         ItemTagManager.instance.ToggleMenu(itemTag);
@@ -180,9 +198,14 @@ public class WorldIngredient : InteractableObject
 
     private enum PickupMode
     {
-        NEVER_INTERACTED,
+        //The player has never interacted with this item pickup before
+        UNKNOWN,
+
+        //The player has interacted with this item pickup before
         DISCOVERED,
-        PICKED
+
+        //This item pickup is harvested
+        HARVESTED
     }
 }
 
