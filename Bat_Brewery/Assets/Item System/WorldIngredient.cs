@@ -73,5 +73,10 @@ public class WorldIngredient : InteractableObject
             }
         }
     }
+
+    void OnValidate()
+    {
+        worldImg.sprite = itemTag.visualTag.GetWorldImg();
+    }
 }
 
