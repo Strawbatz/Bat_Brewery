@@ -13,7 +13,7 @@ public class TextbookController : MonoBehaviour
     [SerializeField] private GameObject tbHeaderPrefab;
     [SerializeField] private GameObject tbDescription;
 
-    [SerializeField] private List<RectTransform> tbItems = new List<RectTransform>();
+    private List<RectTransform> tbItems = new List<RectTransform>();
 
     private int? descPosition;
 

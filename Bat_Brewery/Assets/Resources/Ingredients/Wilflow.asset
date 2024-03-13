@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Wilflow
   m_EditorClassIdentifier: 
   visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
-  description: {fileID: 4900000, guid: 7ce1f2b2d99c35241b2099c1bb15cba7, type: 3}
+  worldDescription: {fileID: 4900000, guid: 7ce1f2b2d99c35241b2099c1bb15cba7, type: 3}
+  TextbookDescription: "These flowers are often found on barren mountain sides. They
+    initially appear quite fragile because of how quickly they appear to wilt and
+    dry out. However this is simply the appearance of the matured flower as it will
+    remain standing as their seeds continue to develop. \r\nHistorically, Wilflow
+    has been a symbol associated with both life and death.\r"

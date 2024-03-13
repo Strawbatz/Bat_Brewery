@@ -33,13 +33,13 @@ public class WorldIngredient : InteractableObject
         if(!consumed && !isTalking && !ItemTagManager.instance.isOpen) {
             isTalking = true;
             DialogueManager dialogueManager = DialogueManager.GetInstance();
-            dialogueManager.EnterDescription(itemTag.description);
+            dialogueManager.EnterDescription(itemTag.worldDescription);
             GameEventsManager.instance.dialogueEvents.onChoiceMade += Collect;
         }
     }
 
     public void Collect(string storyId, int choice){
-        if(!storyId.Equals(itemTag.description.name)) return;
+        if(!storyId.Equals(itemTag.worldDescription.name)) return;
         if(choice == 1) {
             GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
             consumed = true;
