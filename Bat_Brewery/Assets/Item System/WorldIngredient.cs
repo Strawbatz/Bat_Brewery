@@ -17,10 +17,10 @@ public class WorldIngredient : InteractableObject
     [SerializeField] public Ingredient itemTag;
     [SerializeField] private SpriteRenderer worldImg;
     [SerializeField] private TextAsset interactText;
+    [SerializeField] private TextAsset consumedText;
     private bool consumed;
     private bool isTalking;
-
-    private bool firstTime = false;
+    private bool firstTime = true;
 
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
@@ -41,11 +41,27 @@ public class WorldIngredient : InteractableObject
 
     protected override void Interact()
     {
-        if(!consumed && !isTalking && !ItemTagManager.instance.isOpen) {
+        if(!consumed && firstTime && !isTalking && !ItemTagManager.instance.isOpen) {
             isTalking = true;
             DialogueManager dialogueManager = DialogueManager.GetInstance();
             dialogueManager.EnterDescription(itemTag.description);
             GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
+            firstTime = false;
+            return;
+        } else if(!consumed && !firstTime && !isTalking && !ItemTagManager.instance.isOpen)
+        {
+            isTalking = true;
+            DialogueManager dialogueManager = DialogueManager.GetInstance();
+            dialogueManager.EnterDescription(interactText);
+            GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
+            return;
+        } else if(consumed && !isTalking && !ItemTagManager.instance.isOpen)
+        {
+            isTalking = true;
+            DialogueManager dialogueManager = DialogueManager.GetInstance();
+            dialogueManager.EnterDescription(consumedText);
+            GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
+            return;
         }
     }
 
@@ -53,7 +69,8 @@ public class WorldIngredient : InteractableObject
     {
         if(id.Equals(itemTag.description.name))
         {
-            DialogueManager.GetInstance().EnterDescription(interactText);
+            if(!consumed) DialogueManager.GetInstance().EnterDescription(interactText);
+            else DialogueManager.GetInstance().EnterDescription(consumedText);
             GameEventsManager.instance.dialogueEvents.onDialogueEnded -= DescriptionEnded;
             GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
         }
@@ -61,33 +78,58 @@ public class WorldIngredient : InteractableObject
 
     private void RedoDescription(string id)
     {
-        if(!id.Equals(interactText.name)) return;
-        Interact();
+        if(!id.Equals(interactText.name) && !id.Equals(consumedText.name)) return;
+        if(!isTalking && !ItemTagManager.instance.isOpen)
+        {
+            isTalking = true;
+            DialogueManager dialogueManager = DialogueManager.GetInstance();
+            dialogueManager.EnterDescription(itemTag.description);
+            GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
+        }
+
+        GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
     }
 
     public void InteractChoice(string storyId, int choice){
-        if(!storyId.Equals(interactText.name)) return;
-        if(choice == 0) 
-        {
-            //The player picks up the item
-            GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
-            consumed = true;
-            gameObject.SetActive(false);
-        }
+        if(storyId.Equals(interactText.name)){
+            if(choice == 0) 
+            {
+                //The player picks up the item
+                GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
+                consumed = true;
+            }
 
-        if(choice == 1)
-        {
-            //The player investigates the ingredient
-            GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
-        }
+            if(choice == 1)
+            {
+                //The player investigates the ingredient
+                GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
+            }
 
-        if(choice == 2)
+            if(choice == 2)
+            {
+                //The player changes visual tag of item
+                ItemTagManager.instance.ToggleMenu(itemTag);
+            }
+            GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
+            isTalking = false;
+            return;
+        } else if(storyId.Equals(consumedText.name))
         {
-            //The player changes visual tag of item
-            ItemTagManager.instance.ToggleMenu(itemTag);
+            if(choice == 0)
+            {
+                //The player investigates the ingredient
+                GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
+            }
+
+            if(choice == 1)
+            {
+                //The player changes visual tag of item
+                ItemTagManager.instance.ToggleMenu(itemTag);
+            }
+            GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
+            isTalking = false;
+            return;
         }
-        GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
-        isTalking = false;
     }
 
     private void TagMenuToggle() {
