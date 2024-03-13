@@ -81,4 +81,9 @@ public class Utilities
     {
         return(InRange(pos, boxCenter-Vector2.one*sideSize, boxCenter+Vector2.one*sideSize));
     }
+
+    public static bool InBox(Vector2 pos, Vector2 boxCenter, Vector2 boxSize)
+    {
+        return(InRange(pos, boxCenter-boxSize/2f, boxCenter+boxSize/2f));
+    }
 }
