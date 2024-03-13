@@ -103,6 +103,7 @@ MonoBehaviour:
   offset: -1.81
   fadeStrength: 1
   obstructionFade: 0.2
+  fadeSpeed: 1
 --- !u!114 &348900129433335225
 MonoBehaviour:
   m_ObjectHideFlags: 0
