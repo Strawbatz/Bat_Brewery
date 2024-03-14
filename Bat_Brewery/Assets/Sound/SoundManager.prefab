@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 3669604154401160620}
   - {fileID: 646454110159902394}
-  - {fileID: 744643021660714754}
+  - {fileID: 3570695850235607062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5806303540590555501
@@ -64,6 +64,9 @@ MonoBehaviour:
   defaultFootstepAudio: {fileID: 2907495264734114392}
   droneSources: []
   maxDroneTimer: 60
+  maxVolume: 0.3
+  musicZones: []
+  changeMusicTime: 4
 --- !u!1 &3111296936572945948
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +135,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6041108667938073127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6674525307406675839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3570695850235607062}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3570695850235607062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6674525307406675839}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 744643021660714754}
+  m_Father: {fileID: 6041108667938073127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7377658250508573617
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +178,7 @@ GameObject:
   - component: {fileID: 744643021660714754}
   - component: {fileID: 4245412042917322241}
   m_Layer: 0
-  m_Name: BackgroundMusic
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,12 +192,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7377658250508573617}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6041108667938073127}
+  m_Father: {fileID: 3570695850235607062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &4245412042917322241
 AudioSource:

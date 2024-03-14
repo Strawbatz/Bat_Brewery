@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using AYellowpaper.SerializedCollections;
 using AdvancedEditorTools.Attributes;
+using UnityEditor;
 
 /// <summary>
 /// Controls the sound and music in the game scenes
@@ -30,10 +31,19 @@ public class SoundManager : MonoBehaviour
     [BeginFoldout("Drones")]
     [SerializeField] AudioSource[] droneSources;
     [SerializeField] float maxDroneTimer;
-    [EndFoldout]
     float droneTimer;
+    [EndFoldout]
     #endregion
 
+    #region Background Music
+    [BeginFoldout("Background Music")]
+    [SerializeField] float maxVolume;
+    [SerializeField] MusicZone[] musicZones =  new MusicZone[0];
+    [SerializeField] float changeMusicTime;
+    [EndFoldout]
+    AudioSource currentMusic;
+    float currentMaxVolume;
+    #endregion
 
 
     void Start()
@@ -61,6 +71,13 @@ public class SoundManager : MonoBehaviour
         }
 
         droneTimer = Random.Range(0, maxDroneTimer);
+        foreach (MusicZone musicZone in musicZones)
+        {
+            musicZone.audioSource.volume = 0;
+        }
+        currentMusic = musicZones[0].audioSource;
+        currentMaxVolume = maxVolume * musicZones[0].volumeScale;
+        currentMusic.volume = currentMaxVolume;
     }
 
     void Update()
@@ -72,6 +89,16 @@ public class SoundManager : MonoBehaviour
             AudioSource droneSource = droneSources[Random.Range(0, droneSources.Length)];
             droneSource.Play();
             droneTimer = droneSource.clip.length + Random.Range(0, maxDroneTimer);
+        }
+
+        //Background music
+        for (int i = 0; i < musicZones.Length; i++)
+        {
+            if(Utilities.InCircle(playerFeet.transform.position, (Vector2)transform.position+musicZones[i].centerOffset, musicZones[i].radius))
+            {
+                if(currentMusic != musicZones[i].audioSource) StartCoroutine(ChangeBackgroundMusic(musicZones[i].audioSource, musicZones[i].volumeScale));
+                break;
+            }
         }
 
         //Footstep sounds below this
@@ -106,7 +133,6 @@ public class SoundManager : MonoBehaviour
     /// <param name="tile"></param>
     void OnNewTile(SiblingGroupTile tile)
     {
-        Debug.Log(tile.siblingGroup);
         if(footstepSounds.ContainsKey(tile.siblingGroup))
         {
             ChangeFootstepSource(footstepSounds[tile.siblingGroup]);
@@ -114,6 +140,30 @@ public class SoundManager : MonoBehaviour
         {
             ChangeFootstepSource(defaultFootstepAudio);
         }
+    }
+
+    IEnumerator ChangeBackgroundMusic(AudioSource newMusic, float volumeScale)
+    {
+        AudioSource oldMusic = currentMusic;
+        currentMusic = newMusic;
+        float oldMaxVolume = currentMaxVolume;
+        currentMaxVolume = maxVolume * volumeScale;
+        float stepSize = .1f;
+        while(currentMusic.volume < currentMaxVolume)
+        {
+            currentMusic.volume += currentMaxVolume*stepSize/changeMusicTime;
+            oldMusic.volume -= oldMaxVolume*stepSize/changeMusicTime;
+
+            if(currentMusic.volume >= currentMaxVolume)
+            {
+                currentMusic.volume = currentMaxVolume;
+                oldMusic.volume = 0f;
+            }
+
+            yield return new WaitForSeconds(stepSize); 
+        }
+
+        yield return null;
     }
 
     /// <summary>
@@ -141,5 +191,28 @@ public class SoundManager : MonoBehaviour
         TileBase tile = tilemap.GetTile(new Vector3Int(posX,posY,0));
         var retTile = tile as SiblingGroupTile;
         return retTile;
+    }
+
+    #if UNITY_EDITOR
+    void OnDrawGizmos()
+    {
+        Handles.color = Color.yellow;
+        for (int i = 0; i < musicZones.Length; i++)
+        {
+            Handles.DrawWireDisc(((Vector2)transform.position)+musicZones[i].centerOffset, Vector3.forward, musicZones[i].radius);
+        }
+    }
+    #endif
+
+    /// <summary>
+    /// A small class for keeping track of the music zones
+    /// </summary>
+    [System.Serializable]
+    struct MusicZone
+    {
+        public Vector2 centerOffset;
+        public float radius;
+        public AudioSource audioSource;
+        public float volumeScale;
     }
 }
