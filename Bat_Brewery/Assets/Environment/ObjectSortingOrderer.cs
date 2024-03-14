@@ -18,14 +18,14 @@ public class ObjectSortingOrderer : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerFeet = GameObject.Find("PlayerFeet").transform;
-        spriteRenderer.sortingOrder = -Mathf.RoundToInt((transform.position.y+offset)*10);
+        spriteRenderer.sortingOrder = -Mathf.RoundToInt((transform.position.y+offset)*100);
     }
 
     #if UNITY_EDITOR
     void OnDrawGizmos()
     {
         Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position+Vector3.up*offset, Vector3.forward, .1f);
+        Handles.DrawWireDisc(transform.position+Vector3.up*offset, Vector3.forward, .01f);
     }
     #endif
 }

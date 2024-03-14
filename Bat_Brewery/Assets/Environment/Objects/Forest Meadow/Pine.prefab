@@ -103,6 +103,7 @@ MonoBehaviour:
   offset: -1.87
   fadeStrength: 1
   obstructionFade: 0.2
+  fadeSpeed: 1
 --- !u!114 &4186165202838380197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,9 +148,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.69}
+  m_Offset: {x: -0.03, y: -1.7}
   serializedVersion: 2
-  m_Radius: 0.33
+  m_Radius: 0.28
 --- !u!70 &9113782914622651738
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
