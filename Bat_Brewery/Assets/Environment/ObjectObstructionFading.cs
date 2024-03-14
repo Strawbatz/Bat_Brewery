@@ -36,7 +36,6 @@ public class ObjectObstructionFading : ObjectFading
         fading = true;
         while((maxAlpha > obstructionFade && fadeDir < 0) || (maxAlpha < 1f && fadeDir > 0))
         {
-            Debug.Log("maxAlpha " + maxAlpha + " : Sprite colorA " + spriteRenderer.color.a);
             maxAlpha += fadeSpeed*Time.deltaTime*fadeDir;
             yield return new WaitForEndOfFrame();
         }
