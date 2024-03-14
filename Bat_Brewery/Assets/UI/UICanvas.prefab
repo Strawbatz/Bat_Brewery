@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf560866836cb34da01afb5169a2371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 6899309646748930698}
   container: {fileID: 6544202597147696497}
   inactiveContainer: {fileID: 2464705157393973530}
   tbHeaderPrefab: {fileID: 3253945892256186661, guid: ffff7db0b3d2f20469385af899d7990a, type: 3}

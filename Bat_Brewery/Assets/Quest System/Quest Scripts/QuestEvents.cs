@@ -37,4 +37,11 @@ public class QuestEvents
             onQuestStateChange(quest);
         }
     }
+
+    public event Action<Ingredient> onTextbookDescHeard;
+    public void TextbookDescHeard(Ingredient ing) {
+        if(onTextbookDescHeard != null) {
+            onTextbookDescHeard(ing);
+        }
+    } 
 }
