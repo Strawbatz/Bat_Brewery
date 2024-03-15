@@ -10,6 +10,7 @@ public class VisualTag : ScriptableObject
    [SerializeField] private Sprite inventoryImg2;
    [SerializeField] private Sprite mapImg;
    [SerializeField] private Sprite worldImg;
+   [SerializeField] private Sprite harvestedImg;
 
     //List of getters for versions of visual tag.
     public Sprite GetInventoryImg() {
@@ -34,6 +35,11 @@ public class VisualTag : ScriptableObject
     }
     public Sprite GetWorldImg() {
         return worldImg;
+    }
+
+    public Sprite GetHarvestedImg()
+    {
+        return harvestedImg;
     }
 }
 

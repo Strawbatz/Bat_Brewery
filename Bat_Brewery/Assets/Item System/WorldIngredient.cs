@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 /// <summary>
@@ -15,8 +16,10 @@ public class WorldIngredient : InteractableObject
     
     [SerializeField] public Ingredient itemTag;
     [SerializeField] private SpriteRenderer worldImg;
-    private bool consumed;
+    [SerializeField] private TextAsset interactText;
+    [SerializeField] private TextAsset consumedText;
     private bool isTalking;
+    private PickupMode mode = PickupMode.UNKNOWN;
 
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
@@ -24,29 +27,143 @@ public class WorldIngredient : InteractableObject
         
         interactSprite.gameObject.SetActive(false);
         gameObject.SetActive(true);
-        consumed = false;
+        mode = PickupMode.UNKNOWN; //TODO Load from save
         isTalking = false;
+    }
+
+    void OnDisable()
+    {
+        GameEventsManager.instance.dialogueEvents.onDialogueEnded -= DescriptionEnded;
+        GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
+        GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
     }
 
     protected override void Interact()
     {
-        if(!consumed && !isTalking && !ItemTagManager.instance.isOpen) {
+        if(!isTalking && !ItemTagManager.instance.isOpen)
+        {
             isTalking = true;
-            DialogueManager dialogueManager = DialogueManager.GetInstance();
-            dialogueManager.EnterDescription(itemTag.description);
-            GameEventsManager.instance.dialogueEvents.onChoiceMade += Collect;
+            switch(mode)
+            {
+                case PickupMode.UNKNOWN:
+                {
+                    DialogueManager.GetInstance().EnterDescription(itemTag.description);
+                    GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
+                    mode = PickupMode.DISCOVERED;
+                    return;     
+                }
+                case PickupMode.DISCOVERED:
+                {
+                    DialogueManager.GetInstance().EnterDescription(interactText);
+                    GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
+                    return;
+                }
+                case PickupMode.HARVESTED:
+                {
+                    DialogueManager.GetInstance().EnterDescription(consumedText);
+                    GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
+                    return;
+                }
+            }
         }
     }
 
-    public void Collect(string storyId, int choice){
-        if(!storyId.Equals(itemTag.description.name)) return;
-        if(choice == 1) {
-            GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
-            consumed = true;
-            gameObject.SetActive(false);
+    /// <summary>
+    /// Is called when the description of the ingredient ends
+    /// </summary>
+    /// <param name="id"></param>
+    private void DescriptionEnded(string id)
+    {
+        if(id.Equals(itemTag.description.name))
+        {
+            if(mode == PickupMode.HARVESTED) DialogueManager.GetInstance().EnterDescription(consumedText);
+            else DialogueManager.GetInstance().EnterDescription(interactText);
+            GameEventsManager.instance.dialogueEvents.onDialogueEnded -= DescriptionEnded;
+            GameEventsManager.instance.dialogueEvents.onChoiceMade += InteractChoice;
         }
-        GameEventsManager.instance.dialogueEvents.onChoiceMade -= Collect;
+    }
+
+    /// <summary>
+    /// Is called when the player chooses to investigate the ingredient in the ingredient choice
+    /// </summary>
+    /// <param name="id"></param>
+    private void RedoDescription(string id)
+    {
+        if(!id.Equals(interactText.name) && !id.Equals(consumedText.name)) return;
+        if(!isTalking && !ItemTagManager.instance.isOpen)
+        {
+            isTalking = true;
+            DialogueManager.GetInstance().EnterDescription(itemTag.description);
+            GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
+        }
+
+        GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
+    }
+
+    private void InteractChoice(string storyId, int choice){
+        if(storyId.Equals(interactText.name)){
+            switch(choice)
+            {
+                case 0:
+                {
+                    //The player picks up the item
+                    HarvestPlant();
+                    break;
+                }
+                case 1:
+                {
+                    //The player investigates the ingredient
+                    GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
+                    break;
+                }
+                case 2:
+                {
+                    //The player changes visual tag of item
+                    ItemTagManager.instance.ToggleMenu(itemTag);
+                    break;
+                }
+            }
+        } else if(storyId.Equals(consumedText.name))
+        {
+            switch(choice)
+            {
+                case 0:
+                {
+                    //The player investigates the ingredient
+                    GameEventsManager.instance.dialogueEvents.onDialogueEnded += RedoDescription;
+                    break;
+                }
+                case 1:
+                {
+                    //The player changes visual tag of item
+                    ItemTagManager.instance.ToggleMenu(itemTag);
+                    break;
+                }
+            }
+        }
+
+        GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
         isTalking = false;
+        return;
+    }
+
+    /// <summary>
+    /// Harvests this plant
+    /// </summary>
+    public void HarvestPlant()
+    {
+        GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
+        mode = PickupMode.HARVESTED;
+        worldImg.sprite = itemTag.visualTag.GetHarvestedImg();
+    }
+
+    /// <summary>
+    /// Regrow this plant
+    /// </summary>
+    public void RegrowPlant()
+    {
+        mode = PickupMode.DISCOVERED;
+        worldImg.sprite = itemTag.visualTag.GetWorldImg();
     }
 
     private void TagMenuToggle() {
@@ -77,6 +194,18 @@ public class WorldIngredient : InteractableObject
     void OnValidate()
     {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
+    }
+
+    private enum PickupMode
+    {
+        //The player has never interacted with this item pickup before
+        UNKNOWN,
+
+        //The player has interacted with this item pickup before
+        DISCOVERED,
+
+        //This item pickup is harvested
+        HARVESTED
     }
 }
 

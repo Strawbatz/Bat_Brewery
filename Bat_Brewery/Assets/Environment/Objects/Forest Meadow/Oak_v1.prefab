@@ -120,9 +120,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.66}
+  m_Offset: {x: 0.02, y: -1.66}
   serializedVersion: 2
-  m_Radius: 0.33
+  m_Radius: 0.25
 --- !u!70 &2904881909413312014
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,9 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698b3d089fcb6b04ab94ce2b1b25fd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: -1.81
+  offset: -1.86
   fadeStrength: 1
   obstructionFade: 0.2
+  fadeSpeed: 1
 --- !u!114 &5221048332037117261
 MonoBehaviour:
   m_ObjectHideFlags: 0
