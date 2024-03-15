@@ -75,8 +75,17 @@ public class SoundManager : MonoBehaviour
         {
             musicZone.audioSource.volume = 0;
         }
-        currentMusic = musicZones[0].audioSource;
-        currentMaxVolume = maxVolume * musicZones[0].volumeScale;
+        
+        for (int i = 0; i < musicZones.Length; i++)
+        {
+            if(Utilities.InCircle(playerFeet.transform.position, (Vector2)transform.position+musicZones[i].centerOffset, musicZones[i].radius))
+            {
+                currentMusic = musicZones[i].audioSource;
+                currentMaxVolume = maxVolume * musicZones[i].volumeScale;
+                break;
+            }
+        }
+
         currentMusic.volume = currentMaxVolume;
     }
 
