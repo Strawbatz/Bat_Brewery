@@ -18,6 +18,7 @@ public class WorldIngredient : InteractableObject
     [SerializeField] private SpriteRenderer worldImg;
     [SerializeField] private TextAsset interactText;
     [SerializeField] private TextAsset consumedText;
+    [SerializeField] private SmellSource smellSource;
     private bool isTalking;
     private PickupMode mode = PickupMode.UNKNOWN;
 
@@ -155,6 +156,7 @@ public class WorldIngredient : InteractableObject
         GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
         mode = PickupMode.HARVESTED;
         worldImg.sprite = itemTag.visualTag.GetHarvestedImg();
+        if(smellSource) smellSource.enabled = false;
     }
 
     /// <summary>
@@ -164,6 +166,7 @@ public class WorldIngredient : InteractableObject
     {
         mode = PickupMode.DISCOVERED;
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
+        if(smellSource) smellSource.enabled = true;
     }
 
     private void TagMenuToggle() {

@@ -15,6 +15,12 @@ public class SmellSource : MonoBehaviour
         smellManager = GameObject.FindWithTag("Player").GetComponent<SmellManager>();
         playerTransform = GameObject.Find("PlayerFeet").transform;
     }
+
+    void OnDisable()
+    {
+        smelling = false;
+        smellManager.RemoveSmell(transform);
+    }
     
     void Update()
     {
