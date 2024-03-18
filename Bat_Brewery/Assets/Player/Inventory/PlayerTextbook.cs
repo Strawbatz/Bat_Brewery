@@ -8,11 +8,10 @@ using UnityEngine;
 /// </summary>
 public class PlayerTextbook : MonoBehaviour
 {
-    public List<(string name,string desc)> playerTextbook {get; private set;}
-
+    public List<(string name,string desc)> playerTextbook {get; private set;} = new List<(string,string)>();
+    
     void Start()
     {
-        playerTextbook = new List<(string,string)>();
         GameEventsManager.instance.questEvents.onTextbookDescHeard += AddTextbookDesc;
     }
 
