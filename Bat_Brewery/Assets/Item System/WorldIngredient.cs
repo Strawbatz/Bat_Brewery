@@ -47,7 +47,7 @@ public class WorldIngredient : InteractableObject
             {
                 case PickupMode.UNKNOWN:
                 {
-                    DialogueManager.GetInstance().EnterDescription(itemTag.description);
+                    DialogueManager.GetInstance().EnterDescription(itemTag.worldDescription);
                     GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
                     mode = PickupMode.DISCOVERED;
                     return;     
@@ -74,7 +74,7 @@ public class WorldIngredient : InteractableObject
     /// <param name="id"></param>
     private void DescriptionEnded(string id)
     {
-        if(id.Equals(itemTag.description.name))
+        if(id.Equals(itemTag.worldDescription.name))
         {
             if(mode == PickupMode.HARVESTED) DialogueManager.GetInstance().EnterDescription(consumedText);
             else DialogueManager.GetInstance().EnterDescription(interactText);
@@ -93,7 +93,7 @@ public class WorldIngredient : InteractableObject
         if(!isTalking && !ItemTagManager.instance.isOpen)
         {
             isTalking = true;
-            DialogueManager.GetInstance().EnterDescription(itemTag.description);
+            DialogueManager.GetInstance().EnterDescription(itemTag.worldDescription);
             GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
         }
 

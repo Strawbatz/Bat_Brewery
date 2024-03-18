@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb676b1f39747b4bb57325f02ca4443, type: 3}
+  m_Name: Tom Barr
+  m_EditorClassIdentifier: 
+  visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
+  worldDescription: {fileID: 4900000, guid: ac6926c3ff2f746419a73a4b5fd94e88, type: 3}
+  TextbookDescription: "Although the Tom Barr tree is closely related to the spruce
+    species, these trees rarely grow to be taller than 2 meters. According to some
+    local myths this tree originated from a faraway ancient region in the north.\r\nThis
+    species of tree is covered in small and soft needles instead of leaves. The needles
+    can be grinded down and dried into a powder. This powder is often used as a base
+    for medicinal potions.\r"

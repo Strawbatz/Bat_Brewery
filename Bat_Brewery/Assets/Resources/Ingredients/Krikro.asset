@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Krikro
   m_EditorClassIdentifier: 
   visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
-  description: {fileID: 4900000, guid: 5d1411abbc87b4643b57d91e5e08e492, type: 3}
+  worldDescription: {fileID: 4900000, guid: 5d1411abbc87b4643b57d91e5e08e492, type: 3}
+  TextbookDescription: "The Krikro tree is recognized by its long and curly vines,
+    and grows on open fields. When the wind blows through the vines it sometimes
+    sounds like voices singing. \r\nThe curly vines often grow into complex knots,
+    which is what causes the sound when the wind blows through.\r"

@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Bo-Ba
   m_EditorClassIdentifier: 
   visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
-  description: {fileID: 4900000, guid: 17fd68c8d83913b4dbd91a15abedf9de, type: 3}
+  worldDescription: {fileID: 4900000, guid: 17fd68c8d83913b4dbd91a15abedf9de, type: 3}
+  TextbookDescription: "Bo-Ba bushes naturally grow on mountains and sometimes at
+    the very edges of forests. Bo-Ba berries are categorized as small berries. \r\nThe
+    berries should not be consumed raw because of their rock-like shell.  \r\nThe
+    berries usually grow in small groups of four or five.\r"
