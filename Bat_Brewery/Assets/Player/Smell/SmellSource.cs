@@ -6,6 +6,7 @@ using UnityEngine;
 public class SmellSource : MonoBehaviour
 {
     [SerializeField] float smellStrength;
+    [SerializeField] Material smellMaterial;
     Transform playerTransform;
     SmellManager smellManager;
     bool smelling = false;
@@ -20,7 +21,7 @@ public class SmellSource : MonoBehaviour
         if(!smelling && Utilities.InCircle(playerTransform.position, transform.position, smellStrength))
         {
             smelling = true;
-            smellManager.AddSmell(transform, smellStrength);
+            smellManager.AddSmell(transform, smellStrength, smellMaterial);
         } else if(smelling && !Utilities.InCircle(playerTransform.position, transform.position, smellStrength))
         {
             smelling = false;

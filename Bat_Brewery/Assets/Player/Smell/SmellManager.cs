@@ -27,7 +27,7 @@ public class SmellManager : MonoBehaviour
         }
     }
 
-    public void AddSmell(Transform smellSource, float smellStrength)
+    public void AddSmell(Transform smellSource, float smellStrength, Material smellMaterial)
     {
         if(activeSmells.ContainsKey(smellSource)) return;
         if(smellStack.Count == 0) 
@@ -36,6 +36,7 @@ public class SmellManager : MonoBehaviour
             return;
         }
         ParticleSystem particles = smellStack.Pop();
+        particles.GetComponent<ParticleSystemRenderer>().material = smellMaterial;
         particles.Play();
         activeSmells.Add(smellSource, (particles, smellStrength));
     }
