@@ -63,6 +63,9 @@ TagManager:
   - name: Fog
     uniqueID: 3284847661
     locked: 0
+  - name: Smell
+    uniqueID: 2969172765
+    locked: 0
   - name: Footsteps
     uniqueID: 2255634459
     locked: 0

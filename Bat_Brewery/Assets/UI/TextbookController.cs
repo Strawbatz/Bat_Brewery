@@ -46,9 +46,11 @@ public class TextbookController : MonoBehaviour
     private void ToggleTextbook() {
         panel.SetActive(!panel.activeSelf);
         if(panel.activeSelf) {
+            GameEventsManager.instance.playerMovementEvents.SetFreezePlayerMovement("textbook", true);
             OpenTextbook();
         } else if(!panel.activeSelf) {
             CloseTextbook();
+            GameEventsManager.instance.playerMovementEvents.SetFreezePlayerMovement("textbook", false);
         }
     }
 

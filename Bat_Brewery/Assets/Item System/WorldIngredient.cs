@@ -18,12 +18,13 @@ public class WorldIngredient : InteractableObject
     [SerializeField] private SpriteRenderer worldImg;
     [SerializeField] private TextAsset interactText;
     [SerializeField] private TextAsset consumedText;
+    [SerializeField] private SmellSource smellSource;
     private bool isTalking;
     private PickupMode mode = PickupMode.UNKNOWN;
 
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
-        itemTag.tagUpdated += ()=>{worldImg.sprite = itemTag.visualTag.GetWorldImg();}; 
+        itemTag.tagUpdated += ChangeVisualTag; 
         
         interactSprite.gameObject.SetActive(false);
         gameObject.SetActive(true);
@@ -36,6 +37,7 @@ public class WorldIngredient : InteractableObject
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= DescriptionEnded;
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
         GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
+        itemTag.tagUpdated -= ChangeVisualTag;
     }
 
     protected override void Interact()
@@ -155,6 +157,7 @@ public class WorldIngredient : InteractableObject
         GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
         mode = PickupMode.HARVESTED;
         worldImg.sprite = itemTag.visualTag.GetHarvestedImg();
+        if(smellSource) smellSource.enabled = false;
     }
 
     /// <summary>
@@ -164,12 +167,18 @@ public class WorldIngredient : InteractableObject
     {
         mode = PickupMode.DISCOVERED;
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
+        if(smellSource) smellSource.enabled = true;
     }
 
     private void TagMenuToggle() {
         if(!isTalking) { 
         ItemTagManager.instance.ToggleMenu(itemTag);
         }
+    }
+
+    private void ChangeVisualTag()
+    {
+        worldImg.sprite = (mode == PickupMode.HARVESTED)?itemTag.visualTag.GetHarvestedImg():itemTag.visualTag.GetWorldImg();
     }
 
     protected override void OnTriggerEnter2D(Collider2D other) {
