@@ -77,7 +77,8 @@ public class DialogueManager : MonoBehaviour
     /// <param name="inkJSON">Dialogue to be had</param>
     /// <param name="npc">NPC that is having the dialogue</param>
     public void EnterDialogueMode(TextAsset inkJSON, TalkableNPC npc) {
-        if(!dialogueIsPlaying) {
+        if(dialogueIsPlaying) return;
+        GameEventsManager.instance.playerMovementEvents.SetFreezePlayerMovement("dialogue", true);
         currentStory = new Story(inkJSON.text);
         currentStoryId = inkJSON.name;
         dialogueIsPlaying = true;
@@ -89,11 +90,11 @@ public class DialogueManager : MonoBehaviour
         GameEventsManager.instance.inputEvents.onPlayerInteracted += ContinueStory;
         
         ContinueStory();
-        }
     }
 
     public void EnterDescription(TextAsset inkJSON) {
-        if(!dialogueIsPlaying) {
+        if(dialogueIsPlaying) return;
+        GameEventsManager.instance.playerMovementEvents.SetFreezePlayerMovement("dialogue", true);
         currentStory = new Story(inkJSON.text);
         currentStoryId = inkJSON.name;
         dialogueIsPlaying = true;
@@ -102,7 +103,6 @@ public class DialogueManager : MonoBehaviour
         GameEventsManager.instance.inputEvents.onPlayerInteracted += ContinueStory;
         
         ContinueStory();
-        }
     }
 
     private void ContinueStory(InputAction.CallbackContext ctx) {ContinueStory();}
@@ -136,6 +136,7 @@ public class DialogueManager : MonoBehaviour
     /// and send out an action saying dialogue has ended.
     /// </summary>
     private void ExitDialogueMode() {
+        GameEventsManager.instance.playerMovementEvents.SetFreezePlayerMovement("dialogue", false);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         portrait1.SetActive(false);

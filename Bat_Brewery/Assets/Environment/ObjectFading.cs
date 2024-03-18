@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using TreeEditor;
 using UnityEngine;
 
 /// <summary>
@@ -41,7 +40,7 @@ public class ObjectFading : ObjectSortingOrderer
             if(dist < visionController.maxViewDistance*fadeStrength)
             {
                 alpha = (1-((dist-visionController.maxClearDistance*fadeStrength)/(visionController.maxViewDistance*fadeStrength-visionController.maxClearDistance*fadeStrength)))*maxAlpha;
-                if(alpha > 1) alpha = maxAlpha;
+                if(alpha > maxAlpha) alpha = maxAlpha;
                 else if(alpha < 0) alpha = 0;
             } 
             color.a = alpha;

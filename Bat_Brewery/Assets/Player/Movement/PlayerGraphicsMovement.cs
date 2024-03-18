@@ -23,6 +23,6 @@ public class PlayerGraphicsMovement : MonoBehaviour
         Vector3 targetPos = new Vector3(targetTransform.position.x, targetTransform.position.y, transform.position.z);
         Vector3 moveVector = Vector3.Slerp(transform.position, targetPos,cameraSpeed*Time.deltaTime);
         transform.position = moveVector;
-        spriteRenderer.sortingOrder = -Mathf.RoundToInt(feetTransform.position.y*10);
+        spriteRenderer.sortingOrder = -Mathf.RoundToInt(feetTransform.position.y*100);
     }
 }

@@ -7,6 +7,7 @@ TagManager:
   - PlayerPhysics
   - PlayerFootstep
   - PlayerGraphics
+  - Grid
   layers:
   - Default
   - TransparentFX
@@ -58,6 +59,9 @@ TagManager:
     locked: 0
   - name: Objects
     uniqueID: 3891110791
+    locked: 0
+  - name: Fog
+    uniqueID: 3284847661
     locked: 0
   - name: Footsteps
     uniqueID: 2255634459

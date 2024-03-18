@@ -28,6 +28,9 @@ public class InputEvents : MonoBehaviour
     }
 
     public void TagMenu(InputAction.CallbackContext ctx) {
+        TagMenu();
+    }
+    public void TagMenu() {
         if(onTagInteracted != null)
         {
             onTagInteracted();
