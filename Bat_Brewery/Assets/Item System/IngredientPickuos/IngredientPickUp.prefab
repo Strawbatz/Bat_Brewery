@@ -107,6 +107,7 @@ MonoBehaviour:
   worldImg: {fileID: 3780921658161728416}
   interactText: {fileID: 4900000, guid: 5152d351f6faedb4fbc625b2d7cc2c79, type: 3}
   consumedText: {fileID: 4900000, guid: 4c3635b9d01ed40408464711930b5d7f, type: 3}
+  smellSource: {fileID: 622585109127015952}
 --- !u!114 &5869197977869555571
 MonoBehaviour:
   m_ObjectHideFlags: 0
