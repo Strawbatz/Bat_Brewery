@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739de5c409faf9344b269c9ed786fb90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emissionScale: 5
+  emissionScale: 1
   smellParticles:
   - {fileID: 9187431210386832826}
   - {fileID: 238530560186726173}

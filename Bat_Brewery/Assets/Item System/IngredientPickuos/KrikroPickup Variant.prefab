@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 622585109127015952, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: smellMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 202c043b7c08089469b8f6aa1ab90d67, type: 2}
+    - target: {fileID: 622585109127015952, guid: 42f71082aae10d64baf48382237f825a, type: 3}
       propertyPath: smellStrength
       value: 6
       objectReference: {fileID: 0}
