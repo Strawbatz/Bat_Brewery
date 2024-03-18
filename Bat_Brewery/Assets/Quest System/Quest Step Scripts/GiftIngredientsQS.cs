@@ -28,6 +28,9 @@ public class GiftIngredientsQS : DialogueQS
 
         npc = obj.GetComponent<QuestNPC>();
         npc.AddQuestDialogue(this);
+
+        GameEventsManager.instance.questEvents.TextbookDescHeard(ingredientsRequired);
+
         GameEventsManager.instance.dialogueEvents.onChoiceMade += ChoiceMade;
         GameEventsManager.instance.dialogueEvents.onDialogueEnded += DialogueEnded;
     }

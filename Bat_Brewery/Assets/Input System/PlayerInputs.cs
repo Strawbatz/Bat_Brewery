@@ -62,6 +62,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Textbook"",
+                    ""type"": ""Button"",
+                    ""id"": ""dbf4218e-dca9-4fd3-be89-f761102e8803"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -207,6 +216,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""TagMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d45a7ec-5f68-43ea-9527-b67d7bdd008e"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse&Keyboard"",
+                    ""action"": ""Textbook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -236,6 +256,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
         m_Player_TagMenu = m_Player.FindAction("TagMenu", throwIfNotFound: true);
+        m_Player_Textbook = m_Player.FindAction("Textbook", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,6 +322,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Zoom;
     private readonly InputAction m_Player_TagMenu;
+    private readonly InputAction m_Player_Textbook;
     public struct PlayerActions
     {
         private @PlayerInputs m_Wrapper;
@@ -309,6 +331,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
         public InputAction @TagMenu => m_Wrapper.m_Player_TagMenu;
+        public InputAction @Textbook => m_Wrapper.m_Player_Textbook;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -330,6 +353,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @TagMenu.started += instance.OnTagMenu;
             @TagMenu.performed += instance.OnTagMenu;
             @TagMenu.canceled += instance.OnTagMenu;
+            @Textbook.started += instance.OnTextbook;
+            @Textbook.performed += instance.OnTextbook;
+            @Textbook.canceled += instance.OnTextbook;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -346,6 +372,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @TagMenu.started -= instance.OnTagMenu;
             @TagMenu.performed -= instance.OnTagMenu;
             @TagMenu.canceled -= instance.OnTagMenu;
+            @Textbook.started -= instance.OnTextbook;
+            @Textbook.performed -= instance.OnTextbook;
+            @Textbook.canceled -= instance.OnTextbook;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -378,5 +407,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnZoom(InputAction.CallbackContext context);
         void OnTagMenu(InputAction.CallbackContext context);
+        void OnTextbook(InputAction.CallbackContext context);
     }
 }

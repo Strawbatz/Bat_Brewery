@@ -37,4 +37,17 @@ public class QuestEvents
             onQuestStateChange(quest);
         }
     }
+
+    public event Action<Ingredient> onTextbookDescHeard;
+    public void TextbookDescHeard(Ingredient ing) {
+        if(onTextbookDescHeard != null) {
+            onTextbookDescHeard(ing);
+        }
+    } 
+
+    public void TextbookDescHeard(InventoryIngredient[] ing) {
+        foreach(InventoryIngredient item in ing) {
+            TextbookDescHeard(item.ingredient);
+        }
+    }
 }

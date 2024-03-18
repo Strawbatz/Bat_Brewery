@@ -20,6 +20,8 @@ public class GatherIngredientsQS : QuestStep
     {
         playerInventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>();
         GameEventsManager.instance.inventoryEvents.onPickUpIngredient += IngredientPickedUp;
+        
+        GameEventsManager.instance.questEvents.TextbookDescHeard(ingredientsRequired.ToArray());
 
         CheckIfCompleted();
     }

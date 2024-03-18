@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Swomp
   m_EditorClassIdentifier: 
   visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
-  description: {fileID: 4900000, guid: 559cc691c135d1f44a55bbada5c333b3, type: 3}
+  worldDescription: {fileID: 4900000, guid: 559cc691c135d1f44a55bbada5c333b3, type: 3}
+  TextbookDescription: "Tall and slender mushrooms which grow in small clusters in
+    dark forests. \r\nThese small mushrooms are safe to eat and their soft hats are
+    a tasty treat.\r\nA very common mushroom.\r"
