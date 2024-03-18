@@ -76,7 +76,7 @@ public class TextbookController : MonoBehaviour
             tbItems.RemoveAt((int)descPosition);
             Image arrow = tbItems[(int)descPosition-1].GetComponentsInChildren<Image>()[2];
             descPosition = null;
-            arrow.sprite = downArrow;
+            arrow.sprite = rightArrow;
         }
     }
 
