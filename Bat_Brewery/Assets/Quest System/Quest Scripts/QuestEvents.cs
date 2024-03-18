@@ -44,4 +44,10 @@ public class QuestEvents
             onTextbookDescHeard(ing);
         }
     } 
+
+    public void TextbookDescHeard(InventoryIngredient[] ing) {
+        foreach(InventoryIngredient item in ing) {
+            TextbookDescHeard(item.ingredient);
+        }
+    }
 }

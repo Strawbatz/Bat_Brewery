@@ -85,7 +85,6 @@ public class DialogueManager : MonoBehaviour
         portrait1.SetActive(true);
         portrait1Image.sprite = npc.portrait;
         charName.text = npc.npcName;
-
         GameEventsManager.instance.dialogueEvents.DialogueStarted(currentStoryId);
         GameEventsManager.instance.inputEvents.onPlayerInteracted += ContinueStory;
         
@@ -100,7 +99,6 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         charName.text = "?";
-
         GameEventsManager.instance.inputEvents.onPlayerInteracted += ContinueStory;
         
         ContinueStory();
