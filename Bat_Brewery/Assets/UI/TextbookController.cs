@@ -73,9 +73,9 @@ public class TextbookController : MonoBehaviour
         if(descPosition != null) {
             RectTransform descRect = tbDescription.GetComponent<RectTransform>();
             descRect.SetParent(inactiveContainer.transform);
-            descPosition = null;
-
+            tbItems.RemoveAt((int)descPosition);
             Image arrow = tbItems[(int)descPosition-1].GetComponentsInChildren<Image>()[2];
+            descPosition = null;
             arrow.sprite = downArrow;
         }
     }
