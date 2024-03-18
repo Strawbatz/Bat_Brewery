@@ -24,7 +24,7 @@ public class WorldIngredient : InteractableObject
 
     private void Start() {
         worldImg.sprite = itemTag.visualTag.GetWorldImg();
-        itemTag.tagUpdated += ()=>{worldImg.sprite = itemTag.visualTag.GetWorldImg();}; 
+        itemTag.tagUpdated += ChangeVisualTag; 
         
         interactSprite.gameObject.SetActive(false);
         gameObject.SetActive(true);
@@ -37,6 +37,7 @@ public class WorldIngredient : InteractableObject
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= DescriptionEnded;
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
         GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
+        itemTag.tagUpdated -= ChangeVisualTag;
     }
 
     protected override void Interact()
@@ -173,6 +174,11 @@ public class WorldIngredient : InteractableObject
         if(!isTalking) { 
         ItemTagManager.instance.ToggleMenu(itemTag);
         }
+    }
+
+    private void ChangeVisualTag()
+    {
+        worldImg.sprite = (mode == PickupMode.HARVESTED)?itemTag.visualTag.GetHarvestedImg():itemTag.visualTag.GetWorldImg();
     }
 
     protected override void OnTriggerEnter2D(Collider2D other) {
