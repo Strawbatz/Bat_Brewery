@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cbaba93feded7e44a8a574d01b42bd5c, type: 3}
+      objectReference: {fileID: -139067265, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
     - target: {fileID: 5543676408096063576, guid: 42f71082aae10d64baf48382237f825a, type: 3}
       propertyPath: m_Name
       value: MyntaPickup Variant

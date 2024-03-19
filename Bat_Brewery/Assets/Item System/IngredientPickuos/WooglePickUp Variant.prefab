@@ -17,6 +17,14 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.56489563
       objectReference: {fileID: 0}
@@ -60,6 +68,22 @@ PrefabInstance:
       propertyPath: itemTag
       value: 
       objectReference: {fileID: 11400000, guid: edd0d9d9d0b03da469a15b73aa339b9d, type: 2}
+    - target: {fileID: 2935704383259318598, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: smellSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304318677854363819, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_Radius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1233393681, guid: 797889e24c1aa854cbbe3df6def8cdab, type: 3}
+    - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5543676408096063576, guid: 42f71082aae10d64baf48382237f825a, type: 3}
       propertyPath: m_Name
       value: WooglePickUp Variant
