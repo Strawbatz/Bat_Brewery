@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using AYellowpaper.SerializedCollections;
 
 /// <summary>
 /// Singleton class handling dialogue from start to exit.
@@ -20,17 +21,23 @@ public class DialogueManager : MonoBehaviour
     [Header("UI containers")]
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] GameObject portrait1;
+    [SerializeField] Image portrait1Image;
     [SerializeField] GameObject portrait2;
+    [SerializeField] Image fabianImage;
     [SerializeField] GameObject choicesContainer;
     [SerializeField] GameObject firstChoice;
     [SerializeField] TextMeshProUGUI charName;
     [SerializeField] TextMeshProUGUI dialogueText;
-    [SerializeField] Image portrait1Image;
+    
     [SerializeField] private GameObject[] choices;
     [SerializeField] private GameObject inactiveChoices;
     [Header("Typing configuration")]
     [SerializeField] private float typeSpeed = 5;
     private float maxTypeTime = 0.2f;
+
+    [Header("Fabian Portraits")]
+    [SerializedDictionary("mood", "sprite")]
+    [SerializeField] SerializedDictionary<string, Sprite> fabianMoods;
 
     //Components  for progressing the story.
     private Story currentStory;
@@ -228,6 +235,12 @@ public class DialogueManager : MonoBehaviour
         ContinueStory();
         if(dialogueText.text == "") {
             ExitDialogueMode();
+        }
+    }
+
+    private void UpdateMood() {
+        if(currentStory.variablesState["mood"] != null) {
+            
         }
     }
 
