@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: itemTag
       value: 
       objectReference: {fileID: 11400000, guid: bba683f3129a2f043a8478df01507255, type: 2}
+    - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -55859597, guid: ec7e9e927d6368545acc608f2b0c274d, type: 3}
     - target: {fileID: 5543676408096063576, guid: 42f71082aae10d64baf48382237f825a, type: 3}
       propertyPath: m_Name
       value: TomBarrPickUp Variant
