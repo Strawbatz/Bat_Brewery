@@ -21,7 +21,7 @@ public class SoundManager : MonoBehaviour
     Transform playerFeet;
     List<Tilemap> tilemaps = new List<Tilemap>();
     Grid grid;
-    AudioSource currentFootstepSource;
+    List<AudioSource> currentFootstepSources = new List<AudioSource>();
     PlayerMovement playerMovement;
     string previousGround = "";
     [EndFoldout]
@@ -48,7 +48,7 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        currentFootstepSource = defaultFootstepAudio;
+        currentFootstepSources.Add(defaultFootstepAudio);
         playerFeet = GameObject.Find("PlayerFeet").transform;
 
         playerMovement = FindAnyObjectByType<PlayerMovement>();
@@ -113,15 +113,24 @@ public class SoundManager : MonoBehaviour
         //Footstep sounds below this
         if(!playerMovement.IsMoving())
         {
-            currentFootstepSource.Pause();
+            foreach(AudioSource source in currentFootstepSources)
+            {
+                source.Pause();
+            }
             return;
         }
-        else if(!currentFootstepSource.isPlaying)
+        else 
         {
-            currentFootstepSource.UnPause();
+            foreach(AudioSource source in currentFootstepSources)
+            {
+                if(!source.isPlaying)
+                {
+                    source.UnPause();
+                }
+            }
         }
 
-        for(int i = tilemaps.Count-1; i >= 0; i--)
+        for(int i = 0; i < tilemaps.Count; i++)
         {
             SiblingGroupTile tile = GetTile(tilemaps[i]);
             if(tile)
@@ -129,9 +138,12 @@ public class SoundManager : MonoBehaviour
                 if(!previousGround.Equals(tile.siblingGroup))
                 {
                     previousGround = tile.siblingGroup;
-                    OnNewTile(tile);
+                    OnNewTile(tile, i);
                 }
-                return;
+                //return;
+            } else if(currentFootstepSources.Count > i)
+            {
+                currentFootstepSources[i].Pause();
             }
         }
     }
@@ -140,14 +152,14 @@ public class SoundManager : MonoBehaviour
     /// Changes the footstep sound depending on what tile the player is on
     /// </summary>
     /// <param name="tile"></param>
-    void OnNewTile(SiblingGroupTile tile)
+    void OnNewTile(SiblingGroupTile tile, int layer)
     {
         if(footstepSounds.ContainsKey(tile.siblingGroup))
         {
-            ChangeFootstepSource(footstepSounds[tile.siblingGroup]);
+            ChangeFootstepSource(footstepSounds[tile.siblingGroup], layer);
         } else
         {
-            ChangeFootstepSource(defaultFootstepAudio);
+            ChangeFootstepSource(defaultFootstepAudio, layer);
         }
     }
 
@@ -179,11 +191,18 @@ public class SoundManager : MonoBehaviour
     /// Changes the footstep sound
     /// </summary>
     /// <param name="footstepSource"></param>
-    private void ChangeFootstepSource(AudioSource footstepSource)
+    private void ChangeFootstepSource(AudioSource footstepSource, int layer)
     {
-        currentFootstepSource.Pause();
-        currentFootstepSource = footstepSource;
-        currentFootstepSource.UnPause();
+        if(currentFootstepSources.Count > layer)
+        {
+            currentFootstepSources[layer].Pause();
+            currentFootstepSources[layer] = footstepSource;
+            currentFootstepSources[layer].UnPause();
+        } else
+        {
+            currentFootstepSources.Add(footstepSource);
+        }
+
     }
 
     /// <summary>
