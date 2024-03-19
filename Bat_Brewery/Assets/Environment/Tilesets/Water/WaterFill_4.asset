@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa07edbac337de94b90d2f3ecf2732e6, type: 3}
+  m_Name: WaterFill_4
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 0}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 1
+  m_TilingRules:
+  - m_Id: 0
+    m_Sprites:
+    - {fileID: 794800141, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: 467399282, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: 1141171191, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: -568040180, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: 1279998938, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: 1681877308, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: 789982990, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: -686761095, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: 2127747322, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: 1397705405, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: -2103065888, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    - {fileID: 2041087765, guid: 8592e4131ab2916429df65621ec43540, type: 3}
+    m_GameObject: {fileID: 0}
+    m_MinAnimationSpeed: 1
+    m_MaxAnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_Output: 2
+    m_ColliderType: 1
+    m_RandomTransform: 0
+    m_Neighbors: 
+    m_NeighborPositions:
+    - {x: -1, y: 1, z: 0}
+    - {x: 0, y: 1, z: 0}
+    - {x: 1, y: 1, z: 0}
+    - {x: -1, y: 0, z: 0}
+    - {x: 1, y: 0, z: 0}
+    - {x: -1, y: -1, z: 0}
+    - {x: 0, y: -1, z: 0}
+    - {x: 1, y: -1, z: 0}
+    m_RuleTransform: 0
+  siblingGroup: Water
+  cousinGroups: []
