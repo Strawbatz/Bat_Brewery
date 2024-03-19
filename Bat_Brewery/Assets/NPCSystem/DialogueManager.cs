@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using AYellowpaper.SerializedCollections;
+using System;
 
 /// <summary>
 /// Singleton class handling dialogue from start to exit.
@@ -38,6 +39,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Fabian Portraits")]
     [SerializedDictionary("mood", "sprite")]
     [SerializeField] SerializedDictionary<string, Sprite> fabianMoods;
+    private string currentMood = "normal";
 
     //Components  for progressing the story.
     private Story currentStory;
@@ -92,6 +94,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         portrait1.SetActive(true);
         portrait1Image.sprite = npc.portrait;
+        portrait2.SetActive(true);
         charName.text = npc.npcName;
         GameEventsManager.instance.dialogueEvents.DialogueStarted(currentStoryId);
         GameEventsManager.instance.inputEvents.onPlayerInteracted += ContinueStory;
@@ -106,7 +109,10 @@ public class DialogueManager : MonoBehaviour
         currentStoryId = inkJSON.name;
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-        charName.text = "?";
+        portrait1.SetActive(false);
+        charName.text = "";
+        portrait2.SetActive(true);
+        fabianImage.sprite = fabianMoods[currentMood];
         GameEventsManager.instance.inputEvents.onPlayerInteracted += ContinueStory;
         
         ContinueStory();
@@ -124,6 +130,7 @@ public class DialogueManager : MonoBehaviour
         if(currentStory.canContinue) {
             if(!isTyping) {
                 typeDialogueCorutine = StartCoroutine(TypeDialogueText(currentStory.Continue()));
+                UpdateMood();
                 DisplayChoices();
             }
             else {
@@ -147,9 +154,11 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         portrait1.SetActive(false);
+        portrait2.SetActive(false);
         choicesContainer.SetActive(false);
         portrait1Image.sprite = null;
-        dialogueText.name = "";
+        fabianImage.sprite = fabianMoods["normal"];
+        charName.text = "";
         dialogueText.text = "";
 
         GameEventsManager.instance.inputEvents.onPlayerInteracted -= ContinueStory;
@@ -238,9 +247,20 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update Fabians portrait based on mood in story.
+    /// Defaults to normal mood if there is no mood set(or misspelled).
+    /// </summary>
     private void UpdateMood() {
         if(currentStory.variablesState["mood"] != null) {
-            
+            string mood = (string)currentStory.variablesState["mood"];
+            if(fabianMoods.ContainsKey(mood)) {
+                currentMood = mood;
+                fabianImage.sprite = fabianMoods[currentMood];
+            } else {
+                currentMood = "normal";
+                fabianImage.sprite = fabianMoods[currentMood];
+            }
         }
     }
 

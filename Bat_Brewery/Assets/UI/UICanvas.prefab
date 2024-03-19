@@ -152,12 +152,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 750534134773484883}
   portrait1: {fileID: 3677314858809528385}
+  portrait1Image: {fileID: 979437221385635697}
   portrait2: {fileID: 6875249531578406505}
+  fabianImage: {fileID: 6633459061785627595}
   choicesContainer: {fileID: 4968494235822617399}
   firstChoice: {fileID: 2963462852320902617}
   charName: {fileID: 4159481987558166139}
   dialogueText: {fileID: 7073476574876176253}
-  portrait1Image: {fileID: 979437221385635697}
   choices:
   - {fileID: 1855767004753529734}
   - {fileID: 5642365417901827091}
@@ -512,6 +513,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1618109480869244359}
+    - target: {fileID: 5417027406140932773, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+      propertyPath: m_Name
+      value: CharName
+      objectReference: {fileID: 0}
     - target: {fileID: 5487639199231681997, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -738,6 +743,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2722439582186966660, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
   m_PrefabInstance: {fileID: 7747802228442475159}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6633459061785627595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4002432111735677276, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
+  m_PrefabInstance: {fileID: 7747802228442475159}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6875249531578406505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3813548425298705662, guid: 698fd4bdced74b64cb7970b7f48079b1, type: 3}
