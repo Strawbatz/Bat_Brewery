@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1195793677327068715
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 622585109127015952, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: smellMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 202c043b7c08089469b8f6aa1ab90d67, type: 2}
+    - target: {fileID: 622585109127015952, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: smellStrength
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.877857
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.133241
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2224224422844247521, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2935704383259318598, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: itemTag
+      value: 
+      objectReference: {fileID: 11400000, guid: c300907b0b28b934d93eddc0f81285bd, type: 2}
+    - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cbaba93feded7e44a8a574d01b42bd5c, type: 3}
+    - target: {fileID: 5543676408096063576, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_Name
+      value: KrikroPickup Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42f71082aae10d64baf48382237f825a, type: 3}
