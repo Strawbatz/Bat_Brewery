@@ -157,7 +157,8 @@ public class DialogueManager : MonoBehaviour
         portrait2.SetActive(false);
         choicesContainer.SetActive(false);
         portrait1Image.sprite = null;
-        fabianImage.sprite = fabianMoods["normal"];
+        currentMood = "normal";
+        fabianImage.sprite = fabianMoods[currentMood];
         charName.text = "";
         dialogueText.text = "";
 
