@@ -69,14 +69,11 @@ public class SoundManager : MonoBehaviour
             previousGround[i] = "";
         }
 
-        defaultFootstepAudio.Play();
-        defaultFootstepAudio.Pause();
         defaultFootstepAudio.gameObject.SetActive(false);
 
         foreach(AudioSource source in footstepSounds.Values)
         {
-            source.Play();
-            source.Pause();
+
             source.gameObject.SetActive(false);
         }
 
