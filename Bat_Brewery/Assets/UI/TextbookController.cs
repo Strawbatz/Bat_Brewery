@@ -89,8 +89,7 @@ public class TextbookController : MonoBehaviour
     /// <param name="playerTB"></param>
     private void AddTBHeaders(List<(string name,string desc)> playerTB) {
         for(int i=tbItems.Count; i<playerTB.Count; i++) {
-            RectTransform item = Instantiate(tbHeaderPrefab).GetComponentInChildren<RectTransform>();
-            item.SetParent(container.transform);
+            RectTransform item = Instantiate(tbHeaderPrefab, container.transform).GetComponentInChildren<RectTransform>();
             tbItems.Add(item);
             item.GetComponent<TextbookItem>().nr = i;
 

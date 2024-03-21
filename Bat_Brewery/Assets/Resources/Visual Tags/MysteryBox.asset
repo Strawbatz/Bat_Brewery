@@ -16,3 +16,4 @@ MonoBehaviour:
   inventoryImg2: {fileID: 21300000, guid: cbaba93feded7e44a8a574d01b42bd5c, type: 3}
   mapImg: {fileID: 21300000, guid: cbaba93feded7e44a8a574d01b42bd5c, type: 3}
   worldImg: {fileID: 21300000, guid: cbaba93feded7e44a8a574d01b42bd5c, type: 3}
+  harvestedImg: {fileID: 21300000, guid: cbaba93feded7e44a8a574d01b42bd5c, type: 3}

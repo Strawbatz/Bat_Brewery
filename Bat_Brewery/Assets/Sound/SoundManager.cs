@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 using AYellowpaper.SerializedCollections;
 using AdvancedEditorTools.Attributes;
 using UnityEditor;
+using System.Diagnostics;
 
 /// <summary>
 /// Controls the sound and music in the game scenes
@@ -23,13 +24,14 @@ public class SoundManager : MonoBehaviour
     Grid grid;
     List<AudioSource> currentFootstepSources = new List<AudioSource>();
     PlayerMovement playerMovement;
-    string previousGround = "";
+    string[] previousGround = new string[0];
     [EndFoldout]
     #endregion
     
     #region Drones
     [BeginFoldout("Drones")]
-    [SerializeField] AudioSource[] droneSources;
+    [SerializeField] AudioSource droneSource;
+    [SerializeField] AudioClip[] droneSounds;
     [SerializeField] float maxDroneTimer;
     float droneTimer;
     [EndFoldout]
@@ -61,13 +63,18 @@ public class SoundManager : MonoBehaviour
             tilemaps.Add(gridTrans.GetChild(i).GetComponent<Tilemap>());
         }
 
-        defaultFootstepAudio.Play();
-        defaultFootstepAudio.Pause();
+        previousGround = new string[gridTrans.childCount];
+        for (int i = 0; i < previousGround.Length; i++)
+        {
+            previousGround[i] = "";
+        }
+
+        defaultFootstepAudio.gameObject.SetActive(false);
 
         foreach(AudioSource source in footstepSounds.Values)
         {
-            source.Play();
-            source.Pause();
+
+            source.gameObject.SetActive(false);
         }
 
         droneTimer = Random.Range(0, maxDroneTimer);
@@ -95,7 +102,7 @@ public class SoundManager : MonoBehaviour
         droneTimer-=Time.deltaTime;
         if(droneTimer <= 0)
         {
-            AudioSource droneSource = droneSources[Random.Range(0, droneSources.Length)];
+            droneSource.clip = droneSounds[Random.Range(0, droneSounds.Length)];
             droneSource.Play();
             droneTimer = droneSource.clip.length + Random.Range(0, maxDroneTimer);
         }
@@ -116,6 +123,7 @@ public class SoundManager : MonoBehaviour
             foreach(AudioSource source in currentFootstepSources)
             {
                 source.Pause();
+                source.gameObject.SetActive(false);
             }
             return;
         }
@@ -125,7 +133,9 @@ public class SoundManager : MonoBehaviour
             {
                 if(!source.isPlaying)
                 {
-                    source.UnPause();
+                    
+                    source.gameObject.SetActive(true);
+                    source.Play();
                 }
             }
         }
@@ -135,15 +145,16 @@ public class SoundManager : MonoBehaviour
             SiblingGroupTile tile = GetTile(tilemaps[i]);
             if(tile)
             {
-                if(!previousGround.Equals(tile.siblingGroup))
+                if(!previousGround[i].Equals(tile.siblingGroup))
                 {
-                    previousGround = tile.siblingGroup;
+                    previousGround[i] = tile.siblingGroup;
                     OnNewTile(tile, i);
                 }
                 //return;
             } else if(currentFootstepSources.Count > i)
             {
                 currentFootstepSources[i].Pause();
+                currentFootstepSources[i].gameObject.SetActive(false);
             }
         }
     }
@@ -196,8 +207,10 @@ public class SoundManager : MonoBehaviour
         if(currentFootstepSources.Count > layer)
         {
             currentFootstepSources[layer].Pause();
+            currentFootstepSources[layer].gameObject.SetActive(false);
             currentFootstepSources[layer] = footstepSource;
-            currentFootstepSources[layer].UnPause();
+            currentFootstepSources[layer].gameObject.SetActive(true);
+            currentFootstepSources[layer].Play();
         } else
         {
             currentFootstepSources.Add(footstepSource);
