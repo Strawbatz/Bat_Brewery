@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b03ddd29bd023d349a84360716baef37
+guid: b7c6ab88bcdd8874298335b8dd5d4363
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,6 +140,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7625acb33bdc747bd2bf2c03a2b761
+      internalID: -1440565441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bo-ba_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f0644cd999218448f24e6d904bb80e
+      internalID: -426389946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bo-ba_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -150,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b606a412a207d544cbbdb14ad34aee79
-      internalID: -185063516
+      spriteID: 513ee3880bdd3dd4686a70232965ec14
+      internalID: 1372694205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bo-ba_1
+      name: bo-ba_3
       rect:
         serializedVersion: 2
         x: 24
@@ -171,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bc27dd89752fd34d94a971bc444fb5b
-      internalID: -1846029180
+      spriteID: 58c4bc57c7f5d9a4fae2e5612038e2ca
+      internalID: -1516878916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bo-ba_2
+      name: bo-ba_4
       rect:
         serializedVersion: 2
         x: 0
@@ -192,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 426f39a6b853b744385171dc321157aa
-      internalID: 1568047539
+      spriteID: 23fbb698b770fed48b9c094e0365642c
+      internalID: -140600591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bo-ba_3
+      name: bo-ba_5
       rect:
         serializedVersion: 2
         x: 24
@@ -213,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0e6bfba538cfe247a3d77ba120787b6
-      internalID: 1478730657
+      spriteID: 9671822483f399843a790f8fa135181a
+      internalID: 595870776
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bo-ba_0: -185063516
-      bo-ba_1: -1846029180
-      bo-ba_2: 1568047539
-      bo-ba_3: 1478730657
+      bo-ba_0: -1440565441
+      bo-ba_1: -426389946
+      bo-ba_2: 1372694205
+      bo-ba_3: -1516878916
+      bo-ba_4: -140600591
+      bo-ba_5: 595870776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
