@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c20769243cc3ce49bcfaf333c90d6a3, type: 3}
   m_Name: GpAndTheBrokenBridge
   m_EditorClassIdentifier: 
-  <id>k__BackingField: 
-  displayName: 
+  <id>k__BackingField: GpAndTheBrokenBridge
+  displayName: GP and the broken bridge
   questPrerequisites: []
   prerequisites: []
-  questStepPrefabs: []
+  questStepPrefabs:
+  - {fileID: 7085915264423840141, guid: 4349847c9e963044882d0663398cb008, type: 3}
