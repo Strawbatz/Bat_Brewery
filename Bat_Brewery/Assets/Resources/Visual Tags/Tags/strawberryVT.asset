@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
   m_Name: strawberryVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 730862845, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
-  inventoryImg2: {fileID: 1417121175, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
-  mapImg: {fileID: 623596880, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
-  worldImg: {fileID: -1317155507, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
-  harvestedImg: {fileID: 730862845, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
+  inventoryImg: {fileID: 84184787, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
+  inventoryImg2: {fileID: -1063258335, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
+  mapImg: {fileID: 1313308073, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
+  worldImg: {fileID: 505737775, guid: ca7588b0c87509845948af825b3fc68e, type: 3}
+  harvestedImg: {fileID: 248110344, guid: ca7588b0c87509845948af825b3fc68e, type: 3}

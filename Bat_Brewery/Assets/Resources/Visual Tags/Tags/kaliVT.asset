@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
   m_Name: kaliVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 1094628383, guid: a97e08fe573328745b3260d23c162636, type: 3}
-  inventoryImg2: {fileID: 1713116896, guid: a97e08fe573328745b3260d23c162636, type: 3}
-  mapImg: {fileID: 1079142652, guid: a97e08fe573328745b3260d23c162636, type: 3}
-  worldImg: {fileID: -2018516325, guid: a97e08fe573328745b3260d23c162636, type: 3}
-  harvestedImg: {fileID: 1094628383, guid: a97e08fe573328745b3260d23c162636, type: 3}
+  inventoryImg: {fileID: -103866982, guid: a97e08fe573328745b3260d23c162636, type: 3}
+  inventoryImg2: {fileID: 1128253987, guid: a97e08fe573328745b3260d23c162636, type: 3}
+  mapImg: {fileID: 1375782821, guid: a97e08fe573328745b3260d23c162636, type: 3}
+  worldImg: {fileID: 927676950, guid: a97e08fe573328745b3260d23c162636, type: 3}
+  harvestedImg: {fileID: -1700186551, guid: a97e08fe573328745b3260d23c162636, type: 3}

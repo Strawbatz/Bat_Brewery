@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
   m_Name: myntaVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 1826260105, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
-  inventoryImg2: {fileID: 2032582940, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
-  mapImg: {fileID: 289395480, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
-  worldImg: {fileID: -139067265, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
-  harvestedImg: {fileID: 1826260105, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+  inventoryImg: {fileID: -551767502, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+  inventoryImg2: {fileID: -1000953769, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+  mapImg: {fileID: 1370614588, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+  worldImg: {fileID: 32729219, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+  harvestedImg: {fileID: 1498914890, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
