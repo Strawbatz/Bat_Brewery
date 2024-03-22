@@ -19,7 +19,7 @@ public abstract class InteractableObject : MonoBehaviour
 /// </summary>
 /// <param name="other"></param>
 protected virtual void OnTriggerEnter2D(Collider2D other) {
-    if(other.gameObject.CompareTag("PlayerPhysics")) {
+    if(other.gameObject.CompareTag(PlayerManager.PHYSICS_TAG)) {
         GameEventsManager.instance.inputEvents.onPlayerInteracted += Interact;
         if(interactSprite) interactSprite.gameObject.SetActive(true);
     }
@@ -31,7 +31,7 @@ protected virtual void OnTriggerEnter2D(Collider2D other) {
 /// </summary>
 /// <param name="other"></param>
 protected virtual void OnTriggerExit2D(Collider2D other) {
-    if(other.gameObject.CompareTag("PlayerPhysics")) {
+    if(other.gameObject.CompareTag(PlayerManager.PHYSICS_TAG)) {
         GameEventsManager.instance.inputEvents.onPlayerInteracted -= Interact;
         if(interactSprite) interactSprite.gameObject.SetActive(false);
     }

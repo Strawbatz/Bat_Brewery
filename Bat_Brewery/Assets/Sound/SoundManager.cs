@@ -51,9 +51,9 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         currentFootstepSources.Add(defaultFootstepAudio);
-        playerFeet = GameObject.Find("PlayerFeet").transform;
+        playerFeet = PlayerManager.instance.GetPlayerFeet();
 
-        playerMovement = FindAnyObjectByType<PlayerMovement>();
+        playerMovement = PlayerManager.instance.GetPlayerMovement();
 
         grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<Grid>();
         Transform gridTrans = grid.transform;
