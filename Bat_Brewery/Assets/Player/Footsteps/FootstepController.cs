@@ -10,7 +10,6 @@ using UnityEngine.AI;
 /// </summary> 
 public class FootstepController : MonoBehaviour
 {
-    [SerializeField] private Transform playerFeet;
     [SerializeField] private GameObject[] footstepPrefab;
     [SerializeField] int maximumFootsteps;
     [SerializeField] float footstepDistance;
@@ -22,7 +21,7 @@ public class FootstepController : MonoBehaviour
 
     void Start()
     {
-        lastPosition = playerFeet.position;
+        lastPosition = PlayerManager.instance.GetPlayerFeet().position;
         for (int i = 0; i < transform.childCount; i++)
         {
             footstepPool.Push(transform.GetChild(i).gameObject);
@@ -31,7 +30,7 @@ public class FootstepController : MonoBehaviour
 
     void Update()
     {
-        float currentDist = Vector2.Distance(lastPosition, (Vector2)playerFeet.position);
+        float currentDist = Vector2.Distance(lastPosition, (Vector2)PlayerManager.instance.GetPlayerFeet().position);
 
         if(currentDist > footstepDistance)
         {
@@ -44,10 +43,10 @@ public class FootstepController : MonoBehaviour
 
         foreach (GameObject footstep in playerFootsteps)
         {
-            if(Utilities.InRange(footstep.transform.position, (Vector2)playerFeet.parent.position-Vector2.one*(playerFadeFootstepsRadius+2), 
-            (Vector2)playerFeet.parent.position+Vector2.one*(playerFadeFootstepsRadius+2)))
+            if(Utilities.InRange(footstep.transform.position, (Vector2)PlayerManager.instance.GetPlayerFeet().parent.position-Vector2.one*(playerFadeFootstepsRadius+2), 
+            (Vector2)PlayerManager.instance.GetPlayerFeet().parent.position+Vector2.one*(playerFadeFootstepsRadius+2)))
             {
-                float dist = Vector2.Distance(footstep.transform.position, playerFeet.parent.position);
+                float dist = Vector2.Distance(footstep.transform.position, PlayerManager.instance.GetPlayerFeet().parent.position);
                 if(dist < playerFadeFootstepsRadius)
                 {
                     Color color = Color.white;
@@ -76,10 +75,10 @@ public class FootstepController : MonoBehaviour
         }
 
         footstep.transform.position = lastPosition;
-        Utilities.RotateTowardsPosition(footstep.transform, playerFeet.transform.position,-90);
+        Utilities.RotateTowardsPosition(footstep.transform, PlayerManager.instance.GetPlayerFeet().transform.position,-90);
         footstep.SetActive(true);
         playerFootsteps.Enqueue(footstep);
 
-        lastPosition = playerFeet.position;
+        lastPosition = PlayerManager.instance.GetPlayerFeet().position;
     }
 }

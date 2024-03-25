@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 6628820798960296088}
   feetTransform: {fileID: 6286008966893177720}
-  cameraSpeed: 10
+  speed: 10
 --- !u!1 &1173055253617471756
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6966871501491385270}
+  - component: {fileID: 1542556716415767226}
   - component: {fileID: 4714455416233629101}
   - component: {fileID: 4517693806120930429}
   - component: {fileID: 66466938907161758}
@@ -162,6 +163,21 @@ Transform:
   - {fileID: 5927657823407069292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542556716415767226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173055253617471756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562b2bf8e974786478fcad76ad0d9b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFeet: {fileID: 6286008966893177720}
+  playerGraphics: {fileID: 246104409318469738}
+  playerPhysics: {fileID: 5361651027459559883}
 --- !u!114 &4714455416233629101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe52ed1510e88c428f13d7c8dea59d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 5927657823407069292}
   maxViewDistance: 3
   maxClearDistance: 1.5
 --- !u!114 &4517693806120930429
