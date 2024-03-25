@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec7e9e927d6368545acc608f2b0c274d
+guid: 19fc57763b539d048a11b20c2508fb52
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,6 +140,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81fbcc5497aa09d4e940cf5716416b29
+      internalID: 2127902422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombar_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba9f76ceafbb1744a226187dc8957a5
+      internalID: 1037515261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tombar_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -150,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78bd5cb62ed7da049b38e558e6c7617e
-      internalID: 177340098
+      spriteID: 7cae3e684c9effb40b813b22834521a9
+      internalID: 471642687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tombar_1
+      name: tombar_3
       rect:
         serializedVersion: 2
         x: 24
@@ -171,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8512306dc241b5740be4763543fa3a60
-      internalID: -1126938544
+      spriteID: 7bfd44c9726212148a1c8dbb1965e037
+      internalID: -1752002347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tombar_2
+      name: tombar_4
       rect:
         serializedVersion: 2
         x: 0
@@ -192,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 824cf02e254c4724789e985b2c83fece
-      internalID: 872724563
+      spriteID: 5fa8e4fab4bb96d448119835a7f129b8
+      internalID: 1331834628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tombar_3
+      name: tombar_5
       rect:
         serializedVersion: 2
         x: 24
@@ -213,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9a4ca869ee124e4c91dedf794076e99
-      internalID: -55859597
+      spriteID: 7ee413a66316d334a8463d1aec0a5d43
+      internalID: -2015751927
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tombar_0: 177340098
-      tombar_1: -1126938544
-      tombar_2: 872724563
-      tombar_3: -55859597
+      tombar_0: 2127902422
+      tombar_1: 1037515261
+      tombar_2: 471642687
+      tombar_3: -1752002347
+      tombar_4: 1331834628
+      tombar_5: -2015751927
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -140,6 +140,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd61d7097535b3540a6c6c89c0e84d15
+      internalID: -551767502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mynta_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a20c96e3b7c34f4ba3a568ae9a49b21
+      internalID: -1000953769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mynta_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -150,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 936ec5a74ed0b8c4f9b11a503eabd48f
-      internalID: 1826260105
+      spriteID: ffcb2cb69ece9814cb47710daa440304
+      internalID: 1370614588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mynta_1
+      name: mynta_3
       rect:
         serializedVersion: 2
         x: 24
@@ -171,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a24afeaa2aa403a40bc66712c6aff631
-      internalID: 2032582940
+      spriteID: 5ef699b87677e5f48a4ccd2ed6ba67eb
+      internalID: 32729219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mynta_2
+      name: mynta_4
       rect:
         serializedVersion: 2
         x: 0
@@ -192,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f9cad36daa0bad4db413886ce653742
-      internalID: 289395480
+      spriteID: 336f5c30e8fb3f5448a5d3e29b017b69
+      internalID: 723297524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mynta_3
+      name: mynta_5
       rect:
         serializedVersion: 2
         x: 24
@@ -213,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 208ca46a8f98d0d4c8fbe45c108f2b1a
-      internalID: -139067265
+      spriteID: f134cc44bea205843be3e1d95ed19bab
+      internalID: 1498914890
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mynta_0: 1826260105
-      mynta_1: 2032582940
-      mynta_2: 289395480
-      mynta_3: -139067265
+      mynta_0: -551767502
+      mynta_1: -1000953769
+      mynta_2: 1370614588
+      mynta_3: 32729219
+      mynta_4: 723297524
+      mynta_5: 1498914890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

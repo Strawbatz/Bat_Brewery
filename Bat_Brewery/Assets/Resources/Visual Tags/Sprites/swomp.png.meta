@@ -140,6 +140,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37b85b22aed1d0489ebcf88e431314a
+      internalID: -1073547150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swomp_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ef4b61a61327147ba31ac030158000
+      internalID: -1577062482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swomp_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -150,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26b5fb846f26876488d39b64e02cd8ef
-      internalID: 616320010
+      spriteID: 2003ff81812161a4e81ea9894d406dcd
+      internalID: -1629305264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swomp_1
+      name: swomp_3
       rect:
         serializedVersion: 2
         x: 24
@@ -171,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b30aa4e419f55a842a2fc7fa9dae71b3
-      internalID: -1365571331
+      spriteID: a6b4a9ea689608a43a8324dce132671a
+      internalID: 65750869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swomp_2
+      name: swomp_4
       rect:
         serializedVersion: 2
         x: 0
@@ -192,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bc543c66d7fd4143960f92c4fc85546
-      internalID: 1375520113
+      spriteID: 6de227c9fe686c14ab5120254f53bfc0
+      internalID: 1939509487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swomp_3
+      name: swomp_5
       rect:
         serializedVersion: 2
         x: 24
@@ -213,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e040587695214140a2bfafbea1255e7
-      internalID: -1861052041
+      spriteID: eb80b1203145a6743af4b966d8a852a3
+      internalID: -1842661785
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      swomp_0: 616320010
-      swomp_1: -1365571331
-      swomp_2: 1375520113
-      swomp_3: -1861052041
+      swomp_0: -1073547150
+      swomp_1: -1577062482
+      swomp_2: -1629305264
+      swomp_3: 65750869
+      swomp_4: 1939509487
+      swomp_5: -1842661785
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -140,6 +140,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2269d0f0a1a1d94a9a98df5e01608e7
+      internalID: -103866982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kali_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a2f3dffbee6da44979fb932cdefe84
+      internalID: 1128253987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kali_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -150,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98159e0e798cc2448bf481915cc7c925
-      internalID: 1094628383
+      spriteID: 5ad3b631229f42640b729037d73ef125
+      internalID: 927676950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kali_1
+      name: kali_3
       rect:
         serializedVersion: 2
         x: 24
@@ -171,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c40661834cff66f49b4f2f44de9cde93
-      internalID: 1713116896
+      spriteID: 712bac908548b0f489722fee62bd21af
+      internalID: 1375782821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kali_2
+      name: kali_4
       rect:
         serializedVersion: 2
         x: 0
@@ -192,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da91bd832f2c124489439f90029b48ef
-      internalID: -2018516325
+      spriteID: 3768c3bb694db704c88668154003d0c3
+      internalID: -1700186551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kali_3
+      name: kali_5
       rect:
         serializedVersion: 2
         x: 24
@@ -213,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41c8f01c7b4fbb24dbd84aabeda3e7f2
-      internalID: 1079142652
+      spriteID: 944bf988190fb5a48bac263ab5defb5f
+      internalID: -555560025
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      kali_0: 1094628383
-      kali_1: 1713116896
-      kali_2: -2018516325
-      kali_3: 1079142652
+      kali_0: -103866982
+      kali_1: 1128253987
+      kali_2: 927676950
+      kali_3: 1375782821
+      kali_4: -1700186551
+      kali_5: -555560025
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
