@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
   m_Name: swompVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 616320010, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
-  inventoryImg2: {fileID: -1365571331, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
-  mapImg: {fileID: 1375520113, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
-  worldImg: {fileID: -1861052041, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
-  harvestedImg: {fileID: 616320010, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
+  inventoryImg: {fileID: -1073547150, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
+  inventoryImg2: {fileID: -1577062482, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
+  mapImg: {fileID: 65750869, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
+  worldImg: {fileID: -1629305264, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}
+  harvestedImg: {fileID: 1939509487, guid: 18653df3eb06b4243a320f4a3a8ac9a9, type: 3}

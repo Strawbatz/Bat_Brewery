@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
   m_Name: bo-baVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: -185063516, guid: b03ddd29bd023d349a84360716baef37, type: 3}
-  inventoryImg2: {fileID: -1846029180, guid: b03ddd29bd023d349a84360716baef37, type: 3}
-  mapImg: {fileID: 1568047539, guid: b03ddd29bd023d349a84360716baef37, type: 3}
-  worldImg: {fileID: 1478730657, guid: b03ddd29bd023d349a84360716baef37, type: 3}
-  harvestedImg: {fileID: -185063516, guid: b03ddd29bd023d349a84360716baef37, type: 3}
+  inventoryImg: {fileID: -1440565441, guid: b7c6ab88bcdd8874298335b8dd5d4363, type: 3}
+  inventoryImg2: {fileID: -426389946, guid: b7c6ab88bcdd8874298335b8dd5d4363, type: 3}
+  mapImg: {fileID: -140600591, guid: b7c6ab88bcdd8874298335b8dd5d4363, type: 3}
+  worldImg: {fileID: -1516878916, guid: b7c6ab88bcdd8874298335b8dd5d4363, type: 3}
+  harvestedImg: {fileID: 595870776, guid: b7c6ab88bcdd8874298335b8dd5d4363, type: 3}

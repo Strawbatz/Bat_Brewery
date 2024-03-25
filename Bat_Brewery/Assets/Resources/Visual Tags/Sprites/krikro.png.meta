@@ -140,6 +140,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3b226faa2007049b2dc07db72c3fd2
+      internalID: -1810478871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: krikro_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7452977c2dea1c042a84a291c17107bb
+      internalID: 161351863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: krikro_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -150,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81ff5c238c5188741b104a837cfd1fa3
-      internalID: 1361177546
+      spriteID: d0cb70c47d0707847a6c45e1104b7534
+      internalID: 1307018188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: krikro_1
+      name: krikro_3
       rect:
         serializedVersion: 2
         x: 24
@@ -171,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef2ddf6f0ce874489e46890093df5e0
-      internalID: 1611827823
+      spriteID: 0b3e587924620cf49be353f5a69d9051
+      internalID: -635821571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: krikro_2
+      name: krikro_4
       rect:
         serializedVersion: 2
         x: 0
@@ -192,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a36d5f15f11249744aa0bc2bd166ce1a
-      internalID: -2092644652
+      spriteID: 1e1096b634f2e954a99a41e2c483fec1
+      internalID: -436058224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: krikro_3
+      name: krikro_5
       rect:
         serializedVersion: 2
         x: 24
@@ -213,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc0a3e844f359a448baf4a088d1b130d
-      internalID: 503864655
+      spriteID: 05beb2a9adadc58449d1e1c54b56c584
+      internalID: -1222795414
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      krikro_0: 1361177546
-      krikro_1: 1611827823
-      krikro_2: -2092644652
-      krikro_3: 503864655
+      krikro_0: -1810478871
+      krikro_1: 161351863
+      krikro_2: 1307018188
+      krikro_3: -635821571
+      krikro_4: -436058224
+      krikro_5: -1222795414
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
   m_Name: krikroVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 1361177546, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
-  inventoryImg2: {fileID: 1611827823, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
-  mapImg: {fileID: -2092644652, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
-  worldImg: {fileID: 503864655, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
-  harvestedImg: {fileID: 1361177546, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
+  inventoryImg: {fileID: -1810478871, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
+  inventoryImg2: {fileID: 161351863, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
+  mapImg: {fileID: -1222795414, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
+  worldImg: {fileID: 1307018188, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}
+  harvestedImg: {fileID: -436058224, guid: 8cffc9ba348abef41ae0c48160a484f8, type: 3}

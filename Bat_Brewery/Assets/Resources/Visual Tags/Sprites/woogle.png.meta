@@ -140,6 +140,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aff1965a3941c149a4dd8fa53873ab5
+      internalID: -1820468853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woogle_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2caf88efb49b6f046bdd8d331c0dbe09
+      internalID: -488316114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woogle_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -150,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b174ad3baee27e645af9d4eba31640b5
-      internalID: 1848243646
+      spriteID: ffe9bfc4c62b1ef43892f794536fb316
+      internalID: 669537125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: woogle_1
+      name: woogle_3
       rect:
         serializedVersion: 2
         x: 24
@@ -171,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b483f70a880690a4b90a697e3857a279
-      internalID: -895556221
+      spriteID: 6fff7ddca7ff9b5419b5b2b3d85e5b27
+      internalID: 566168684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: woogle_2
+      name: woogle_4
       rect:
         serializedVersion: 2
         x: 0
@@ -192,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e74b974422c6cb5428e97b56cda8ef17
-      internalID: -394190430
+      spriteID: 864a6196ce4f75c4386d4215e6f18ab9
+      internalID: -257255163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: woogle_3
+      name: woogle_5
       rect:
         serializedVersion: 2
         x: 24
@@ -213,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cfa6493d0e60ca439d060e35ab422f6
-      internalID: -1233393681
+      spriteID: c24a5d0cc74f8d44d900ae7ceac86fad
+      internalID: 549823767
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      woogle_0: 1848243646
-      woogle_1: -895556221
-      woogle_2: -394190430
-      woogle_3: -1233393681
+      woogle_0: -1820468853
+      woogle_1: -488316114
+      woogle_2: 669537125
+      woogle_3: 566168684
+      woogle_4: -257255163
+      woogle_5: 549823767
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

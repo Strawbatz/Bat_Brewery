@@ -140,6 +140,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e5a350d378ad54894e7f4a5ff77569
+      internalID: -1670664522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wilflow_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e52148de4d497418816d00b2ff5757
+      internalID: -1032203999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wilflow_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 24
         width: 24
         height: 24
@@ -150,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68c243d25b0319d4597834ee17db57af
-      internalID: -602010029
+      spriteID: 1fa93081c00c84f449b0f474d81a9b45
+      internalID: -1506265384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wilflow_1
+      name: wilflow_3
       rect:
         serializedVersion: 2
         x: 24
@@ -171,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74bdf74c04682444c80e02a288aabbdf
-      internalID: -371784321
+      spriteID: 2e2d0ef86358cd041b6a47f15d05d4f9
+      internalID: 75059676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wilflow_2
+      name: wilflow_4
       rect:
         serializedVersion: 2
         x: 0
@@ -192,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef7f453dfafbd67439ed51a7485521d1
-      internalID: -991841558
+      spriteID: 8003f50fa605c5e44874fcf32b500af5
+      internalID: 1579223220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wilflow_3
+      name: wilflow_5
       rect:
         serializedVersion: 2
         x: 24
@@ -213,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0cfb27a8599b274288f04ac27d01409
-      internalID: -1198707166
+      spriteID: 58824c2e44ab68445a0331516ecfc37f
+      internalID: -550318350
       vertices: []
       indices: 
       edges: []
@@ -230,10 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      wilflow_0: -602010029
-      wilflow_1: -371784321
-      wilflow_2: -991841558
-      wilflow_3: -1198707166
+      wilflow_0: -1670664522
+      wilflow_1: -1032203999
+      wilflow_2: -1506265384
+      wilflow_3: 75059676
+      wilflow_4: 1579223220
+      wilflow_5: -550318350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

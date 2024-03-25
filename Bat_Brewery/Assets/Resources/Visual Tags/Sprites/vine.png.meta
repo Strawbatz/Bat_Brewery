@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca7588b0c87509845948af825b3fc68e
+guid: 420181710fad8e54ab6f7a7aa558b77b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: strawberry_0
+      name: vine_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,35 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0eaaffa369758c04fb37f459e992f4d8
-      internalID: 84184787
+      spriteID: 13c28469bda4deb4599966b7f92e9a03
+      internalID: 1287901728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawberry_1
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 48
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2691c1382289ebc498aac02cc108974f
-      internalID: -1063258335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strawberry_2
+      name: vine_1
       rect:
         serializedVersion: 2
         x: 0
@@ -192,35 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45cce5c894ec8a04386808b0d83ffa91
-      internalID: 505737775
+      spriteID: 2fc810d5049456c499b4de8dec7fc253
+      internalID: -2036499439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: strawberry_3
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 24
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad36938db15755e408caa1858db2c96b
-      internalID: 1313308073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strawberry_4
+      name: vine_2
       rect:
         serializedVersion: 2
         x: 0
@@ -234,29 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad386eb06ce470740848566bc79cf2b9
-      internalID: 248110344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: strawberry_5
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7ebcb49aebf9984195b110719caaf0c
-      internalID: 426153284
+      spriteID: 82a7d0f534e9b9a4bac1e83bb93741b9
+      internalID: 2026474511
       vertices: []
       indices: 
       edges: []
@@ -272,12 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      strawberry_0: 84184787
-      strawberry_1: -1063258335
-      strawberry_2: 505737775
-      strawberry_3: 1313308073
-      strawberry_4: 248110344
-      strawberry_5: 426153284
+      vine_0: 1287901728
+      vine_1: -2036499439
+      vine_2: 2026474511
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

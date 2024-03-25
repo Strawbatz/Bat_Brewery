@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5c76e825526f74e8b38f0d595895f6, type: 3}
   m_Name: tombarrVT
   m_EditorClassIdentifier: 
-  inventoryImg: {fileID: 177340098, guid: ec7e9e927d6368545acc608f2b0c274d, type: 3}
-  inventoryImg2: {fileID: -1126938544, guid: ec7e9e927d6368545acc608f2b0c274d, type: 3}
-  mapImg: {fileID: 872724563, guid: ec7e9e927d6368545acc608f2b0c274d, type: 3}
-  worldImg: {fileID: -55859597, guid: ec7e9e927d6368545acc608f2b0c274d, type: 3}
-  harvestedImg: {fileID: 177340098, guid: ec7e9e927d6368545acc608f2b0c274d, type: 3}
+  inventoryImg: {fileID: 2127902422, guid: 19fc57763b539d048a11b20c2508fb52, type: 3}
+  inventoryImg2: {fileID: 1037515261, guid: 19fc57763b539d048a11b20c2508fb52, type: 3}
+  mapImg: {fileID: 471642687, guid: 19fc57763b539d048a11b20c2508fb52, type: 3}
+  worldImg: {fileID: -1752002347, guid: 19fc57763b539d048a11b20c2508fb52, type: 3}
+  harvestedImg: {fileID: -2015751927, guid: 19fc57763b539d048a11b20c2508fb52, type: 3}
