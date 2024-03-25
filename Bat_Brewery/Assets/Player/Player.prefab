@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 6628820798960296088}
   feetTransform: {fileID: 6286008966893177720}
-  cameraSpeed: 10
+  speed: 10
 --- !u!1 &1173055253617471756
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe52ed1510e88c428f13d7c8dea59d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 5927657823407069292}
   maxViewDistance: 3
   maxClearDistance: 1.5
 --- !u!114 &4517693806120930429
