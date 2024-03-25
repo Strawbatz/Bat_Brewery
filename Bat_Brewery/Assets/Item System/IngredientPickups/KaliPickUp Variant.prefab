@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: itemTag
       value: 
       objectReference: {fileID: 11400000, guid: 2513773e14935ae4c83cf77772970ac7, type: 2}
+    - target: {fileID: 2935704383259318598, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: ingredientSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 2513773e14935ae4c83cf77772970ac7, type: 2}
     - target: {fileID: 5543676408096063576, guid: 42f71082aae10d64baf48382237f825a, type: 3}
       propertyPath: m_Name
       value: KaliPickUp Variant

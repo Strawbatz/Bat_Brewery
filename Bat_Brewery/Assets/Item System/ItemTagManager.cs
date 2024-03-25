@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -13,9 +14,12 @@ using UnityEngine.UI;
 /// </summary>
 public class ItemTagManager : MonoBehaviour
 {
+    [SerializeField] VisualTagSO defaultVisualTag;
     public static ItemTagManager instance {get; private set;}
-    private VisualTag[] visualTags;
-    private TaggableItem toBeTagged;
+    private VisualTagSO[] visualTags;
+    private IngredientSO toBeTagged;
+    Dictionary<IngredientSO, VisualTagSO>  ingredientTagDictionary = new Dictionary<IngredientSO, VisualTagSO>();
+    public UnityAction<IngredientSO> onVisualTagUpdated;
 
     [NonSerialized] public bool isOpen; 
 
@@ -29,11 +33,13 @@ public class ItemTagManager : MonoBehaviour
             Debug.LogWarning("More than 1 ItemTag Manager in scene!");
         }
         instance = this; 
+
+        //TODO LOAD ALL VISUAL TAGS FROM SAVE FILE
     }
 
     private void Start() {
-        visualTags = Resources.LoadAll<VisualTag>("Visual Tags/Tags");
-        foreach(VisualTag tag in visualTags) {
+        visualTags = Resources.LoadAll<VisualTagSO>("Visual Tags/Tags");
+        foreach(VisualTagSO tag in visualTags) {
             GameObject newButton = Instantiate(buttonPrefab);
             newButton.transform.SetParent(buttonContainer.transform);
             newButton.GetComponent<TagMenuButton>().visualTag = tag;
@@ -45,14 +51,14 @@ public class ItemTagManager : MonoBehaviour
     /// Function for toggling the menu on and off. Is only toggleable
     /// given an item to change tags on.
     /// </summary>
-    /// <param name="item">taggable item to be changed.</param>
-    public void ToggleMenu(TaggableItem item) {
+    /// <param name="ingredient">taggable item to be changed.</param>
+    public void ToggleMenu(IngredientSO ingredient) {
         if(!menuContainer.activeSelf) {
             GameEventsManager.instance.playerMovementEvents.SetFreezePlayerMovement("tagMenu", true);
             isOpen = true;
             menuContainer.SetActive(true);
-            toBeTagged = item;
-            StartCoroutine(SelectFirstChoice(Array.IndexOf(visualTags, item.visualTag)));
+            toBeTagged = ingredient;
+            StartCoroutine(SelectFirstChoice(Array.IndexOf(visualTags, GetVisualTag(ingredient))));
         } else {
             ExitMenu();
         }
@@ -63,8 +69,8 @@ public class ItemTagManager : MonoBehaviour
     /// the visual tag to be set for the item.
     /// </summary>
     /// <param name="visualTag">Visual tag to be set.</param>
-    public void ItemClicked(VisualTag visualTag) {
-        toBeTagged.SetVisualTag(visualTag);
+    public void ItemClicked(VisualTagSO visualTag) {
+        SetVisualTag(toBeTagged, visualTag);
         ExitMenu();
     }
 
@@ -97,5 +103,37 @@ public class ItemTagManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         EventSystem.current.SetSelectedGameObject(buttonContainer.GetComponentsInChildren<Button>()[nr].gameObject);
         
+    }
+
+    /// <summary>
+    /// Set the visual tag of the ingredient
+    /// </summary>
+    /// <param name="ingredientSO"></param>
+    /// <param name="visualTagSO"></param>
+    private void SetVisualTag(IngredientSO ingredientSO, VisualTagSO visualTagSO)
+    {
+        if(ingredientTagDictionary.ContainsKey(ingredientSO))
+        {
+            ingredientTagDictionary[ingredientSO] = visualTagSO;
+        } else
+        {
+            ingredientTagDictionary.Add(ingredientSO, visualTagSO);
+        }
+
+        onVisualTagUpdated?.Invoke(ingredientSO);
+    }
+
+    /// <summary>
+    /// Get the visual tag of the ingredient
+    /// </summary>
+    /// <param name="ingredientSO"></param>
+    /// <returns></returns>
+    public VisualTagSO GetVisualTag(IngredientSO ingredientSO)
+    {
+        if(ingredientTagDictionary.ContainsKey(ingredientSO))
+        {
+            return ingredientTagDictionary[ingredientSO];
+        }
+        return defaultVisualTag;
     }
 }

@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class TagMenuButton : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     private Button thisButton;
-    [NonSerialized] public VisualTag visualTag;
+    [NonSerialized] public VisualTagSO visualTag;
 
     [SerializeField] private Color baseColor;
     [SerializeField] private Color selectedColor;

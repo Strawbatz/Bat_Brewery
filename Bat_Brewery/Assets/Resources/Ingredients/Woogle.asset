@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb676b1f39747b4bb57325f02ca4443, type: 3}
   m_Name: Woogle
   m_EditorClassIdentifier: 
-  visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
+  id: Woogle
   worldDescription: {fileID: 4900000, guid: 21c80bc7dc6c56e43b6555412a92d2f8, type: 3}
   TextbookDescription: "A waterweed which grows in clusters, commonly found along
     the shallow parts of lakes and rivers.\r\nThese plants can grow up to 20 cm long.\r\nWoogles

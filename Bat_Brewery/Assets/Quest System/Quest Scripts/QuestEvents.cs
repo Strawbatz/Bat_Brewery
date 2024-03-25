@@ -38,16 +38,16 @@ public class QuestEvents
         }
     }
 
-    public event Action<Ingredient> onTextbookDescHeard;
-    public void TextbookDescHeard(Ingredient ing) {
+    public event Action<IngredientSO> onTextbookDescHeard;
+    public void TextbookDescHeard(IngredientSO ing) {
         if(onTextbookDescHeard != null) {
             onTextbookDescHeard(ing);
         }
     } 
 
-    public void TextbookDescHeard(InventoryIngredient[] ing) {
-        foreach(InventoryIngredient item in ing) {
-            TextbookDescHeard(item.ingredient);
+    public void TextbookDescHeard(IngredientSO[] ing) {
+        foreach(IngredientSO item in ing) {
+            TextbookDescHeard(item);
         }
     }
 }

@@ -14,17 +14,17 @@ using UnityEngine.UIElements;
 public class WorldIngredient : InteractableObject
 {
     
-    [SerializeField] public Ingredient itemTag;
+    [SerializeField] private IngredientSO ingredientSO;
     [SerializeField] private SpriteRenderer worldImg;
     [SerializeField] private TextAsset interactText;
     [SerializeField] private TextAsset consumedText;
     [SerializeField] private SmellSource smellSource;
     private bool isTalking;
     private PickupMode mode = PickupMode.UNKNOWN;
-
     private void Start() {
-        worldImg.sprite = itemTag.visualTag.GetWorldImg();
-        itemTag.tagUpdated += ChangeVisualTag; 
+
+        worldImg.sprite = ItemTagManager.instance.GetVisualTag(ingredientSO).GetWorldImg();
+        ItemTagManager.instance.onVisualTagUpdated += ChangeVisualTag;
         
         interactSprite.gameObject.SetActive(false);
         gameObject.SetActive(true);
@@ -37,7 +37,7 @@ public class WorldIngredient : InteractableObject
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= DescriptionEnded;
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
         GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
-        itemTag.tagUpdated -= ChangeVisualTag;
+        ItemTagManager.instance.onVisualTagUpdated -= ChangeVisualTag;
     }
 
     protected override void Interact()
@@ -49,7 +49,7 @@ public class WorldIngredient : InteractableObject
             {
                 case PickupMode.UNKNOWN:
                 {
-                    DialogueManager.GetInstance().EnterDescription(itemTag.worldDescription);
+                    DialogueManager.GetInstance().EnterDescription(ingredientSO.worldDescription);
                     GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
                     mode = PickupMode.DISCOVERED;
                     return;     
@@ -76,7 +76,7 @@ public class WorldIngredient : InteractableObject
     /// <param name="id"></param>
     private void DescriptionEnded(string id)
     {
-        if(id.Equals(itemTag.worldDescription.name))
+        if(id.Equals(ingredientSO.worldDescription.name))
         {
             if(mode == PickupMode.HARVESTED) DialogueManager.GetInstance().EnterDescription(consumedText);
             else DialogueManager.GetInstance().EnterDescription(interactText);
@@ -95,7 +95,7 @@ public class WorldIngredient : InteractableObject
         if(!isTalking && !ItemTagManager.instance.isOpen)
         {
             isTalking = true;
-            DialogueManager.GetInstance().EnterDescription(itemTag.worldDescription);
+            DialogueManager.GetInstance().EnterDescription(ingredientSO.worldDescription);
             GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
         }
 
@@ -121,7 +121,7 @@ public class WorldIngredient : InteractableObject
                 case 2:
                 {
                     //The player changes visual tag of item
-                    ItemTagManager.instance.ToggleMenu(itemTag);
+                    ItemTagManager.instance.ToggleMenu(ingredientSO);
                     break;
                 }
             }
@@ -138,7 +138,7 @@ public class WorldIngredient : InteractableObject
                 case 1:
                 {
                     //The player changes visual tag of item
-                    ItemTagManager.instance.ToggleMenu(itemTag);
+                    ItemTagManager.instance.ToggleMenu(ingredientSO);
                     break;
                 }
             }
@@ -154,9 +154,9 @@ public class WorldIngredient : InteractableObject
     /// </summary>
     public void HarvestPlant()
     {
-        GameEventsManager.instance.inventoryEvents.PickUpIngredient(itemTag);
+        GameEventsManager.instance.inventoryEvents.PickUpIngredient(ingredientSO);
         mode = PickupMode.HARVESTED;
-        worldImg.sprite = itemTag.visualTag.GetHarvestedImg();
+        worldImg.sprite = ItemTagManager.instance.GetVisualTag(ingredientSO).GetHarvestedImg();
         if(smellSource) smellSource.enabled = false;
     }
 
@@ -166,19 +166,21 @@ public class WorldIngredient : InteractableObject
     public void RegrowPlant()
     {
         mode = PickupMode.DISCOVERED;
-        worldImg.sprite = itemTag.visualTag.GetWorldImg();
+                worldImg.sprite = ItemTagManager.instance.GetVisualTag(ingredientSO).GetWorldImg();
         if(smellSource) smellSource.enabled = true;
     }
 
     private void TagMenuToggle() {
         if(!isTalking) { 
-        ItemTagManager.instance.ToggleMenu(itemTag);
+        ItemTagManager.instance.ToggleMenu(ingredientSO);
         }
     }
 
-    private void ChangeVisualTag()
+    private void ChangeVisualTag(IngredientSO ingredient)
     {
-        worldImg.sprite = (mode == PickupMode.HARVESTED)?itemTag.visualTag.GetHarvestedImg():itemTag.visualTag.GetWorldImg();
+        if(ingredient.Equals(this.ingredientSO))
+            worldImg.sprite = (mode == PickupMode.HARVESTED)?ItemTagManager.instance.GetVisualTag(ingredientSO).GetHarvestedImg():
+                ItemTagManager.instance.GetVisualTag(ingredientSO).GetWorldImg();
     }
 
     protected override void OnTriggerEnter2D(Collider2D other) {
@@ -198,11 +200,6 @@ public class WorldIngredient : InteractableObject
                 ItemTagManager.instance.ExitMenu();
             }
         }
-    }
-
-    void OnValidate()
-    {
-        worldImg.sprite = itemTag.visualTag.GetWorldImg();
     }
 
     private enum PickupMode

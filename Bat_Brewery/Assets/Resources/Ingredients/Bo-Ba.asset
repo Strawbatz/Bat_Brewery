@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfb676b1f39747b4bb57325f02ca4443, type: 3}
   m_Name: Bo-Ba
   m_EditorClassIdentifier: 
-  visualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
+  id: Bo-Ba
   worldDescription: {fileID: 4900000, guid: 17fd68c8d83913b4dbd91a15abedf9de, type: 3}
   TextbookDescription: "Bo-Ba bushes naturally grow on mountains and sometimes at
     the very edges of forests. Bo-Ba berries are categorized as small berries. \r\nThe
