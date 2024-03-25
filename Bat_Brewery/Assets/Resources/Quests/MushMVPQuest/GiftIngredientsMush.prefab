@@ -49,7 +49,7 @@ MonoBehaviour:
   notEnoughStory: {fileID: 4900000, guid: 452261dc027ff5d4e92b38e016c35e75, type: 3}
   npcName: Mush
   ingredientsRequired:
-  - ingredient: {fileID: 11400000, guid: 4b6ff57844a555546bbd98bbbb32d1ef, type: 2}
+  - item: {fileID: 11400000, guid: 4b6ff57844a555546bbd98bbbb32d1ef, type: 2}
     count: 1
-  - ingredient: {fileID: 11400000, guid: e37210dca0026a44d8b8eba7a2ba6fa8, type: 2}
+  - item: {fileID: 11400000, guid: e37210dca0026a44d8b8eba7a2ba6fa8, type: 2}
     count: 1

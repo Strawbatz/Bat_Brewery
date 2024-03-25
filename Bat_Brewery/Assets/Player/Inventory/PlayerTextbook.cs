@@ -24,7 +24,7 @@ public class PlayerTextbook : MonoBehaviour
     /// If description doesn't already exist, add it.
     /// </summary>
     /// <param name="ing">Ingredient mentioned</param>
-    private void AddTextbookDesc(Ingredient ing) {
+    private void AddTextbookDesc(IngredientSO ing) {
         if(playerTextbook.Contains((ing.name, ing.TextbookDescription))) {
             return;
         }

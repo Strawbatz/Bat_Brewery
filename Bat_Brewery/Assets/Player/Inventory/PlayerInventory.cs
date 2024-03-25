@@ -9,49 +9,49 @@ using System;
 /// </summary>
 public class PlayerInventory : MonoBehaviour
 {
-    public List<InventoryIngredient> ingredients = new List<InventoryIngredient>();
+    public List<InventoryItem> items = new List<InventoryItem>();
 
     void Start()
     {
-        GameEventsManager.instance.inventoryEvents.onPickUpIngredient += AddIngredient;
+        GameEventsManager.instance.inventoryEvents.onItemAdded += AddItem;
     }
 
     void OnDisable()
     {
-        GameEventsManager.instance.inventoryEvents.onPickUpIngredient -= AddIngredient;
+        GameEventsManager.instance.inventoryEvents.onItemAdded -= AddItem;
     }
 
     /// <summary>
-    /// Adds ingredient to inventory, if it already exists count is increased,
-    /// else a new ingredient is created and added.
+    /// Adds item to inventory, if it already exists count is increased,
+    /// else a new item is created and added.
     /// </summary>
-    /// <param name="ing">Ingredient to be added.</param>
-    private void AddIngredient(Ingredient ing) {
-        InventoryIngredient temp = ingredients.Find(ingredient => ingredient.ingredient == ing);
+    /// <param name="ing">Item to be added.</param>
+    private void AddItem(ItemSO ing) {
+        InventoryItem temp = items.Find(ingredient => ingredient.item == ing);
         if(temp != null) {
             temp.count ++;
         } else {
-            ingredients.Add(new InventoryIngredient(ing));
+            items.Add(new InventoryItem(ing));
         }
     }
 
     /// <summary>
-    /// Tries to remove an ingredient from inventory. If ingredient exists
+    /// Tries to remove an item from inventory. If ingredient exists
     /// its count is lowered in inventory, or removed if it was the last
     /// and returns true.
-    /// If ingredient doesn't exist the method returns false and nothing
+    /// If item doesn't exist the method returns false and nothing
     /// happens.
     /// </summary>
     /// <param name="ing">Ingredient to be removed.</param>
     /// <returns></returns>
-    public bool RemoveIngredient(Ingredient ing) {
-        InventoryIngredient temp = ingredients.Find(ingredient => ingredient.ingredient == ing);
+    public bool RemoveItem(ItemSO ing) {
+        InventoryItem temp = items.Find(item => item.item == ing);
         if(temp != null) {
             temp.count --;
             if(temp.count == 0) {
-            ingredients.Remove(temp);
+            items.Remove(temp);
             }
-            GameEventsManager.instance.inventoryEvents.IngredientWasRemoved(ing);
+            GameEventsManager.instance.inventoryEvents.ItemWasRemoved(ing);
             return true;
         } 
         InsufficientIngredientsPopup();
@@ -69,9 +69,9 @@ public class PlayerInventory : MonoBehaviour
     /// </summary>
     /// <param name="ing">Ingredient to be removed.</param>
     /// <returns></returns>
-    public bool RemoveIngredient(Ingredient ing, int amount)
+    public bool RemoveItem(ItemSO ing, int amount)
     {
-        InventoryIngredient temp = ingredients.Find(ingredient => ingredient.ingredient == ing);
+        InventoryItem temp = items.Find(ingredient => ingredient.item == ing);
         if(temp != null)
         {
             if(temp.count < amount)
@@ -82,9 +82,9 @@ public class PlayerInventory : MonoBehaviour
             temp.count -= amount;
             if(temp.count == 0)
             {
-                ingredients.Remove(temp);
+                items.Remove(temp);
             }
-            GameEventsManager.instance.inventoryEvents.IngredientWasRemoved(ing);
+            GameEventsManager.instance.inventoryEvents.ItemWasRemoved(ing);
             return true;
         }
         InsufficientIngredientsPopup();
@@ -100,12 +100,12 @@ public class PlayerInventory : MonoBehaviour
     /// </summary>
     /// <param name="ingredientsToRemove"></param>
     /// <returns></returns>
-    public bool RemoveIngredient(InventoryIngredient[] ingredientsToRemove)
+    public bool RemoveItem(InventoryItem[] ingredientsToRemove)
     {
         if (!EnoughIngredients(ingredientsToRemove)) return false;
-        foreach(InventoryIngredient invIng in ingredientsToRemove)
+        foreach(InventoryItem invIng in ingredientsToRemove)
         {
-            RemoveIngredient(invIng.ingredient, invIng.count);
+            RemoveItem(invIng.item, invIng.count);
         }
 
         return true;
@@ -117,8 +117,8 @@ public class PlayerInventory : MonoBehaviour
     /// </summary>
     /// <param name="ing">Ingredient to be checked.</param>
     /// <returns>Number of ingredient.</returns>
-    public int CheckIngredientCount(Ingredient ing){
-        InventoryIngredient temp = ingredients.Find(ingredient => ingredient.ingredient == ing);
+    public int CheckIngredientCount(ItemSO ing){
+        InventoryItem temp = items.Find(ingredient => ingredient.item == ing);
         if(temp != null) {
             return temp.count;
         } 
@@ -130,11 +130,11 @@ public class PlayerInventory : MonoBehaviour
     /// </summary>
     /// <param name="required"></param>
     /// <returns></returns>
-    public bool EnoughIngredients(InventoryIngredient[] required)
+    public bool EnoughIngredients(InventoryItem[] required)
     {
-        foreach(InventoryIngredient invIng in required)
+        foreach(InventoryItem invIng in required)
         {
-            if(CheckIngredientCount(invIng.ingredient) < invIng.count) return false;
+            if(CheckIngredientCount(invIng.item) < invIng.count) return false;
         }
 
         return true;
@@ -151,12 +151,12 @@ public class PlayerInventory : MonoBehaviour
 /// Wrapper for handling ingredients in inventory.
 /// </summary>
 [Serializable]
-public class InventoryIngredient {
-    public Ingredient ingredient;
+public class InventoryItem {
+    public ItemSO item;
     public int count;
 
-    public InventoryIngredient(Ingredient ing) {
-        ingredient = ing;
+    public InventoryItem(ItemSO ing) {
+        item = ing;
         count = 1;
     }
 }

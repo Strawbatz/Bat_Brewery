@@ -60,10 +60,22 @@ PrefabInstance:
       propertyPath: itemTag
       value: 
       objectReference: {fileID: 11400000, guid: 4b6ff57844a555546bbd98bbbb32d1ef, type: 2}
-    - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 2935704383259318598, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: ingredientSO
       value: 
-      objectReference: {fileID: -139067265, guid: 35a5b3f2e5dadfc4090210a05f222902, type: 3}
+      objectReference: {fileID: 11400000, guid: 4b6ff57844a555546bbd98bbbb32d1ef, type: 2}
+    - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3780921658161728416, guid: 42f71082aae10d64baf48382237f825a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5543676408096063576, guid: 42f71082aae10d64baf48382237f825a, type: 3}
       propertyPath: m_Name
       value: MyntaPickup Variant

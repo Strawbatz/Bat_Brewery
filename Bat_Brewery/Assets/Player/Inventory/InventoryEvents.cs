@@ -3,30 +3,45 @@ using System;
 public class InventoryEvents
 {
     /// <summary>
-    /// Is fired when an ingredient is added to the inventory
+    /// Is fired when an item is added to the inventory
     /// </summary>
-    public event Action<Ingredient> onPickUpIngredient;
+    public event Action<ItemSO> onItemAdded;
     /// <summary>
-    /// Add an ingredient to the players inventory
+    /// Add an item to the players inventory
     /// </summary>
-    /// <param name="ingredient"></param>
-    public void PickUpIngredient(Ingredient ingredient)
+    /// <param name="item"></param>
+    public void AddItem(ItemSO item)
     {
-        if(onPickUpIngredient != null)
+        if(onItemAdded != null)
         {
-            onPickUpIngredient(ingredient);
+            onItemAdded(item);
         }
     }
 
     /// <summary>
-    /// Is fired after an ingredient was removed from the inventory
+    /// Is fired after an item was removed from the inventory
     /// </summary>
-    public event Action<Ingredient> onIngredientWasRemoved;
-    public void IngredientWasRemoved(Ingredient ingredient)
+    public event Action<ItemSO> onItemWasRemoved;
+    public void ItemWasRemoved(ItemSO item)
     {
-        if(onIngredientWasRemoved != null)
+        if(onItemWasRemoved != null)
         {
-            onIngredientWasRemoved(ingredient);
+            onItemWasRemoved(item);
         }
+    }
+
+    /// <summary>
+    /// Is fired when an ingredient is added to the inventory
+    /// </summary>
+    public event Action<IngredientSO> onPickedUpIngredient;
+    /// Add an ingredient to the players inventory
+    public void PickUpIngredient(IngredientSO ingredient)
+    {
+        if(onPickedUpIngredient != null)
+        {
+            onPickedUpIngredient(ingredient);
+        }
+
+        AddItem(ingredient);
     }
 }

@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3797450da29378444a06240074e6d58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultVisualTag: {fileID: 11400000, guid: d7ed7edfeb9783a4c9da577e9e7513e5, type: 2}
   menuContainer: {fileID: 5457160897468686129}
   buttonPrefab: {fileID: 2151986197574914287, guid: 823b2ecb8d55a3245bafba2e7deb9b6d, type: 3}
   buttonContainer: {fileID: 4964104849316629607}
