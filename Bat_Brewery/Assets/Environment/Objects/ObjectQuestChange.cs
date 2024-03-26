@@ -13,6 +13,12 @@ public class ObjectQuestChange : MonoBehaviour
 
     void Start()
     {
+        if(QuestManager.instance.CheckQuestState(quest.id) == QuestState.FINISHED)
+        {
+            beforeQuestObject.SetActive(false);
+            afterQuestObject.SetActive(true);
+            return;
+        }
         GameEventsManager.instance.questEvents.onFinishQuest += ChangeObject;
     }
 

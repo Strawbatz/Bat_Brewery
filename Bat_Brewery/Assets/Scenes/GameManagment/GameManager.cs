@@ -18,10 +18,10 @@ public class GameManager : MonoBehaviour
             instance = this;
         } else
         {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()

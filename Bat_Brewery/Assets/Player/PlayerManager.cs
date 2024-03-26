@@ -24,12 +24,11 @@ public class PlayerManager : MonoBehaviour
             instance = this;
         } else
         {
-            Debug.LogWarning("Player already exists in scene");
             Destroy(gameObject);
             return;
         }
 
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
     }
 
     public Transform GetPlayerFeet() {return playerFeet;}

@@ -18,6 +18,7 @@ public class QuestPoint : InteractableObject
     void Start()
     {
         GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
+        currentQuestState = QuestManager.instance.CheckQuestState(questId);
     }
     void OnDisable()
     {
@@ -32,6 +33,7 @@ public class QuestPoint : InteractableObject
     }
     protected override void Interact()
     {
+        Debug.Log(questId + " QM: " + QuestManager.instance.CheckQuestState(questId) + " QP: " + currentQuestState);
         if(currentQuestState.Equals(QuestState.CAN_START) && canStart)
         {
             GameEventsManager.instance.questEvents.StartQuest(questId);
