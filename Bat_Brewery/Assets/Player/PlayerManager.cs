@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] Transform playerFeet;
     [SerializeField] GameObject playerGraphics;
     [SerializeField] GameObject playerPhysics;
+    [SerializeField] GameObject mainCamera;
 
     void Awake()
     {
@@ -25,7 +26,10 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.LogWarning("Player already exists in scene");
             Destroy(gameObject);
+            return;
         }
+
+        DontDestroyOnLoad(this);
     }
 
     public Transform GetPlayerFeet() {return playerFeet;}
@@ -36,4 +40,16 @@ public class PlayerManager : MonoBehaviour
     public SmellManager GetSmellManager() {return GetComponent<SmellManager>();}
     public PlayerTextbook GetTextbook() {return GetComponent<PlayerTextbook>();}
     public PlayerMovement GetPlayerMovement() {return playerPhysics.GetComponent<PlayerMovement>();}
+    public GameObject GetMainCamera(){return mainCamera;}
+
+    /// <summary>
+    /// Teleport the player to a specific point.
+    /// </summary>
+    /// <param name="position"></param>
+    public void TeleportPlayer(Vector2 position)
+    {
+        playerGraphics.transform.position = position;
+        playerPhysics.transform.position = position;
+        mainCamera.transform.position = new Vector3(position.x, position.y, mainCamera.transform.position.z);
+    }
 }

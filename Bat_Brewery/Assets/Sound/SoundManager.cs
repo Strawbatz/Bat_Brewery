@@ -89,11 +89,10 @@ public class SoundManager : MonoBehaviour
             {
                 currentMusic = musicZones[i].audioSource;
                 currentMaxVolume = maxVolume * musicZones[i].volumeScale;
+                currentMusic.volume = currentMaxVolume;
                 break;
             }
         }
-
-        currentMusic.volume = currentMaxVolume;
     }
 
     void Update()
