@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb676b1f39747b4bb57325f02ca4443, type: 3}
+  m_Name: Twister
+  m_EditorClassIdentifier: 
+  id: Twister
+  worldDescription: {fileID: 4900000, guid: c43ef69e50ac1564dabef7cd67a2ae38, type: 3}
+  TextbookDescription: "Recognised by its iconic twisted shape, twisters are a waterweed
+    which naturally grow in rapids and rivers. \r\nTheir peculiar shape allows for
+    efficient filtering of water, producing clear and clean water. These are often
+    planted in water bodies supporting towns, and also wells. \r\n\r"

@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// This class represents a quest in the game
 /// </summary>
+[System.Serializable]
 public class Quest
 {
     public QuestInfoSO info;

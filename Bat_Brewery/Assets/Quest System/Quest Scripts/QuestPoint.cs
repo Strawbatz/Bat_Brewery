@@ -18,6 +18,7 @@ public class QuestPoint : InteractableObject
     void Start()
     {
         GameEventsManager.instance.questEvents.onQuestStateChange += QuestStateChange;
+        currentQuestState = QuestManager.instance.CheckQuestState(questId);
     }
     void OnDisable()
     {

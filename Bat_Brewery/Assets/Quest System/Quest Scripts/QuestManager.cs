@@ -1,14 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using AdvancedEditorTools.Attributes;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
+    public static QuestManager instance;
     private Dictionary<string, Quest> questMap;
+    
+    [SerializeField, ReadOnly] private string[]viewQuests =  new string[0];
 
     void Awake()
     {
-        questMap = CreateQuestMap();
+        if(instance) 
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        if(questMap == null)
+            questMap = CreateQuestMap();
+        viewQuests = questMap.Keys.ToArray<string>();
     }
 
     void OnDisable()
@@ -124,5 +137,11 @@ public class QuestManager : MonoBehaviour
             Debug.LogError("ID not found in the Quest Map: " + id);
         }
         return quest;
+    }
+
+    public QuestState CheckQuestState(string id)
+    {
+        Quest quest = GetQuestById(id);
+        return quest.state;
     }
 }

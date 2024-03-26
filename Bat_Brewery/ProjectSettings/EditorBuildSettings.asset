@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ForestMeadow.unity
     guid: 6dc8bf7d9c5bec448a6e6e640e05cf0f
+  - enabled: 1
+    path: Assets/Scenes/BearRiver.unity
+    guid: f4123ea384a29224dbe79e6bbc0d391a
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 60b2d77d9dd93b64999bf9bac334b647, type: 2}
