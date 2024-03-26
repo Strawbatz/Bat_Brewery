@@ -5,11 +5,12 @@ using System.Linq;
 using System;
 
 /// <summary>
-/// The players inventory, currently only holds ingredients.
+/// The players inventory, currently only holds ingredients and items;
 /// </summary>
 public class PlayerInventory : MonoBehaviour
 {
     public List<InventoryItem> items = new List<InventoryItem>();
+    public List<InventoryItem> ingredients = new List<InventoryItem>();
 
     void Start()
     {
@@ -21,104 +22,121 @@ public class PlayerInventory : MonoBehaviour
         GameEventsManager.instance.inventoryEvents.onItemAdded -= AddItem;
     }
 
+    private List<InventoryItem> FindList(ItemSO item) {
+        if(item.GetType().Equals(typeof(IngredientSO))) {
+            return ingredients;
+        } else if(item.GetType().Equals(typeof(QuestItemSO))){
+            return items;
+        }
+        Debug.LogError("Trying to add illegal item to inventory");
+        return null;
+    } 
+
     /// <summary>
     /// Adds item to inventory, if it already exists count is increased,
     /// else a new item is created and added.
     /// </summary>
-    /// <param name="ing">Item to be added.</param>
-    private void AddItem(ItemSO ing) {
-        InventoryItem temp = items.Find(ingredient => ingredient.item == ing);
+    /// <param name="item">Item to be added.</param>
+    private void AddItem(ItemSO item) {
+        List<InventoryItem> activeList = FindList(item);
+        if(activeList == null) return;
+        InventoryItem temp = activeList.Find(obj => obj.item == item);
         if(temp != null) {
             temp.count ++;
         } else {
-            items.Add(new InventoryItem(ing));
+            activeList.Add(new InventoryItem(item));
         }
     }
 
     /// <summary>
-    /// Tries to remove an item from inventory. If ingredient exists
+    /// Tries to remove an item from inventory. If item exists
     /// its count is lowered in inventory, or removed if it was the last
     /// and returns true.
     /// If item doesn't exist the method returns false and nothing
     /// happens.
     /// </summary>
-    /// <param name="ing">Ingredient to be removed.</param>
+    /// <param name="item">item to be removed.</param>
     /// <returns></returns>
-    public bool RemoveItem(ItemSO ing) {
-        InventoryItem temp = items.Find(item => item.item == ing);
+    public bool RemoveItem(ItemSO item) {
+        List<InventoryItem> activeList = FindList(item);
+        if(activeList == null) return false;
+        InventoryItem temp = activeList.Find(obj => obj.item == item);
         if(temp != null) {
             temp.count --;
             if(temp.count == 0) {
-            items.Remove(temp);
+            activeList.Remove(temp);
             }
-            GameEventsManager.instance.inventoryEvents.ItemWasRemoved(ing);
+            GameEventsManager.instance.inventoryEvents.ItemWasRemoved(item);
             return true;
         } 
-        InsufficientIngredientsPopup();
+        InsufficientItemPopup();
         return false;
     }
 
     /// <summary>
-    /// Tries to remove ingredients from inventory. If ingredient exists
+    /// Tries to remove items from inventory. If item exists
     /// its count is reduced by the amount, and removed if it was the last
     /// and returns true.
-    /// If ingredient doesn't exist the method returns false and nothing
+    /// If item doesn't exist the method returns false and nothing
     /// happens.
-    /// If the ingredient existed but the amount in the inventory was not enough as the amount specified to be removed, 
-    /// none of the ingredient is removed and the method returns false.
+    /// If the item existed but the amount in the inventory was not enough as the amount specified to be removed, 
+    /// none of the item is removed and the method returns false.
     /// </summary>
-    /// <param name="ing">Ingredient to be removed.</param>
+    /// <param name="item">item to be removed.</param>
     /// <returns></returns>
-    public bool RemoveItem(ItemSO ing, int amount)
-    {
-        InventoryItem temp = items.Find(ingredient => ingredient.item == ing);
+    public bool RemoveItem(ItemSO item, int amount) {
+        List<InventoryItem> activeList = FindList(item);
+        if(activeList == null) return false;
+        InventoryItem temp = activeList.Find(obj => obj.item == item);
         if(temp != null)
         {
             if(temp.count < amount)
             {
-                InsufficientIngredientsPopup();
+                InsufficientItemPopup();
                 return false;
             }
             temp.count -= amount;
             if(temp.count == 0)
             {
-                items.Remove(temp);
+                activeList.Remove(temp);
             }
-            GameEventsManager.instance.inventoryEvents.ItemWasRemoved(ing);
+            GameEventsManager.instance.inventoryEvents.ItemWasRemoved(item);
             return true;
         }
-        InsufficientIngredientsPopup();
+        InsufficientItemPopup();
         return false;
     }
 
     /// <summary>
-    /// Tries to remove ingredients from inventory. If all ingredients exist with 
+    /// Tries to remove items from inventory. If all items exist with 
     /// the specified amount then those are reduced in the inventory and it returns true.
-    /// If ingredient doesn't exist the method returns false.
-    /// If not all ingredients existed with the specified amount the method returns false and no
-    /// ingredients are removed.
+    /// If item doesn't exist the method returns false.
+    /// If not all item existed with the specified amount the method returns false and no
+    /// items are removed.
     /// </summary>
-    /// <param name="ingredientsToRemove"></param>
+    /// <param name="itemToRemove"></param>
     /// <returns></returns>
-    public bool RemoveItem(InventoryItem[] ingredientsToRemove)
+    public bool RemoveItem(InventoryItem[] itemToRemove)
     {
-        if (!EnoughIngredients(ingredientsToRemove)) return false;
-        foreach(InventoryItem invIng in ingredientsToRemove)
+        if (!EnoughItems(itemToRemove)) return false;
+        foreach(InventoryItem invItem in itemToRemove)
         {
-            RemoveItem(invIng.item, invIng.count);
+            RemoveItem(invItem.item, invItem.count);
         }
 
         return true;
     }
 
     /// <summary>
-    /// Returns 0 if ingredient doesn't exist in inventory.
-    /// Else returns ingredient count.
+    /// Returns 0 if item doesn't exist in inventory.
+    /// Else returns item count.
     /// </summary>
-    /// <param name="ing">Ingredient to be checked.</param>
-    /// <returns>Number of ingredient.</returns>
-    public int CheckIngredientCount(ItemSO ing){
-        InventoryItem temp = items.Find(ingredient => ingredient.item == ing);
+    /// <param name="item">item to be checked.</param>
+    /// <returns>Number of item.</returns>
+    public int CheckItemCount(ItemSO item){
+        List<InventoryItem> activeList = FindList(item);
+        if(activeList == null) return 0;
+        InventoryItem temp = activeList.Find(obj => obj.item == item);
         if(temp != null) {
             return temp.count;
         } 
@@ -126,37 +144,37 @@ public class PlayerInventory : MonoBehaviour
     }
 
     /// <summary>
-    /// Returns true if the inventory has equal to or more than the specified required ingredients
+    /// Returns true if the inventory has equal to or more than the specified required items
     /// </summary>
     /// <param name="required"></param>
     /// <returns></returns>
-    public bool EnoughIngredients(InventoryItem[] required)
+    public bool EnoughItems(InventoryItem[] required)
     {
-        foreach(InventoryItem invIng in required)
+        foreach(InventoryItem invItem in required)
         {
-            if(CheckIngredientCount(invIng.item) < invIng.count) return false;
+            if(CheckItemCount(invItem.item) < invItem.count) return false;
         }
 
         return true;
     }
 
-    public void InsufficientIngredientsPopup()
+    public void InsufficientItemPopup()
     {
         //TODO: ADD A UI EFFECT THAT POPS UP ON THE SCREEN THAT TELLS THE PLAYER THAT THEY HAVE INSUFFICIENT INGREDIENTS
-        Debug.Log("The player has insufficient ingredients for the operation");
+        Debug.Log("The player has insufficient ingredients or items for the operation");
     }
 }
 
 /// <summary>
-/// Wrapper for handling ingredients in inventory.
+/// Wrapper for handling items in inventory.
 /// </summary>
 [Serializable]
 public class InventoryItem {
     public ItemSO item;
     public int count;
 
-    public InventoryItem(ItemSO ing) {
-        item = ing;
+    public InventoryItem(ItemSO obj) {
+        item = obj;
         count = 1;
     }
 }
