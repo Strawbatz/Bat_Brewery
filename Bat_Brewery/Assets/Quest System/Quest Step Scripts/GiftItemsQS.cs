@@ -46,7 +46,7 @@ public class GiftItemsQS : DialogueQS
 
     public override TextAsset GetQuestStory()
     {
-        if(notEnoughStory == null || playerInventory.EnoughIngredients(ingredientsRequired))
+        if(notEnoughStory == null || playerInventory.EnoughItems(ingredientsRequired))
         {
             story = giftStory;
             return story;
@@ -77,7 +77,7 @@ public class GiftItemsQS : DialogueQS
     {
         if(!playerInventory.RemoveItem(ingredientsRequired))
         {
-            playerInventory.InsufficientIngredientsPopup();
+            playerInventory.InsufficientItemPopup();
             npc.AddQuestDialogue(this);
             return;
         }

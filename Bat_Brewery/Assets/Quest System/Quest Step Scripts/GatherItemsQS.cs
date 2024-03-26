@@ -44,7 +44,7 @@ public class GatherItemsQS : QuestStep
 
     private void CheckIfCompleted()
     {
-        if(!playerInventory.EnoughIngredients(ingredientsRequired.ToArray())) return;
+        if(!playerInventory.EnoughItems(ingredientsRequired.ToArray())) return;
 
         if(destroyIngredients)
         {
