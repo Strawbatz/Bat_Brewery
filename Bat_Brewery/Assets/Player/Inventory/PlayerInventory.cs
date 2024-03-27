@@ -11,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<InventoryItem> items = new List<InventoryItem>();
     public List<InventoryItem> ingredients = new List<InventoryItem>();
-    int maxIngredientSlots = 4;
+    [SerializeField] int maxIngredientSlots = 4;
 
     void Start()
     {

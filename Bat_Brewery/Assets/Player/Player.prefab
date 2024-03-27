@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   ingredients: []
+  maxIngredientSlots: 3
 --- !u!114 &5654469693604185257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8050ac63807ce47ab3e3a820160cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCraftingSlots: 2
   failedPotion: {fileID: 11400000, guid: 397a508efb136fb429a6ff5aa2cbadb6, type: 2}
   addedIngredients: []
 --- !u!114 &66466938907161758
