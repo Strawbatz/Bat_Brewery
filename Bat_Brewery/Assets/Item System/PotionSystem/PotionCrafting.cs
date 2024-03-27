@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PotionCrafting : MonoBehaviour
 {
+    [SerializeField] int maxCraftingSlots;
     [SerializeField] PotionSO failedPotion;
     /// <summary>
     /// The ingredients added to the potion crafting
@@ -26,6 +27,7 @@ public class PotionCrafting : MonoBehaviour
     /// <returns></returns>
     public PotionSO CraftPotion()
     {   
+        if(addedIngredients.Count <= 0) return null;
         foreach (PotionSO recipePotion in potions)
         {
             if(recipePotion.GetIngredients().Length != addedIngredients.Count) break;
@@ -43,4 +45,32 @@ public class PotionCrafting : MonoBehaviour
         addedIngredients = new List<IngredientSO>();
         return failedPotion;
     }
+
+    /// <summary>
+    /// Add crafting slots
+    /// </summary>
+    /// <param name="slots"></param>
+    public void AddCraftingSlots(int slots)
+    {
+        maxCraftingSlots += slots;
+    }
+
+    /// <summary>
+    /// Returns how many crafting slots that are available
+    /// </summary>
+    /// <returns></returns>
+    public int GetCraftingSlots()
+    {
+        return maxCraftingSlots;
+    }
+    
+    /// <summary>
+    /// Returns true if the potion crafting system has an available slot for crafting
+    /// </summary>
+    /// <returns></returns>
+    public bool HasAvailableSlot()
+    {
+        return addedIngredients.Count < maxCraftingSlots;
+    }
+
 }

@@ -40,6 +40,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerTextbook GetTextbook() {return GetComponent<PlayerTextbook>();}
     public PlayerMovement GetPlayerMovement() {return playerPhysics.GetComponent<PlayerMovement>();}
     public GameObject GetMainCamera(){return mainCamera;}
+    public PotionCrafting GetPotionCrafting(){return GetComponent<PotionCrafting>();}
 
     /// <summary>
     /// Teleport the player to a specific point.
