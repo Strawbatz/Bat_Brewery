@@ -103,10 +103,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactSprite: {fileID: 7706935445182662060}
-  itemTag: {fileID: 11400000, guid: 2513773e14935ae4c83cf77772970ac7, type: 2}
+  ingredientSO: {fileID: 0}
   worldImg: {fileID: 3780921658161728416}
   interactText: {fileID: 4900000, guid: 5152d351f6faedb4fbc625b2d7cc2c79, type: 3}
   consumedText: {fileID: 4900000, guid: 4c3635b9d01ed40408464711930b5d7f, type: 3}
+  inventoryFullText: {fileID: 4900000, guid: 3e9d73036fdadcb468104922c97d1cdb, type: 3}
   smellSource: {fileID: 622585109127015952}
 --- !u!114 &5869197977869555571
 MonoBehaviour:

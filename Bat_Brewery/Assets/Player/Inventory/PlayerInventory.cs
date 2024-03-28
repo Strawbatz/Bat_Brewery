@@ -11,6 +11,7 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<InventoryItem> items = new List<InventoryItem>();
     public List<InventoryItem> ingredients = new List<InventoryItem>();
+    [SerializeField] int maxIngredientSlots = 4;
 
     void Start()
     {
@@ -23,12 +24,12 @@ public class PlayerInventory : MonoBehaviour
     }
 
     private List<InventoryItem> FindList(ItemSO item) {
-        if(item.GetType().Equals(typeof(IngredientSO))) {
+        if(item.GetType().IsSubclassOf(typeof(IngredientSO)) || item.GetType().Equals(typeof(IngredientSO))) {
             return ingredients;
-        } else if(item.GetType().Equals(typeof(QuestItemSO))){
+        } else if(item.GetType().IsSubclassOf(typeof(QuestItemSO)) || item.GetType().Equals(typeof(QuestItemSO))){
             return items;
         }
-        Debug.LogError("Trying to add illegal item to inventory");
+        Debug.LogError("Trying to add illegal item to inventory. Item type: " + item.GetType() + ", Item name: " + item.name);
         return null;
     } 
 
@@ -46,6 +47,8 @@ public class PlayerInventory : MonoBehaviour
         } else {
             activeList.Add(new InventoryItem(item));
         }
+
+        if (ingredients.Count > maxIngredientSlots) ingredients.RemoveAt(ingredients.Count-1);
     }
 
     /// <summary>
@@ -162,6 +165,33 @@ public class PlayerInventory : MonoBehaviour
     {
         //TODO: ADD A UI EFFECT THAT POPS UP ON THE SCREEN THAT TELLS THE PLAYER THAT THEY HAVE INSUFFICIENT INGREDIENTS
         Debug.Log("The player has insufficient ingredients or items for the operation");
+    }
+
+    /// <summary>
+    /// Adds more ingredient slots
+    /// </summary>
+    /// <param name="slots"></param>
+    public void AddIngredientSlots(int slots)
+    {
+        maxIngredientSlots += slots;
+    }
+
+    /// <summary>
+    /// Returns the max number of ingredient slots
+    /// </summary>
+    /// <returns></returns>
+    public int GetMaxIngredientSlots()
+    {
+        return maxIngredientSlots;
+    }
+
+    /// <summary>
+    /// Returns true if the inventory has an available ingredient slot
+    /// </summary>
+    /// <returns></returns>
+    public bool HasAvailableIngredientSlot()
+    {
+        return ingredients.Count < maxIngredientSlots;
     }
 }
 

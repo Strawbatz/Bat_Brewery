@@ -44,4 +44,19 @@ public class InventoryEvents
 
         AddItem(ingredient);
     }
+
+    /// <summary>
+    /// Is fired when the crafting menu opens
+    /// </summary>
+    public event Action onOpenCrafting;
+    /// <summary>
+    /// Open the crafting menu
+    /// </summary>
+    public void OpenCrafting()
+    {
+        if(onOpenCrafting != null)
+        {
+            onOpenCrafting();
+        }
+    }
 }

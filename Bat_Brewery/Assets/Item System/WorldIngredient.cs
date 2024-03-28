@@ -18,6 +18,7 @@ public class WorldIngredient : InteractableObject
     [SerializeField] private SpriteRenderer worldImg;
     [SerializeField] private TextAsset interactText;
     [SerializeField] private TextAsset consumedText;
+    [SerializeField] private TextAsset inventoryFullText;
     [SerializeField] private SmellSource smellSource;
     private bool isTalking;
     private PickupMode mode = PickupMode.UNKNOWN;
@@ -38,6 +39,7 @@ public class WorldIngredient : InteractableObject
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
         GameEventsManager.instance.dialogueEvents.onChoiceMade -= InteractChoice;
         ItemTagManager.instance.onVisualTagUpdated -= ChangeVisualTag;
+        GameEventsManager.instance.dialogueEvents.onDialogueEnded -= InventoryFull;
     }
 
     protected override void Interact()
@@ -76,7 +78,7 @@ public class WorldIngredient : InteractableObject
     /// <param name="id"></param>
     private void DescriptionEnded(string id)
     {
-        if(id.Equals(ingredientSO.worldDescription.name))
+        if(id.Equals(ingredientSO.worldDescription.name) || id.Equals(inventoryFullText.name))
         {
             if(mode == PickupMode.HARVESTED) DialogueManager.GetInstance().EnterDescription(consumedText);
             else DialogueManager.GetInstance().EnterDescription(interactText);
@@ -102,6 +104,18 @@ public class WorldIngredient : InteractableObject
         GameEventsManager.instance.dialogueEvents.onDialogueEnded -= RedoDescription;
     }
 
+    private void InventoryFull(string id)
+    {
+        if(!id.Equals(interactText.name) && !id.Equals(consumedText.name)) return;
+        if(!isTalking && !ItemTagManager.instance.isOpen)
+        {
+            isTalking = true;
+            DialogueManager.GetInstance().EnterDescription(inventoryFullText);  
+            GameEventsManager.instance.dialogueEvents.onDialogueEnded += DescriptionEnded;
+        }
+        GameEventsManager.instance.dialogueEvents.onDialogueEnded -= InventoryFull;
+    }
+    
     private void InteractChoice(string storyId, int choice){
         if(storyId.Equals(interactText.name)){
             switch(choice)
@@ -154,6 +168,11 @@ public class WorldIngredient : InteractableObject
     /// </summary>
     public void HarvestPlant()
     {
+        if(!PlayerManager.instance.GetInventory().HasAvailableIngredientSlot())
+        {
+            GameEventsManager.instance.dialogueEvents.onDialogueEnded += InventoryFull;
+            return;
+        }
         GameEventsManager.instance.inventoryEvents.PickUpIngredient(ingredientSO);
         mode = PickupMode.HARVESTED;
         worldImg.sprite = ItemTagManager.instance.GetVisualTag(ingredientSO).GetHarvestedImg();
