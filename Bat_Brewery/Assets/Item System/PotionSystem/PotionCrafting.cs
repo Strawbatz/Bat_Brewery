@@ -30,15 +30,18 @@ public class PotionCrafting : MonoBehaviour
         if(addedIngredients.Count <= 0) return null;
         foreach (PotionSO recipePotion in potions)
         {
+            bool ok = true;
             if(recipePotion.GetIngredients().Length != addedIngredients.Count) break;
             foreach(IngredientSO ingredient in recipePotion.GetIngredients())
             {
                 if(!addedIngredients.Contains(ingredient))
                 {
-                    break;
+                    ok = false;
+                    break;   
                 }
             }
-
+            if(!ok) break;
+            
             addedIngredients = new List<IngredientSO>();
             return recipePotion;
         }
